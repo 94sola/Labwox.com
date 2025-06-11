@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+.root 
+{
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.logo
+ {
+  font-family: "Fredoka", sans-serif;
+}
+
+.nav
+ {
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.hero
+ {
+  font-family: "Open Sans", sans-serif;
+}
+
+
+
+  
