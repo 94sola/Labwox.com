@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Wrapper from "./wrapper";
-import lab from "../assets/image/chemxpert-hero.jpg";
+import lab from "../assets/image/chemx.jpg";
 
 const Chemxpert = () => {
   return (
