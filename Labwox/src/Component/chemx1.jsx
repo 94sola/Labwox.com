@@ -1,105 +1,65 @@
-import React, { useState } from "react";
+import React from "react";
 import Wrapper from "./wrapper";
-import { Link } from "react-router-dom";
+import { Microscope, FlaskConical, Award } from "lucide-react";
+import { motion } from "framer-motion";
 
-// ✅ Importing local images
-import consultingImg from "../assets/image/labwox.jpg";
-import researchImg from "../assets/image/research.jpg";
-
-// ✅ Specialties array with updated Collaboration content
-const specialties = [
+const items = [
   {
-    title: "Collaboration",
-    subtitle: "Empowering joint scientific breakthroughs.",
-    link: "/collaboration",
-    details: [
-      "Partnering with labs, universities, and industry leaders",
-      "Co-authoring proposals and publications",
-      "Joint seminars, training, and knowledge-sharing sessions",
-    ],
-    image: consultingImg,
+    title: "Who We Are",
+    icon: <Microscope className="w-10 h-10 text-[#FFC000] mb-4" />,
+    description:
+      "Chemxpert is a research accelerator dedicated to supporting scientists and innovators. We connect researchers with advanced analytical laboratories, technical expertise, and resources to turn groundbreaking ideas into reality.",
   },
   {
-    title: "Research",
-    subtitle: "Partnering for cutting-edge discoveries.",
-    link: "/research",
-    details: [
-      "Collaborative academic and industrial research",
-      "Publishing support and peer review advice",
-      "Custom experimental design",
-    ],
-    image: researchImg,
+    title: "What We Do",
+    icon: <FlaskConical className="w-10 h-10 text-[#FFC000] mb-4" />,
+    description:
+      "We provide seamless access to cutting-edge analytical equipment, expert consultation, and hands-on training—ensuring researchers can confidently operate instruments and fully utilize the technology to achieve their goals.",
+  },
+  {
+    title: "Our Values",
+    icon: <Award className="w-10 h-10 text-[#FFC000] mb-4" />,
+    description:
+      "We believe in scientific integrity, collaboration, and innovation. Our commitment to transparency, quality, and long-term partnerships ensures meaningful impact in every project we support.",
   },
 ];
 
-// ✅ Accordion Card Component
-const Accordion = ({ title, subtitle, details, link, isOpen, onClick, image }) => {
-  return (
-    <div className="bg-white rounded-xl shadow-md overflow-hidden transition-all">
-      <div
-        className="cursor-pointer px-6 py-6 hover:bg-gray-50 transition flex flex-col gap-4"
-        onClick={onClick}
-      >
-        <div className="flex flex-col items-start text-left group">
-          <Link
-            to={link}
-            className="md:text-3xl text-2xl font-semibold text-[#153D63] hover:underline block"
-          >
-            {title}
-          </Link>
-          <p className="text-gray-600 text-lg">{subtitle}</p>
-        </div>
-
-        {/* Show image only if accordion is closed */}
-        {!isOpen && (
-          <img
-            src={image}
-            alt={`${title} visual`}
-            className="mt-4 rounded-lg shadow-md w-full h-44 object-cover transition-opacity duration-500"
-          />
-        )}
-
-        <div className="flex justify-end w-full">
-          <span className="text-[#153D63] text-2xl font-bold transition-all duration-300">
-            {isOpen ? "−" : "+"}
-          </span>
-        </div>
-      </div>
-
-      <div
-        className={`transition-all duration-500 ease-in-out overflow-hidden ${
-          isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-        }`}
-      >
-        <ul className="px-6 pb-4 pt-2 text-base text-gray-700 space-y-2">
-          {details.map((item, idx) => (
-            <li key={idx} className="list-disc ml-4">{item}</li>
-          ))}
-        </ul>
-      </div>
-    </div>
-  );
-};
-
-// ✅ Main Component
-const ChemxSpecialties = () => {
-  const [openIndex, setOpenIndex] = useState(null);
-
-  const handleClick = (index) => {
-    setOpenIndex(index === openIndex ? null : index);
-  };
-
+const Chemx = () => {
   return (
     <Wrapper>
-      <section className="w-full py-16 px-4 sm:px-8 lg:px-16 xl:px-24 bg-neutral-100">
-        <div className="max-w-screen-2xl mx-auto grid gap-8 md:grid-cols-3">
-          {specialties.map((item, index) => (
-            <Accordion
+      <section className="bg-[#faf3ed] text-black py-20 px-4 my-10 w-full rounded-lg">
+        <div className="max-w-8xl mx-auto text-center mb-12">
+          <h5 className="text-gray-900 max-w-6xl mx-auto font-light text-3xl">
+            Chemxpert accelerates research by connecting scientists with
+            high-performance analytical laboratories, expert guidance, training
+            opportunities, and funding—removing obstacles that slow down
+            scientific progress.
+          </h5>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-10 max-w-7xl mx-auto">
+          {items.map((item, index) => (
+            <motion.div
               key={index}
-              {...item}
-              isOpen={openIndex === index}
-              onClick={() => handleClick(index)}
-            />
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.2, duration: 0.6 }}
+              className="bg-slate-700 p-8 rounded-2xl shadow-lg hover:shadow-xl transition duration-300 flex flex-col items-center text-center"
+            >
+              {item.icon}
+              <div className="relative group">
+                <h3 className="text-2xl font-medium text-gray-100 mb-2">
+                  {item.title}
+                </h3>
+                <motion.span
+                  initial={{ width: 0 }}
+                  whileInView={{ width: "60%" }}
+                  transition={{ duration: 0.5 }}
+                  className="absolute left-1/2 -translate-x-1/2 bottom-0 h-1 bg-[#FFC000] rounded-full group-hover:shadow-[0_0_8px_#f97316] transition-all duration-300"
+                ></motion.span>
+              </div>
+              <p className="text-gray-100 text-lg mt-4">{item.description}</p>
+            </motion.div>
           ))}
         </div>
       </section>
@@ -107,4 +67,4 @@ const ChemxSpecialties = () => {
   );
 };
 
-export default ChemxSpecialties;
+export default Chemx;

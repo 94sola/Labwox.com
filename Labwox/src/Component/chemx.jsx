@@ -21,13 +21,13 @@ const ChemxHero = () => {
 
   return (
     <Wrapper>
-      <section className="relative w-full pt-16 pb-10 text-center lg:pt-24 lg:pb-32 lg:text-left bg-black overflow-hidden">
+      <section className="relative w-full pt-16 pb-10 text-center lg:pt-24 lg:pb-32 lg:text-left bg-[#ebe6e2] rounded-lg overflow-hidden">
         {/* Particle Background with swirl and sparkles */}
         <div className="absolute inset-0 z-0 pointer-events-none">
           {Array.from({ length: 40 }).map((_, i) => (
             <div
               key={i}
-              className="absolute w-1 h-1 bg-white rounded-full opacity-20 animate-pulse"
+              className="absolute w-1 h-1 bg-black rounded-full opacity-20 animate-pulse"
               style={{
                 top: `${Math.random() * 100}%`,
                 left: `${Math.random() * 100}%`,
@@ -63,45 +63,44 @@ const ChemxHero = () => {
           </div>
 
           {/* Floating Tags */}
-          <Link to="/consulting" className="absolute top-8 right-6 text-white text-xs sm:text-sm font-semibold animate-float-fast cursor-pointer hover:underline">
+          <Link to="/consulting" className="absolute top-8 right-6 text-black text-xs sm:text-sm font-semibold animate-float-fast cursor-pointer hover:underline">
             CONSULTING
           </Link>
-          <Link to="/training" className="absolute top-[48%] left-[56%] text-white text-xs sm:text-sm font-semibold animate-float-slow transform -translate-x-1/2 -translate-y-1/2 cursor-pointer hover:underline">
+          <Link to="/training" className="absolute top-[48%] left-[56%] text-black text-xs sm:text-sm font-semibold animate-float-slow transform -translate-x-1/2 -translate-y-1/2 cursor-pointer hover:underline">
             TRAINING
           </Link>
-          <Link to="/research" className="absolute bottom-6 left-4 text-white text-xs sm:text-sm font-semibold animate-float-fast cursor-pointer hover:underline">
+          <Link to="/research" className="absolute bottom-6 left-4 text-black text-xs sm:text-sm font-semibold animate-float-fast cursor-pointer hover:underline">
             RESEARCH
           </Link>
 
           {/* Joining Dots Animation */}
-          <div className="absolute top-1/4 left-[6%] w-2 h-2 bg-white rounded-full animate-ping" />
+          <div className="absolute top-1/4 left-[6%] w-2 h-2 bg-black rounded-full animate-ping" />
           <div className="absolute top-1/2 right-[94%] w-3 h-3 bg-[#FFC000] rounded-full animate-pulse" />
-          <div className="absolute top-1/4 left-[10%] w-1 h-1 bg-white rounded-full animate-ping" />
-          <div className="absolute top-1/4 left-[56%] w-1 h-1 bg-white rounded-full animate-ping" />
+          <div className="absolute top-1/4 left-[10%] w-1 h-1 bg-black rounded-full animate-ping" />
+          <div className="absolute top-1/4 left-[56%] w-1 h-1 bg-black rounded-full animate-ping" />
           <div className="absolute top-1/2 right-[94%] w-3 h-3 bg-[#FFC000] rounded-full animate-pulse" />
           <div className="absolute top-1/4 right-[10%] w-2 h-2 bg-[#FFC000] rounded-full animate-ping" />
-          <div className="absolute top-1/4 right-[10%] w-2 h-2 bg-white rounded-full animate-ping" />
+          <div className="absolute top-1/4 right-[10%] w-2 h-2 bg-black rounded-full animate-ping" />
           <div className="absolute top-1/3 left-[66%] w-2 h-2 bg-[#FFC000] rounded-full animate-pulse" />
         </div>
 
         {/* Hero Text Section */}
         <div className="relative z-10 mx-auto max-w-7xl lg:grid lg:grid-cols-2 lg:gap-x-10 items-center px-4 sm:px-8 xl:pr-16">
           <div className="max-w-3xl mx-auto">
-            <h1 className="font-thin text-white text-4xl md:text-6xl xl:text-7xl leading-tight drop-shadow-xl">
+            <h1 className="font-thin text-black text-4xl md:text-6xl xl:text-7xl leading-tight drop-shadow-xl">
               Empowering Scientific Discovery
             </h1>
-            <p className="mt-5 text-lg sm:text-base text-gray-200 leading-relaxed">
-              ChemXpert delivers expert-led training, consulting, and research partnerships to
-              advance chemical analysis in modern laboratories.
+            <p className="mt-5 text-lg sm:text-base text-gray-900 leading-relaxed">
+              ChemXpert delivers expert-led training, consulting, and research partnerships to advance chemical analysis in modern laboratories.
             </p>
-            <div className="mt-6 p-4 bg-white/10 backdrop-blur rounded-lg shadow text-[#FFC000] font-medium text-sm sm:text-base min-h-[60px] flex items-center justify-center animate-pulse">
+            <div className="mt-6 p-4 bg-slate-600 backdrop-blur rounded-lg shadow text-[#FFC000] font-medium text-sm sm:text-base min-h-[60px] flex items-center justify-center animate-pulse">
               <span className="transition-opacity duration-500 ease-in-out">
                 {rotatingQuotes[quoteIndex]}
               </span>
             </div>
             <div className="mt-10">
               <Link
-                to="/contact"
+                to="/application"
                 className="inline-block px-6 py-3 rounded-full text-sm font-semibold tracking-wide uppercase text-[#153D63] bg-[#FFC000] hover:bg-yellow-400 transition duration-300 shadow"
               >
                 Get Started
