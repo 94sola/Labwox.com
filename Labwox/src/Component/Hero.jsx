@@ -38,16 +38,7 @@ const Labwox = () => {
           </svg>
         </div>
 
-        <div
-          className="absolute bottom-28 right-28 opacity-50 z-0 animate-spinSlow"
-          style={{ animationDelay: '1s' }}
-        >
-          <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#14b8a6" strokeWidth="1.5">
-            <circle cx="12" cy="12" r="2" />
-            <path d="M12 2a10 10 0 0 1 0 20" />
-            <path d="M2 12a10 10 0 0 1 20 0" />
-          </svg>
-        </div>
+        
 
        
 
@@ -69,34 +60,10 @@ const Labwox = () => {
           </svg>
         </div>
 
-        <div
-          className="absolute bottom-32 left-[20%] opacity-30 z-0  animate-spinSlow"
-          style={{ animationDelay: '0s' }}
-        >
-          <svg width="64" height="64" viewBox="0 0 100 100" fill="none" stroke="#252301" strokeWidth="2">
-            <circle cx="50" cy="50" r="8" />
-            <circle cx="30" cy="30" r="3" />
-            <circle cx="70" cy="30" r="3" />
-            <circle cx="30" cy="70" r="3" />
-            <circle cx="70" cy="70" r="3" />
-            <line x1="50" y1="50" x2="30" y2="30" />
-            <line x1="50" y1="50" x2="70" y2="30" />
-            <line x1="50" y1="50" x2="30" y2="70" />
-            <line x1="50" y1="50" x2="70" y2="70" />
-          </svg>
-        </div>
+        
 
         {/* 🫧 Bubble Group */}
-        <div
-          className="absolute top-[74%] left-[70%] opacity-20  animate-spinSlow"
-          style={{ animationDelay: '1.5s' }}
-        >
-          <svg width="80" height="80" viewBox="0 0 100 100" fill="none" stroke="#423904" strokeWidth="1.2">
-            <circle cx="30" cy="30" r="12" />
-            <circle cx="50" cy="50" r="8" />
-            <circle cx="70" cy="30" r="6" />
-          </svg>
-        </div>
+        
 
         <div
           className="absolute bottom-[74%] right-[40%] opacity-20  animate-spinSlow"
@@ -110,7 +77,6 @@ const Labwox = () => {
         </div>
        
           {/* Floating Heavy Metals */}
-        <HeavyMetalLabel symbol="As" label="Arsenic" className="top-1/4 left-[10%]" color="text-red-500" />
         <HeavyMetalLabel symbol="Sb" label="Antimony" className="bottom-[20%] left-[5%]" color="text-green-500" delay={0.2} />
         <HeavyMetalLabel symbol="Bi" label="Bismuth" className="top-[30%] right-[15%]" color="text-blue-500" delay={0.4} />
         <HeavyMetalLabel symbol="Tl" label="Thallium" className="bottom-[30%] right-[10%]" color="text-yellow-500" delay={0.6} />
@@ -145,19 +111,8 @@ const Labwox = () => {
         </div>
 
         {/* Main Content */}
-        <div className="w-full max-w-7xl mx-auto space-y-16 z-10 relative px-4 lg:px-8">
-          {/* Collaborate */}
-          <div className="flex flex-col-reverse lg:flex-row justify-between gap-6 items-center">
-            <h3 className="text-base font-light text-gray-800 whitespace-nowrap lg:text-right flex items-center">
-              <span className="text-red-700 text-3xl mr-2">.</span>COLLABORATE
-            </h3>
-            <div className="bg-[#153D63] text-slate-100 w-full max-w-sm p-6 rounded-2xl shadow-md">
-              <h5 className="font-semibold mb-2 text-lg">Who is Labwox</h5>
-              <p className="text-sm leading-relaxed">
-                Labwox supports academic and industrial research by providing reliable analytical services, expert insights, and custom project collaboration.
-              </p>
-            </div>
-          </div>
+        <div className="w-full max-w-7xl mx-auto space-y-16 z-10 relative lg:pt-36 px-4 lg:px-8">
+          
 
           {/* Hero */}
           <div className="grid lg:grid-cols-2 items-center gap-12">
