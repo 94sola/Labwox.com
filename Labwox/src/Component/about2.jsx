@@ -7,9 +7,9 @@ import aboutMobile from "../assets/image/method.jpg";
 const About = () => {
   return (
     <Wrapper>
-    <section className="bg-transparent w-full flex items-center justify-center px-4 py-20">
+    <section className="bg-yellow-50 w-full flex items-center justify-center px-4 py-20">
       <div className="grid md:grid-cols-2 gap-10 items-center">
-        <div className="w-full">
+        <div className="w-full px-10 md:px-20">
           <picture>
             <source media="(min-width:1024px)" srcSet={aboutDesktop} />
             <source media="(min-width:640px)" srcSet={aboutTablet} />
@@ -32,7 +32,7 @@ const About = () => {
             research, laboratory productivity, and technical capacity-building,
             serving academic institutions, government agencies, and private labs
             across Nigeria.
-            <p className="text-base max-w-2xl text-gray-700 leading-relaxed">Through our flagship programs like Chemxpert and our proprietary Labsoft application, Labwox acts as a research accelerator, connecting researchers with cutting-edge analytical laboratories, expert support, and project funding; removing barriers that slow down scientific discovery.</p>
+            <p className="text-lg max-w-2xl text-gray-700 leading-relaxed">Through our flagship programs like Chemxpert and our proprietary Labsoft application, Labwox acts as a research accelerator, connecting researchers with cutting-edge analytical laboratories, expert support, and project funding; removing barriers that slow down scientific discovery.</p>
           </p>
         </div>
       </div>

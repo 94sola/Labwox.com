@@ -98,7 +98,7 @@ const NavTop = () => {
       transition={{ duration: 0.2, ease: 'easeInOut' }}
     >
       <div
-        className={`max-w-7xl mx-auto px-3 sm:px-6 transition-all duration-200 ${
+        className={`max-w-[1280px] w-full mx-auto transition-all duration-200 ${
           isDesktop() && isHovered
             ? 'py-6 grid grid-cols-3 gap-4'
             : 'h-12 flex items-center justify-between gap-2'
