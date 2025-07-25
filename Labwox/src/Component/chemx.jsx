@@ -91,8 +91,7 @@ const ChemxHero = () => {
               Empowering Scientific Discovery
             </h1>
             <p className="mt-5 text-lg sm:text-base text-gray-200 leading-relaxed">
-              ChemXpert delivers expert-led training, consulting, and research partnerships to
-              advance chemical analysis in modern laboratories.
+              ChemXpert delivers expert-led training, consulting, and research partnerships to advance chemical analysis in modern laboratories.
             </p>
             <div className="mt-6 p-4 bg-white/10 backdrop-blur rounded-lg shadow text-[#FFC000] font-medium text-sm sm:text-base min-h-[60px] flex items-center justify-center animate-pulse">
               <span className="transition-opacity duration-500 ease-in-out">
@@ -101,7 +100,7 @@ const ChemxHero = () => {
             </div>
             <div className="mt-10">
               <Link
-                to="/contact"
+                to="/application"
                 className="inline-block px-6 py-3 rounded-full text-sm font-semibold tracking-wide uppercase text-[#153D63] bg-[#FFC000] hover:bg-yellow-400 transition duration-300 shadow"
               >
                 Get Started

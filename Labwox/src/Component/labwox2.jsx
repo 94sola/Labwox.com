@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import Wrapper from "./wrapper";
 import labsoft from "../assets/image/labsoft.jpg";
 import labsofts from "../assets/image/labsoft2.jpg";
+import Wrapper from './wrapper';
 
 // Swiper imports
 import { Swiper, SwiperSlide } from 'swiper/react';
