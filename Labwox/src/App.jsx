@@ -15,6 +15,9 @@ import Universities  from './Component/Universities';
 import Laboratory from './Component/labora';
 import Explore from './Component/explore';
 import About from './Component/about';
+import Gallery from './Component/gallery';
+import Aim from './Component/aim';
+import Faq from './Component/faq';
 
 
 function App() {
@@ -30,7 +33,10 @@ function App() {
           <Routes>
             <Route path="/" element={<Labwox />} />
             <Route path="/explore" element={<Explore />} />
+            <Route path="/gallery" element={<Gallery />} />
             <Route path="/about" element={<About />} />
+            <Route path="/faq" element={<Faq />} />
+            <Route path="/aim" element={<Aim />} />
             <Route path="/labsoft" element={<Labsoft />} />
             <Route path="/chemxpert" element={<Xpert />} />
             <Route path="/research" element={<Research />} />
@@ -38,7 +44,6 @@ function App() {
             <Route path="/consulting" element={<Consulting />} />
             <Route path="/universities" element={<Universities />} />
             <Route path="/laboratory" element={<Laboratory />} />
-
           </Routes>
         </div>
 
