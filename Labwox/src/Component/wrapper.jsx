@@ -1,6 +1,6 @@
 function Wrapper({ children, className }) {
   return (
-    <section className={`w-full px-4 lg:px-80 ${className}`}>
+    <section className={`max-w-[800px] lg:w-full w-[90%] mx-auto ${className}`}>
       {children}
     </section>
   );
