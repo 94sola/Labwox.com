@@ -117,7 +117,7 @@ const NavTop = () => {
                   isDesktop() && isHovered
                     ? isCardHovered
                       ? 'bg-white text-gray-950 shadow-2xl border'
-                      : 'bg-neutral-800 text-white border'
+                      : 'bg-[#b92b7e] text-white border'
                     : 'bg-transparent text-white'
                 }
               `}
@@ -166,7 +166,7 @@ const NavTop = () => {
                       </h3>
 
                       <motion.p
-                        className="mt-1 text-sm px-1 text-center text-neutral-400"
+                        className="mt-1 text-sm px-1 text-center text-neutral-700"
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: 10 }}

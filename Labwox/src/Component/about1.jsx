@@ -1,32 +1,30 @@
 import React from "react";
 import Wrapper from "./wrapper";
-import lab from "../assets/image/labwox2.jpg";
+import lab from "../assets/image/labwox5.jpg";
 
 const About = () => {
   return (
-    <Wrapper>
-      <section className="relative bg-neutral-900 h-[700px]  lg:py-28 sm:py-20 overflow-hidden">
-        {/* Background Image */}
-       <div
-        className="absolute inset-0 transition-transform duration-700 scale-100 group-hover:scale-110"
+    <section className="relative bg-neutral-900 h-[600px] sm:h-[500px] xs:h-[400px] mb-10 overflow-hidden">
+      {/* Background Image */}
+      <div
+        className="absolute inset-0 transition-transform duration-700 scale-100"
         style={{
           backgroundImage: `url(${lab})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
+          backgroundSize: "cover",
+          backgroundPosition: "center",
         }}
       ></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-neutral-800 to-transparent transition duration-300"></div>
-        {/* Content */}
-        <div className="relative z-10 w-full max-w-screen-2xl py-10 mx-auto px-4 sm:px-8 lg:px-16 xl:px-24">
-          <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
-            <h1 className="text-4xl sm:text-5xl md:text-8xl font-medium "><span className="text-lime-50">About Labwox</span>
-            </h1>
-            
-            
-          </div>
-        </div>
-      </section>
-    </Wrapper>
+
+      {/* Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-t from-neutral-900 via-neutral-800/70 to-transparent transition duration-300"></div>
+
+      {/* Content */}
+      <div className="absolute bottom-0 right-0 z-10 text-right pr-24 py-8 sm:py-6 lg:py-14">
+        <h1 className="text-neutral-50 text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-semibold leading-tight tracking-tight drop-shadow-lg">
+          About Labwox
+        </h1>
+      </div>
+    </section>
   );
 };
 

@@ -19,11 +19,26 @@ export default {
           '0%': { transform: 'translateX(0)' },
           '100%': { transform: 'translateX(100vw)' },
         },
+        scrollLeft: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-100%)' },
+        },
+        scrollLeftRight: {
+          '0%, 100%': { transform: 'translateX(0)' },
+          '50%': { transform: 'translateX(-100%)' },
+        },
+        spinSlow: {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(360deg)' },
+        },
       },
       animation: {
         'float-slow': 'floatSlow 6s ease-in-out infinite',
         'float-fast': 'floatFast 4s ease-in-out infinite',
-        'horizontalMove': 'horizontalMove 10s linear infinite',
+        'horizontalMove': 'horizontalMove 50s linear infinite',
+        scroll: 'scrollLeft 100s linear infinite',
+        scrollReverse: 'scrollLeftRight 100s ease-in-out infinite',
+        spinSlow: 'spinSlow 35s linear infinite',
       },
     },
   },
