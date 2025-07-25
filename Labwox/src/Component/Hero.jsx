@@ -1,11 +1,6 @@
 import Wrapper from "./wrapper";
 import hero from "../assets/image/heroImg.png";
 import { Link } from "react-router-dom";
-import lasepa from '../assets/image/LASEPA.jpg';
-import son from '../assets/image/SON-logo.jpg';
-import nirma from '../assets/image/nirma-logo.jpg';
-import scientific from '../assets/image/ls-scientific.png';
-import ctx from '../assets/image/ctx-ion.png';
 import { motion } from "framer-motion";
 
 
@@ -25,7 +20,7 @@ const Labwox = () => {
   return (
     <Wrapper>
       {/* 🌐 Desktop Layout */}
-      <div className="hidden lg:block relative bg-white px-4 py-10 lg:px-0 lg:rounded-t-[40px] shadow-xl min-h-screen flex flex-col justify-center">
+      <div className="hidden lg:block relative bg-white px-4 py-36 lg:px-0 lg:rounded-t-[40px] shadow-xl flex flex-col justify-center">
         {/* Decorative SVGs */}
         <div
           className="absolute hidden lg:block top-10 left-10 opacity-60 z-0 animate-spinSlow"
@@ -37,10 +32,6 @@ const Labwox = () => {
             <path d="M2 12a10 10 0 0 1 20 0" />
           </svg>
         </div>
-
-        
-
-       
 
         {/* ⚛️ Molecule-style Atom */}
         <div
@@ -60,10 +51,6 @@ const Labwox = () => {
           </svg>
         </div>
 
-        
-
-        {/* 🫧 Bubble Group */}
-        
 
         <div
           className="absolute bottom-[74%] right-[40%] opacity-20  animate-spinSlow"
@@ -77,14 +64,10 @@ const Labwox = () => {
         </div>
        
           {/* Floating Heavy Metals */}
-        <HeavyMetalLabel symbol="Sb" label="Antimony" className="bottom-[20%] left-[5%]" color="text-green-500" delay={0.2} />
         <HeavyMetalLabel symbol="Bi" label="Bismuth" className="top-[30%] right-[15%]" color="text-blue-500" delay={0.4} />
-        <HeavyMetalLabel symbol="Tl" label="Thallium" className="bottom-[30%] right-[10%]" color="text-yellow-500" delay={0.6} />
         <HeavyMetalLabel symbol="Cr" label="Chromium" className="top-[10%] right-[20%]" color="text-purple-500" delay={0.8} />
-        <HeavyMetalLabel symbol="Ni" label="Nickel" className="bottom-[10%] left-[25%]" color="text-pink-500" delay={1.0} />
-        <HeavyMetalLabel symbol="U" label="Uranium" className="top-[60%] right-[30%]" color="text-emerald-500" delay={1.2} />
+        <HeavyMetalLabel symbol="U" label="Uranium" className="-[60%] right-[30%]" color="text-emerald-500" delay={1.2} />
         <HeavyMetalLabel symbol="Th" label="Thorium" className="top-[15%] left-[30%]" color="text-indigo-500" delay={1.4} />
-        <HeavyMetalLabel symbol="Co" label="Cobalt" className="bottom-[15%] right-[5%]" color="text-orange-500" delay={1.6} />
         <HeavyMetalLabel symbol="V" label="Vanadium" className="top-[5%] right-[5%]" color="text-cyan-500" delay={1.8} />
 
        
@@ -111,16 +94,16 @@ const Labwox = () => {
         </div>
 
         {/* Main Content */}
-        <div className="w-full max-w-7xl mx-auto space-y-16 z-10 relative lg:pt-36 px-4 lg:px-8">
+        <div className="w-full max-w-8xl mx-10 space-y-16 z-10 relative lg:pt-36 px-8 lg:px-16">
           
 
           {/* Hero */}
-          <div className="grid lg:grid-cols-2 items-center gap-12">
+          <div className="grid lg:grid-cols-2 items-center  gap-12">
             <div className="space-y-6 text-gray-800">
-              <h1 className="text-4xl md:text-7xl font-medium text-neutral-900 leading-tight">
+              <h1 className="text-4xl md:text-8xl font-medium text-neutral-900 leading-tight">
                 Classic Research, Modern Tools
               </h1>
-              <p className="text-base md:text-lg font-light text-gray-700 leading-relaxed">
+              <p className="text-base md:text-2xl font-light text-gray-700 leading-relaxed">
                 Labwox offers a unique solution to support researchers and academics in planning, executing, and delivering high-quality scientific work through streamlined lab access and collaboration.
               </p>
               <Link
@@ -134,22 +117,13 @@ const Labwox = () => {
               <img
                 src={hero}
                 alt="Labwox Hero"
-                className="w-full max-w-2xl object-contain rounded-l-2xl"
+                className="w-full max-w-3xl object-contain  rounded-2xl"
               />
             </div>
           </div>
 
           {/* Trusted Partners */}
-          <div className="text-center space-y-8">
-            <h4 className="text-base font-light text-gray-800">TRUSTED BY INDUSTRY LEADERS</h4>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 px-6 justify-center">
-              {[lasepa, son, nirma, scientific, ctx].map((logo, index) => (
-                <div key={index} className="p-2 flex justify-center items-center">
-                  <img src={logo} alt={`Logo ${index}`} className="w-20 h-auto object-contain" />
-                </div>
-              ))}
-            </div>
-          </div>
+          
         </div>
       </div>
 
@@ -181,16 +155,7 @@ const Labwox = () => {
         </div>
 
         {/* Mobile Trusted Partners */}
-        <div className="text-center space-y-4">
-          <h4 className="text-base font-light text-gray-800">TRUSTED BY INDUSTRY LEADERS</h4>
-          <div className="grid grid-cols-2 gap-4">
-            {[lasepa, son, nirma, scientific, ctx].map((logo, index) => (
-              <div key={index} className="p-2 flex justify-center items-center">
-                <img src={logo} alt={`Partner ${index}`} className="w-16 h-auto object-contain" />
-              </div>
-            ))}
-          </div>
-        </div>
+        
       </div>
     </Wrapper>
   );
