@@ -1,0 +1,11 @@
+/* keep normal centered layout */
+.pdf-full-width {
+  max-width: 100%;
+}
+
+/* only when exporting PDF */
+.pdf-mode {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 auto !important;
+}

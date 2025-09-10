@@ -30,8 +30,8 @@ import Ash from './Component/composition/ash';
 
 // ✅ Fixed casing here
 import Pthalate from './Component/pollutant/Ester';
-import Pah from './Component/pollutant/pah';
-import Mixf from './Component/pollutant/pahmixf';
+import Pah from './Component/pollutant/Mix';
+import Mixf from './Component/pollutant/Mixf';
 import Tph from './Component/pollutant/tph';
 import Mixg from './Component/pollutant/mixg';
 import Pcb from './Component/pollutant/pcb';
