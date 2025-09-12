@@ -1,11 +1,19 @@
-/* keep normal centered layout */
-.pdf-full-width {
-  max-width: 100%;
+.pdf-scale {
+  transform: scale(1.25);
+  transform-origin: top left;
+  width: 125% !important;
 }
 
-/* only when exporting PDF */
-.pdf-mode {
-  width: 100% !important;
-  max-width: 100% !important;
-  margin: 0 auto !important;
+.pdf-hide {
+  display: block;
+}
+.pdf-scale .pdf-hide {
+  display: none !important;
+}
+
+.pdf-show {
+  display: none;
+}
+.pdf-scale .pdf-show {
+  display: block !important;
 }

@@ -1,111 +1,112 @@
 import React, { useRef, useState } from "react";
+import image from "../../assets/image/water.png";
+import image1 from "../../assets/image/soil.jpg";
+import image2 from "../../assets/image/food.jpg";
+import image3 from "../../assets/image/dust.jpg";
+import image4 from "../../assets/image/petroleum.jpg";
+import image5 from "../../assets/image/fish.jpg";
+import logo from "../../assets/image/labwox..jpeg"; // ✅ Your logo
+
 import { Link } from "react-router-dom";
 import {
   ArrowLeft,
   Printer,
   ChevronDown,
-  Droplets,
-  Mountain,
-  Wind,
-  Flame,
-  UtensilsCrossed,
-  Fish,
+  
 } from "lucide-react";
 import Wrapper from "../wrapper";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
 
-
-
 const Pah = () => {
   const compounds = [
-    "Naphthalene", "Acenaphthylene", "Acenaphthene", "Fluorene",
-    "Phenanthrene", "Anthracene", "Fluoranthene", "Pyrene",
-    "Benzo[c]phenanthrene", "Benz[a]anthracene", "Chrysene",
-    "Benzo[b]fluoranthene", "Benzo[j]fluoranthene", "Benz[a]pyrene",
-    "Benzo[k]fluoranthene", "3-Methylcholanthrene", "Indeno(1,2,3-cd)pyrene",
-    "Dibenz[a,h]anthracene", "Benzo[ghi]perylene", "Dibenz[a,l]pyrene",
+    "Naphthalene",
+    "Acenaphthylene",
+    "Acenaphthene",
+    "Fluorene",
+    "Phenanthrene",
+    "Anthracene",
+    "Fluoranthene",
+    "Pyrene",
+    "Benzo[c]phenanthrene",
+    "Benz[a]anthracene",
+    "Chrysene",
+    "Benzo[b]fluoranthene",
+    "Benzo[j]fluoranthene",
+    "Benz[a]pyrene",
+    "Benzo[k]fluoranthene",
+    "3-Methylcholanthrene",
+    "Indeno(1,2,3-cd)pyrene",
+    "Dibenz[a,h]anthracene",
+    "Benzo[ghi]perylene",
+    "Dibenz[a,l]pyrene",
     "Dibenz[a,h]pyrene",
   ];
 
-  // Map Lucide icons to their CDN .svg fallback
   const samplingDetails = [
-  {
-    category: "Water",
-    icon: Droplets,
-    img: "https://lucide.dev/icons/droplets.svg",
-    color: "text-blue-500",
-    details: [
-      "Volume: 1–2 L grab samples",
-      "Container: Amber glass bottles with Teflon caps",
-      "Preservation: Store at 4 °C, extract within 7 days",
-      "Precaution: Minimize headspace to reduce volatilization",
-    ],
-  },
-  {
-    category: "Soil & Sediments",
-    icon: Mountain,
-    img: "https://lucide.dev/icons/mountain.svg",
-    color: "text-yellow-600",
-    details: [
-      "Method: Collect with stainless scoop/corer",
-      "Amount: 50 g (depending on heterogeneity)",
-      "Container: Amber glass jars with Teflon lids",
-      "Preservation: Refrigerate at 4 °C, extract within 14 days",
-      "Precaution: Avoid plastics, prevent light exposure",
-    ],
-  },
-  {
-    category: "Dust",
-    icon: Wind,
-    img: "https://lucide.dev/icons/wind.svg",
-    color: "text-gray-500",
-    details: [
-      "Method: Vacuum sampling with clean filter or sweep/brush",
-      "Amount: 10–50 g typical",
-      "Container: Amber glass jars",
-      "Storage: 4 °C, dark, minimize holding time",
-    ],
-  },
-  {
-    category: "Petroleum Products",
-    icon: Flame,
-    img: "https://lucide.dev/icons/flame.svg",
-    color: "text-red-600",
-    details: [
-      "Method: Grab samples with glass or stainless steel sampler.",
-      "Volume: 100–500 mL.",
-      "Container: Amber glass bottles, Teflon-lined caps.",
-      "Storage: 4 °C, no headspace for volatile-rich samples.",
-    ],
-  },
-  {
-    category: "Food",
-    icon: UtensilsCrossed,
-    img: "https://lucide.dev/icons/utensils-crossed.svg",
-    color: "text-green-600",
-    details: [
-      "Amount: 100–500 g or mL, homogenized.",
-      "Container: Pre-baked amber glass jars or solvent-rinsed containers.",
-      "Storage: Freeze at –20 °C until extraction.",
-      "Precaution: Avoid contamination from smoke/dust during sampling.",
-    ],
-  },
-  {
-    category: "Biota",
-    icon: Fish,
-    img: "https://lucide.dev/icons/fish.svg",
-    color: "text-purple-600",
-    details: [
-      "Method: Whole tissue or specific organ (liver, muscle, fat).",
-      "Amount: 20–100 g depending on species.",
-      "Container: Solvent-rinsed amber glass jars.",
-      "Storage: Freeze at –20 °C or lower until extraction.",
-      "Precaution: Minimize degradation by light and heat.",
-    ],
-  },
-];
-
+    {
+      category: "Water",
+      img: image,
+      details: [
+        "Volume: 1–2 L grab samples",
+        "Container: Amber glass bottles with Teflon caps",
+        "Preservation: Store at 4 °C, extract within 7 days",
+        "Precaution: Minimize headspace to reduce volatilization",
+      ],
+    },
+    {
+      category: "Soil & Sediments",
+      img: image1,
+      details: [
+        "Method: Collect with stainless scoop/corer",
+        "Amount: 50 g (depending on heterogeneity)",
+        "Container: Amber glass jars with Teflon lids",
+        "Preservation: Refrigerate at 4 °C, extract within 14 days",
+        "Precaution: Avoid plastics, prevent light exposure",
+      ],
+    },
+    {
+      category: "Dust",
+      img: image3,
+      details: [
+        "Method: Vacuum sampling with clean filter or sweep/brush",
+        "Amount: 10–50 g typical",
+        "Container: Amber glass jars",
+        "Storage: 4 °C, dark, minimize holding time",
+      ],
+    },
+    {
+      category: "Petroleum Products",
+      img: image4,
+      details: [
+        "Method: Grab samples with glass or stainless steel sampler.",
+        "Volume: 100–500 mL.",
+        "Container: Amber glass bottles, Teflon-lined caps.",
+        "Storage: 4 °C, no headspace for volatile-rich samples.",
+      ],
+    },
+    {
+      category: "Food",
+      img: image2,
+      details: [
+        "Amount: 100–500 g or mL, homogenized.",
+        "Container: Pre-baked amber glass jars or solvent-rinsed containers.",
+        "Storage: Freeze at –20 °C until extraction.",
+        "Precaution: Avoid contamination from smoke/dust during sampling.",
+      ],
+    },
+    {
+      category: "Biota",
+      img: image5,
+      details: [
+        "Method: Whole tissue or specific organ (liver, muscle, fat).",
+        "Amount: 20–100 g depending on species.",
+        "Container: Solvent-rinsed amber glass jars.",
+        "Storage: Freeze at –20 °C or lower until extraction.",
+        "Precaution: Minimize degradation by light and heat.",
+      ],
+    },
+  ];
 
   const contentRef = useRef(null);
   const [openIndex, setOpenIndex] = useState(null);
@@ -116,47 +117,67 @@ const Pah = () => {
 
   const handleDownloadPDF = async () => {
     const input = contentRef.current;
+
+    // Temporarily hide "Back" and "Download" for PDF only
+    const buttons = input.querySelectorAll(".no-pdf");
+    buttons.forEach((el) => (el.style.display = "none"));
+
     const canvas = await html2canvas(input, {
-      scale: 0.8,
+      scale: 2,
       useCORS: true,
-      ignoreElements: (el) => el.classList.contains("no-pdf"),
     });
 
-    const imgData = canvas.toDataURL("image/jpeg", 0.5);
+    // Restore buttons after capture
+    buttons.forEach((el) => (el.style.display = ""));
+
+    const imgData = canvas.toDataURL("image/jpeg", 1.0);
     const pdf = new jsPDF("p", "mm", "a4", true);
-    const imgWidth = 160;
+
+    const imgWidth = 190;
     const pageHeight = 297;
     const imgHeight = (canvas.height * imgWidth) / canvas.width;
 
     let heightLeft = imgHeight;
-    let position = 20;
+    let position = 10;
     let page = 1;
 
     const footerText = `© ${new Date().getFullYear()} Labwox Limited, all rights reserved.`;
 
     const addHeaderFooter = (pageNum) => {
-      pdf.setFont("helvetica", "bold");
-      pdf.setFontSize(18);
-      pdf.setTextColor(21, 61, 99);
-      pdf.text("labwox", 15, 15);
-      pdf.setTextColor(255, 192, 0);
-      pdf.text(".", 43, 15);
+      // ✅ Header with logo instead of text
+      const logoWidth = 30;
+      const logoHeight = 12;
+      pdf.addImage(logo, "PNG", 15, 8, logoWidth, logoHeight);
 
-      pdf.setFontSize(9);
+      // Footer
+      pdf.setFontSize(11);
       pdf.setTextColor(60);
       pdf.text(footerText, 105, 280, { align: "center" });
       pdf.text(`Page ${pageNum}`, 105, 290, { align: "center" });
+
+      // Watermark
+      pdf.saveGraphicsState();
+      pdf.setGState(new pdf.GState({ opacity: 0.1 }));
+      pdf.setFontSize(60);
+      pdf.setTextColor(200, 200, 200);
+      pdf.text("Labwox Confidential", 105, 150, {
+        angle: 45,
+        align: "center",
+      });
+      pdf.restoreGraphicsState();
     };
 
-    pdf.addImage(imgData, "JPEG", 25, position, imgWidth, imgHeight, null, "FAST");
+    // First page
+    pdf.addImage(imgData, "JPEG", 10, position, imgWidth, imgHeight, null, "FAST");
     addHeaderFooter(page);
-    heightLeft -= pageHeight - 20;
+    heightLeft -= pageHeight;
 
+    // Remaining pages
     while (heightLeft > 0) {
-      position = heightLeft - imgHeight + 20;
+      position = heightLeft - imgHeight + 10;
       pdf.addPage();
       page++;
-      pdf.addImage(imgData, "JPEG", 25, position, imgWidth, imgHeight, null, "FAST");
+      pdf.addImage(imgData, "JPEG", 10, position, imgWidth, imgHeight, null, "FAST");
       addHeaderFooter(page);
       heightLeft -= pageHeight;
     }
@@ -170,7 +191,7 @@ const Pah = () => {
         ref={contentRef}
         className="bg-gradient-to-b from-white via-neutral-50 to-white py-12 lg:py-20 mb-10"
       >
-        {/* Back & Print Actions */}
+        {/* Back & Print Actions (not included in PDF) */}
         <div className="max-w-6xl mx-auto px-4 mt-2 flex justify-between items-center no-pdf">
           <Link
             to="/pollutantanaly"
@@ -188,14 +209,13 @@ const Pah = () => {
         </div>
 
         {/* Header */}
-        <div className="max-w-6xl mx-auto text-center mb-12 px-4">
-          <h1 className="text-5xl md:text-7xl font-light text-[#153D63] mb-6">
+        <div className="max-w-4xl mx-auto text-center my-12 px-4">
+          <h1 className="text-5xl md:text-6xl font-thin text-[#153D63] mb-6">
             PAH Mix E
           </h1>
-          <p className="text-lg md:text-xl text-gray-700 leading-relaxed max-w-4xl mx-auto">
-            <strong>PAH Mix E</strong> is a collection of polycyclic aromatic
-            hydrocarbons (PAHs). These compounds are persistent in nature and
-            are linked to ecological and health risks.
+          <p className="text-base md:text-lg text-gray-700 leading-relaxed max-w-4xl mx-auto">
+            <strong>PAH Mix E</strong> is a collection of polycyclic aromatic hydrocarbons (PAHs).
+            These compounds are persistent in nature and are linked to ecological and health risks.
           </p>
         </div>
 
@@ -208,7 +228,7 @@ const Pah = () => {
             {compounds.map((compound, index) => (
               <div
                 key={index}
-                className="border border-gray-300 rounded-xl p-4 text-center text-gray-800 text-base font-medium shadow-sm hover:shadow-md hover:border-[#FFC000] transition"
+                className="border border-gray-300 rounded-xl p-5 text-center text-gray-800 text-base font-normal shadow-sm hover:shadow-md hover:border-[#FFC000] transition"
               >
                 {compound}
               </div>
@@ -224,33 +244,27 @@ const Pah = () => {
             </h3>
             <div className="overflow-x-auto shadow-lg rounded-xl">
               <table className="w-full border-collapse">
-                <tbody className="text-gray-700 text-sm md:text-base">
+                <tbody className="text-gray-700 text-base md:text-lg">
                   <tr className="bg-gray-50 hover:bg-gray-100 transition">
                     <td className="p-4 font-semibold border border-gray-300 w-1/3">
                       Sample Types
                     </td>
-                    <td className="p-4 border border-gray-300">
-                      Water [surface water, groundwater, drinking water,
-                      wastewater effluents]
-                      <br /> Soil & Sediments [especially near industrial,
-                      urban, and oil-polluted areas]
-                      <br /> Dust [household dust, street dust, road-deposited
-                      sediments]
-                      <br /> Crude oil & refined petroleum products [gasoline,
-                      diesel, kerosene, lubricating oils]
-                      <br /> Industrial effluents & sludges [coking plants,
-                      petroleum refineries, creosote waste]
-                      <br /> Edible oils [especially recycled frying oils]
-                      <br /> Smoked and grilled foods – fish, meat
-                      <br /> Cereals and grains [contamination during drying,
-                      processing, or packaging]
+                    <td className="p-4 text-sm border border-gray-300">
+                      Water [surface water, groundwater, drinking water, wastewater effluents] <br />
+                      Soil & Sediments [especially near industrial, urban, and oil-polluted areas] <br />
+                      Dust [household dust, street dust, road-deposited sediments] <br />
+                      Crude oil & refined petroleum products [gasoline, diesel, kerosene, lubricating oils] <br />
+                      Industrial effluents & sludges [coking plants, petroleum refineries, creosote waste] <br />
+                      Edible oils [especially recycled frying oils] <br />
+                      Smoked and grilled foods – fish, meat <br />
+                      Cereals and grains [contamination during drying, processing, or packaging]
                     </td>
                   </tr>
                   <tr className="bg-white hover:bg-gray-50 transition">
                     <td className="p-4 font-semibold border border-gray-300">
                       Instrument Used
                     </td>
-                    <td className="p-4 border border-gray-300">
+                    <td className="p-4 border text-sm border-gray-300">
                       Agilent 5977 GC-MSD or Thermo ISQ 7610
                     </td>
                   </tr>
@@ -258,10 +272,9 @@ const Pah = () => {
                     <td className="p-4 font-semibold border border-gray-300">
                       Sampling Information
                     </td>
-                    <td className="p-4 border border-gray-300">
-                      Amber glass + Teflon-lined lids prevent contamination and
-                      photodegradation. Cooling (4 °C) or freezing extends
-                      holding times. Light protection is critical.
+                    <td className="p-4 border text-sm border-gray-300">
+                      Amber glass + Teflon-lined lids prevent contamination and photodegradation.<br />
+                      Cooling (4 °C) or freezing extends holding times. Light protection is critical.
                     </td>
                   </tr>
                 </tbody>
@@ -270,26 +283,22 @@ const Pah = () => {
           </div>
         </div>
 
-        {/* Sampling Details as Dropdown Cards */}
-        <div className="mt-16 max-w-7xl mx-auto px-4">
+        {/* Sampling Details */}
+        <div className="mt-12 max-w-6xl mx-auto px-4">
           <h3 className="text-3xl md:text-4xl font-thin text-[#153D63] mb-10 text-center">
-            Select Sample type
+            Select Sample Type
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {samplingDetails.map((sample, i) => (
               <div
                 key={i}
-                className="bg-white hover:shadow-sm transition p-6"
+                className="bg-white transition p-6"
               >
-                {/* Normal SVG Icon (hidden in print/PDF) */}
-                <sample.icon
-                  className={`${sample.color} w-20 h-20 mx-auto transition-transform duration-300 hover:scale-110 hover:rotate-6 hover:drop-shadow-sm print:hidden`}
-                />
-                {/* Fallback PNG for PDF */}
+                {/* Always show image (UI + PDF) */}
                 <img
                   src={sample.img}
                   alt={`${sample.category} icon`}
-                  className="hidden print:block w-20 h-20 mx-auto"
+                  className="w-48 h-32 mx-auto transition-transform duration-300 hover:scale-110 hover:rotate-6 rounded-lg"
                 />
 
                 <button
@@ -310,7 +319,7 @@ const Pah = () => {
                   }`}
                 >
                   <ul
-                    className={`relative text-gray-700 text-sm md:text-base space-y-2 text-right pr-6
+                    className={`relative text-gray-700 text-sm md:text-base space-y-2 text-right px-2
                       before:absolute before:top-0 before:left-0 before:w-1 before:bg-pink-500
                       before:transition-all before:duration-500
                       ${openIndex === i ? "before:h-full" : "before:h-0"}
@@ -325,6 +334,7 @@ const Pah = () => {
             ))}
           </div>
         </div>
+
       </section>
     </Wrapper>
   );

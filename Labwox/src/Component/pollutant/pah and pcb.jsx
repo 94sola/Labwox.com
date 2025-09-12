@@ -103,13 +103,10 @@ const PahMixG = () => {
         {/* Header */}
         <div className="max-w-4xl mx-auto text-center mb-12 px-4">
           <h1 className="text-5xl md:text-7xl font-light text-[#153D63] mb-6">
-            PAH Mix G Compounds
+            PAH and PCB mix 
           </h1>
           <p className="text-gray-700 mb-8 text-center max-w-2xl mx-auto">
-            PAH Mix G contains selected Polycyclic Aromatic Hydrocarbons
-            commonly used as reference standards. This mix supports reliable
-            detection and monitoring in food safety, environmental, and
-            toxicological studies.
+            PAH and PCB mix contains a mixture of polycyclic aromatic hydrocarbons and polychlorinated biphenyl compounds. Two categories of toxic environmental pollutants that are a common focus of research.
           </p>
 
           {/* Compounds List */}

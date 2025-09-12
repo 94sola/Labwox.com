@@ -33,7 +33,7 @@ import Pthalate from './Component/pollutant/Ester';
 import Pah from './Component/pollutant/Mix';
 import Mixf from './Component/pollutant/Mixf';
 import Tph from './Component/pollutant/tph';
-import Mixg from './Component/pollutant/mixg';
+import Mixg from './Component/pollutant/pah and pcb';
 import Pcb from './Component/pollutant/pcb';
 import Pbde from './Component/pollutant/PBDEs';
 import Voc from './Component/pollutant/voc';
@@ -87,9 +87,9 @@ function App() {
             {/* Food Sample Pages */}
             <Route path="/pollutant/phthalate" element={<Pthalate />} />
             <Route path="/pollutant/pah" element={<Pah />} />
-            <Route path="/pollutant/pahmix" element={<Mixf />} />
+            <Route path="/pollutant/pahmixf" element={<Mixf />} />
             <Route path="/pollutant/tph" element={<Tph />} />
-            <Route path="/pollutant/pahmixg" element={<Mixg />} />
+            <Route path="/pollutant/pahmix" element={<Mixg />} />
             <Route path="/pollutant/pcb" element={<Pcb />} />
             <Route path="/pollutant/voc" element={<Voc />} />
             <Route path="/pesticide/single" element={<Single />} />

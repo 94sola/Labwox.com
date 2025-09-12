@@ -78,10 +78,7 @@ const Tph = () => {
             Total Petroleum Hydrocarbons (TPH)
           </h1>
           <p className="text-xl text-gray-700 leading-relaxed">
-            <strong>TPH</strong> represents a broad family of hydrocarbons
-            derived from crude oil. Monitoring TPH is essential for assessing
-            environmental pollution, food safety, and public health risks
-            associated with petroleum exposure.
+            <strong>TPH</strong>(total petroleum hydrocarbons) represents a group of n-alkanes from C10-C40 often analysed in environmental media as indicators of petroleum contamination.
           </p>
 
           {/* Compounds List */}
