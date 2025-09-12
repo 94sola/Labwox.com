@@ -77,7 +77,7 @@ const Labwox = () => {
                 Labwox offers a unique solution to support researchers <br /> in executing high-quality scientific work. 
               </p>
               <Link
-                to="/labsoft"
+                to="/application"
                 className="inline-block bg-[#153D63] text-white px-6 py-3 rounded-lg hover:bg-[#102B4E] transition-all text-sm font-medium shadow-md"
               >
                 Get started

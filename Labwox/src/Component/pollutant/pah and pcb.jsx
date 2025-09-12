@@ -1,7 +1,8 @@
 import React, { useRef, useState } from "react";
 import image from "../../assets/image/water.png";
-import images from "../../assets/image/sediment.jpg";
-import image2 from "../../assets/image/waste.jpg";
+import image1 from "../../assets/image/soil.jpg";
+import image2 from "../../assets/image/food.jpg";
+import image3 from "../../assets/image/fish.jpg";
 import logo from "../../assets/image/labwox..jpeg"; // ✅ Your logo
 
 import { Link } from "react-router-dom";
@@ -10,79 +11,88 @@ import Wrapper from "../wrapper";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
 
-const Voc = () => {
+const Pah = () => {
   const compounds = [
-   "Benzene",
-    "1,2-Dichloroethane",
-    "Trichloroethene",
-    "1,2-Dichloropropane",
-    "Dibromomethane",
-    "Bromochloromethane",
-    "cis-1,3-Dichloropropene",
-    "Toluene",
-    "trans-1,3-Dichloropropane",
-    "1,1,3-Trichloroethane",
-    "Tetrachloroethene",
-    "Dibromochloromethane",
-    "Ethylbenzene",
-    "Chlorobenzene",
-    "m-Xylene + p-Xylene",
-    "o-Xylene",
-    "Bromoform",
-    "Isopropylbenzene",
-    "Bromobenzene",
-    "1,1,2,2-Tetrachloroethane",
-    "n-Propylbenzene",
-    "2-Chlorotoluene",
-    "1,3-Dichlorobenzene",
-    "4-Chlorotoluene",
-    "1,4-Dichlorobenzene",
-    "p-Isopropyltoluene",
-    "1,2-Dichlorobenzene",
-    "Butylbenzene",
-    "1,2-Dibromo-3-chloropropane",
-    "1,2,4-Trichlorobenzene",
-    "Hexachlorobutadiene",
-    "Naphthalene",
-    "1,2,3-Trichlorobenzene",
+   "Isophorone",
+    "Acenaphthylene",
+    "Fluorene",
+    "Hexachlorobenzene",
+    "Phenanthrene",
+    "Anthracene",
+    "Benz[a]anthracene",
+    "Chrysene",
+    "Benzo[b]fluoranthene",
+    "Benzo[k]fluoranthene",
+    "Benzo[a]pyrene",
+    "Indeno(1,2,3-cd)pyrene",
+    "Dibenz[a,h]anthracene",
+    "Benzo[ghi]perylene",
+    "PCB 1",
+    "PCB 3",
+    "PCB 28",
+    "PCB-52",
+    "PCB 44",
+    "PCB-70",
+    "PCB 110",
+    "PCB 143",
+    "PCB 153",
+    "PCB 204",
+    "PCB 180",
+    "PCB 204",
+    "PCB 180",
   ];
+
 
   const firstSix = compounds.slice(0, 6);
   const remaining = compounds.slice(6); 
-  
+
+
   const samplingDetails = [
      {
-      category: "Drinking Water & Environmental Water",
+      category: "Water (drinking, surface, groundwater)",
       img: image,
       details: [
-        "Collect in 40 mL pre-cleaned glass vials with Teflon-lined septa caps.",
-        "Fill vials completely (no headspace) to minimize volatilization.",
-        "Add preservatives (e.g., hydrochloric acid to pH < 2 for THMs and other VOCs).",
-        "Store at ≤ 4 °C and analyze within holding times (typically 14 days).",
-        "Avoid agitation and minimize opening/closing to prevent VOC loss.",
+        "Use amber glass bottles (1 L or larger) with Teflon-lined caps (no plastics).",
+        "Collect without headspace; fill bottle completely.",
+        "Protect from sunlight (wrap in foil or use amber bottles).",
+        "Preserve: cool to ≤ 4 °C; no chemical preservatives normally added for PAHs/PCBs.",
+        "Transport on ice; analyze within holding time (usually ≤ 7–14 days).",
+        "Include field blanks and trip blanks.",
       ],
     },
     {
       category: "Soil and Sediment",
-      img: images,
+      img: image1,
       details: [
-        "Collect in airtight glass jars (with Teflon-lined caps).",
-        "Minimize headspace, or use methanol preservation for field extraction.",
-        "Keep samples chilled (≤ 4 °C) and in the dark.",
-        "Transport promptly to the laboratory.",
-        "Avoid plastic containers (VOCs may permeate or adsorb).",
+        "Collect with stainless steel or solvent-rinsed tools (scoop, trowel, corer).",
+        "Place in amber glass jars with Teflon-lined lids.",
+        "Fill the container fully to minimize headspace.",
+        "Avoid contact with plastics or painted surfaces.",
+        "Store at ≤ 4 °C; freeze for long-term storage.",
+        "Composite sampling may be required for site assessments.",
+        "Keep samples away from light and dust sources.",
       ],
     },
     {
-      category: "Industrial & Waste Samples",
-      img: image2,
+      category: "Food (fish, meat, dairy, grains, oils, vegetables)",
+      img: image3,
       details: [
-        "Use pre-cleaned amber glass bottles or vials with Teflon-lined septa.",
-        "For liquid wastes, avoid headspace; preserve with acid if required.",
-        "For sludge/solid wastes, minimize exposure to air; refrigerate immediately.",
-        "Clearly label and record source, process type, and sample conditions.",
+        "Wrap solid samples in solvent-rinsed aluminum foil, then place in amber glass jars.",
+        "For oils/liquids, collect directly into amber glass jars",
+        "Avoid plastic bags or containers (risk of contamination/adsorption).",
+        "Keep at ≤ 4 °C; freeze high-fat foods and fish until extraction.",
+        "Minimize handling to avoid cross-contamination.",
       ],
     },
+    {
+      category: "Biological Tissue (fish, mussels, animal tissues)",
+      img: image2,
+      details: [
+        "Tissues: Wrap in solvent-rinsed foil, place in amber glass jars, and freeze immediately (−20 °C or lower)",
+        "Protect all biologicals from light and contamination during collection.",
+      ],
+    },
+   
   ];
 
   const contentRef = useRef(null);
@@ -158,7 +168,7 @@ const Voc = () => {
     // Restore UI buttons
     buttons.forEach((el) => (el.style.display = ""));
 
-    pdf.save("Voc.pdf");
+    pdf.save("PAH-pcb-Mix.pdf");
   };
 
   return (
@@ -188,59 +198,57 @@ const Voc = () => {
         {/* Header */}
         <div className="max-w-4xl mx-auto text-center my-12 px-4">
           <h1 className="text-5xl md:text-6xl font-thin text-[#153D63] mb-6">
-            Volatile Organic Compounds (VOCs)
+            PAH and PCB Mix
           </h1>
           <p className="text-base md:text-lg text-gray-700 leading-relaxed max-w-4xl mx-auto">
-            VOCs are a diverse group of carbon-based chemicals that easily evaporate at room temperature.
-            They are found in petroleum products, solvents, paints, cleaning agents, and many industrial processes.
-            Due to their volatility and toxicity, accurate sampling and analysis are critical for environmental and health monitoring.
+            PAH and PCB mix contains a mixture of polycyclic aromatic hydrocarbons and polychlorinated biphenyl compounds. Two categories of toxic environmental pollutants that are a common focus of research.
           </p>
         </div>
 
-        {/* Available Compounds */}
-        <div className="mt-10 max-w-5xl mx-auto">
-          <h3 className="text-4xl font-thin text-[#153D63] mb-6 text-center">
-            Available Compounds
-          </h3>
-          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-4">
-            {firstSix.map((compound, index) => (
-              <div
-                key={index}
-                className="border border-gray-300 rounded-xl p-4 text-center text-gray-800 text-base font-normal shadow-sm hover:shadow-md hover:border-[#FFC000] transition"
+         {/* Available Compounds */}
+          <div className="mt-10 max-w-5xl mx-auto">
+            <h3 className="text-4xl font-thin text-[#153D63] mb-6 text-center">
+              Available Compounds
+            </h3>
+            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-4">
+              {firstSix.map((compound, index) => (
+                <div
+                  key={index}
+                  className="border border-gray-300 rounded-xl p-4 text-center text-gray-800 text-base font-normal shadow-sm hover:shadow-md hover:border-[#FFC000] transition"
+                >
+                  {compound}
+                </div>
+              ))}
+            </div>
+  
+            {/* Dropdown for Remaining */}
+            <div className="mt-6 text-center">
+              <button
+                onClick={() => setShowMore(!showMore)}
+                className="inline-flex items-center gap-2 px-4 py-3 bg-[#153D63] text-white rounded-xl shadow hover:bg-[#112f4c] transition"
               >
-                {compound}
-              </div>
-            ))}
+                <ChevronDown
+                  className={`w-5 h-5 transition-transform ${
+                    showMore ? "rotate-180" : ""
+                  }`}
+                />
+                {showMore ? "Show Less" : "Show More Compounds"}
+              </button>
+  
+              {showMore && (
+                <div className="mt-6 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-4 animate-fadeIn">
+                  {remaining.map((compound, index) => (
+                    <div
+                      key={index}
+                      className="border border-gray-300 rounded-xl p-4 text-center text-gray-800 text-base font-normal shadow-sm hover:shadow-md hover:border-[#FFC000] transition"
+                    >
+                      {compound}
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
-
-          {/* Dropdown for Remaining */}
-          <div className="mt-6 text-center">
-            <button
-              onClick={() => setShowMore(!showMore)}
-              className="inline-flex items-center gap-2 px-4 py-3 bg-[#153D63] text-white rounded-xl shadow hover:bg-[#112f4c] transition"
-            >
-              <ChevronDown
-                className={`w-5 h-5 transition-transform ${
-                  showMore ? "rotate-180" : ""
-                }`}
-              />
-              {showMore ? "Show Less" : "Show More Compounds"}
-            </button>
-
-            {showMore && (
-              <div className="mt-6 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-4 animate-fadeIn">
-                {remaining.map((compound, index) => (
-                  <div
-                    key={index}
-                    className="border border-gray-300 rounded-xl p-4 text-center text-gray-800 text-base font-normal shadow-sm hover:shadow-md hover:border-[#FFC000] transition"
-                  >
-                    {compound}
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
-        </div>
 
         {/* Analytical Overview Table */}
         <div className="max-w-5xl mx-auto px-4 py-10">
@@ -255,38 +263,40 @@ const Voc = () => {
                     <td className="p-4 font-semibold border border-gray-300 w-1/3">
                       Sample Types
                     </td>
-                    <td className="p-4 border text-sm border-gray-300 space-y-2">
-                      <p>
-                        <span className="font-semibold">Environmental Samples:</span> Air (indoor, outdoor, workplace air), drinking water (tap,
-                        bottled, well water), surface water (rivers, lakes, reservoirs), groundwater (aquifers, wells), soil (contaminated sites,
-                        landfills, industrial zones), sediment (near industrial discharges or waste sites).
-                      </p>
-                      <p>
-                        <span className="font-semibold">Food & Beverages:</span> Bottled water (regulated for VOCs like benzene, toluene,
-                        chloroform), alcoholic beverages (beer, wine, spirits), juices and soft drinks (packaging-related VOCs), oils and fats
-                        (volatile residues), packaged foods (migration of VOCs from packaging materials).
-                      </p>
-                      <p>
-                        <span className="font-semibold">Industrial & Waste Samples:</span> Industrial effluents, landfill leachates, wastewater
-                        plant influents/effluents, hazardous waste (sludges, tars, solvents), building materials (paints, adhesives, flooring).
-                      </p>
+                    <td className="p-4 text-sm border border-gray-300">
+                      <span className="text-base font-medium">Water Samples:</span>{" "}
+                      Drinking water (tap, bottled, treated supplies).<br />
+                      Groundwater (especially near landfills, industrial zones, and agricultural sites).<br />
+                      Surface water (rivers, lakes, reservoirs, catchments for drinking water).<br />
+                      Wastewater effluents.  
+                      <br />
+                      <span className="text-base font-medium">Soil & Sediment Samples:</span>{" "}
+                      Soils near industrial or urban areas (especially near combustion sources, spills, or pesticide use).<br />
+                      River/lake sediments (long-term sinks for PAHs and PCBs).  
+                      <br />
+                      <span className="text-base font-medium">
+                        Food & Animal Tissue
+                      </span>{" "}
+                      IFish and aquatic organisms (bioaccumulation in fatty tissues). <br />
+                      Dairy, meat, and crops irrigated with contaminated water.  
                     </td>
                   </tr>
                   <tr className="bg-white hover:bg-gray-50 transition">
                     <td className="p-4 font-semibold border border-gray-300">
-                      Instrument Used
+                      Instruments Used
                     </td>
-                    <td className="p-4 border text-sm border-gray-300">Agilent 8860 Headspace GC-FID</td>
+                    <td className="p-4 border border-gray-300 text-sm">
+                      Agilent 5977 GC-MSD or Thermo ISQ 7610
+                    </td>
                   </tr>
                   <tr className="bg-gray-50 hover:bg-gray-100 transition">
                     <td className="p-4 font-semibold border border-gray-300">
                       Sampling Information
                     </td>
                     <td className="p-4 border text-sm border-gray-300">
-                      Use glass, not plastic (unless specialized bags/canisters are required). <br />
-                      No headspace whenever possible. <br />
-                      Keep samples cool (≤ 4 °C) and out of light. <br />
-                      Avoid sources of contamination (fuels, solvents, adhesives).
+                      Always use glass, not plastic (PCBs and PAHs adsorb to plastics).<br />
+                      Protect from light to prevent degradation.<br / >Cool or freeze as soon as possible.<br />
+                      Document source, matrix type, and collection date to ensure<br />Maintain strict chain of custody.<br />Include appropriate blanks (field, trip, method).
                     </td>
                   </tr>
                 </tbody>
@@ -349,8 +359,7 @@ const Voc = () => {
   );
 };
 
-export default Voc;
-
+export default Pah;
 
 
 

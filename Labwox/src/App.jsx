@@ -20,7 +20,7 @@ import Aim from './Component/aim';
 import Chemical from './Component/phytochemical';
 import Application from './Component/application';
 import Faq from './Component/faq';
-import Food from './Component/composition/foodcomp';
+import Food from './Component/Foodanalysis/foodcomp';
 import Waterqua from './Component/waterquality';
 import Pollutantanaly from './Component/polluanalysis';
 import Pesticide from './Component/pest';
@@ -33,7 +33,7 @@ import Pthalate from './Component/pollutant/Ester';
 import Pah from './Component/pollutant/Mix';
 import Mixf from './Component/pollutant/Mixf';
 import Tph from './Component/pollutant/tph';
-import Mixg from './Component/pollutant/mixg';
+import Mixg from './Component/pollutant/pah and pcb';
 import Pcb from './Component/pollutant/pcb';
 import Pbde from './Component/pollutant/PBDEs';
 import Voc from './Component/pollutant/voc';
@@ -48,9 +48,11 @@ import Other from './Component/pesticide/others';
 import Pyrethroids from './Component/pesticide/Pyrethroids';
 import Phosphate from './Component/pesticide/phosphate';
 import Phytochemical from './Component/composition/Phytochem';
-import Fames from './Component/composition/Foodanalysis/fames';
-import Mineral from './Component/composition/Foodanalysis/minerals';
-import Heavymetals from './Component/pollutant/HeavyMetals';  
+import Fames from './Component/Foodanalysis/fames';
+import Mineral from './Component/Foodanalysis/minerals';
+import Oil from './Component/Foodanalysis/oil';
+import Proximate from './Component/Foodanalysis/proximate';
+import Heavymetals from './Component/pollutant/HeavyMetals'; 
 
 
 function App() {
@@ -87,9 +89,9 @@ function App() {
             {/* Food Sample Pages */}
             <Route path="/pollutant/phthalate" element={<Pthalate />} />
             <Route path="/pollutant/pah" element={<Pah />} />
-            <Route path="/pollutant/pahmix" element={<Mixf />} />
+            <Route path="/pollutant/pahmixf" element={<Mixf />} />
             <Route path="/pollutant/tph" element={<Tph />} />
-            <Route path="/pollutant/pahmixg" element={<Mixg />} />
+            <Route path="/pollutant/pahmix" element={<Mixg />} />
             <Route path="/pollutant/pcb" element={<Pcb />} />
             <Route path="/pollutant/voc" element={<Voc />} />
             <Route path="/pesticide/single" element={<Single />} />
@@ -105,6 +107,8 @@ function App() {
             <Route path="/composition/food" element={<Food />} />
             <Route path="/composition/food/fame" element={<Fames />} />
             <Route path="/composition/food/mineral" element={<Mineral />} />
+            <Route path="/composition/food/oil" element={<Oil />} />
+            <Route path="/composition/food/proximate" element={<Proximate />} />
             <Route path="/composition/metal" element={<Metal />} />
             <Route path="/composition/ash" element={<Ash />} />
             <Route path="/composition/Phytochemical" element={<Phytochemical />} />

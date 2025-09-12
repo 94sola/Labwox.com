@@ -4,9 +4,10 @@ import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 
 const applications = [
+  { name: "Compositional Analysis", link: "/composition" },
   { name: "Pollutant Analysis", link: "/pollutantanaly" },
   { name: "Pesticide Residue Analysis", link: "/pesticide" },
-  { name: "Compositional Analysis", link: "/composition" },
+  { name: "Food Analysis", link: "/composition/food" },
   { name: "Water Quality Analysis", link: "/waterqua" },
 ];
 
@@ -20,10 +21,10 @@ const Application = () => {
         {/* Navigation */}
         <div className="relative flex items-center justify-start mb-10 max-w-7xl mx-auto px-4">
           <Link
-            to="/chemxpert"
+            to="/"
             className="flex items-center gap-2 hover:text-white text-[#FFC000] transition"
           >
-            <ArrowLeft size={20} /> Back to ChemXpert
+            <ArrowLeft size={20} /> Back home
           </Link>
         </div>
 
@@ -44,7 +45,8 @@ const Application = () => {
             <Link
               key={index}
               to={app.link}
-              className="bg-neutral-900 border border-neutral-800 hover:border-[#FFC000] rounded-xl p-6 text-center text-white hover:shadow-lg hover:shadow-[#ffc00033] transition"
+              className={`bg-neutral-900 border border-neutral-800 hover:border-[#FFC000] rounded-xl p-6 text-center text-white hover:shadow-lg hover:shadow-[#ffc00033] transition 
+                ${index === applications.length - 1 ? "md:col-span-2 md:mx-auto md:w-1/2" : ""}`}
             >
               <h2 className="text-xl font-semibold">{app.name}</h2>
             </Link>

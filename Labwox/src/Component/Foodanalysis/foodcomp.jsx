@@ -6,10 +6,11 @@ import { ArrowLeft } from "lucide-react";
 const applications = [
   { name: "Fatty Acid Methyl Esters (FAMEs)", link: "/composition/food/fame" },
   { name: "Minerals in Food", link: "/composition/food/mineral" },
-  { name: "Others", link: "/composition/other" },
+  { name: "Proximate Analysis of Foods", link: "/composition/food/proximate" },
+  { name: "Oil Quality Parameters", link: "/composition/food/oil" },
 ];
 
-const FoodComposition = () => {
+const Food = () => {
   return (
     <Wrapper>
       <section className="relative w-full py-16 mb-10 lg:py-24 bg-gradient-to-b from-black via-neutral-900 to-black overflow-hidden">
@@ -23,7 +24,7 @@ const FoodComposition = () => {
             to="/composition"
             className="flex items-center gap-2 italic hover:text-white text-[#FFC000] transition"
           >
-            <ArrowLeft size={20} /> Back to composition applications 
+            <ArrowLeft size={20} /> Back to applications 
           </Link>
         </div>
 
@@ -32,7 +33,7 @@ const FoodComposition = () => {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal text-white tracking-wide">
             Food Composition Analysis
           </h1>
-          <p className="mt-4 text-lg text-gray-50 max-w-5xl mx-auto leading-relaxed">
+          <p className="mt-4 text-lg text-gray-50 max-w-3xl mx-auto leading-relaxed">
             Comprehensive analytical methods to determine the composition of 
             food and related products. From Fatty Acid Methyl Esters (FAMEs)
             to Minerals and other components, our techniques ensure accurate, 
@@ -42,7 +43,7 @@ const FoodComposition = () => {
         </div>
 
         {/* Application Grid */}
-        <div className="relative max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 px-4">
+        <div className="relative max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 px-4">
           {applications.map((app, index) => (
             <div
               key={index}
@@ -61,4 +62,4 @@ const FoodComposition = () => {
   );
 };
 
-export default FoodComposition;
+export default Food;

@@ -11,7 +11,7 @@ const pesticides = [
 const Pesticide = () => {
   return (
     <Wrapper>
-      <section className="relative w-full py-12 sm:py-16 lg:py-24 bg-gradient-to-b from-black via-neutral-950 to-black overflow-hidden">
+      <section className="relative w-full py-24 sm:py-24 lg:py-32 bg-gradient-to-b from-black via-neutral-950 to-black overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10 pointer-events-none bg-[url('/molecule-pattern.svg')] bg-repeat" />
 
