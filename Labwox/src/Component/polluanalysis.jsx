@@ -3,6 +3,7 @@ import Wrapper from "./wrapper";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 
+
 const applications = [
   { name: "Phthalate Esters", link: "/pollutant/phthalate" },
   { name: "PAHs Mix E", link: "/pollutant/pah" },
