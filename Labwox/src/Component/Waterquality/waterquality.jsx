@@ -1,5 +1,5 @@
 import React from "react";
-import Wrapper from "./wrapper";
+import Wrapper from "../wrapper";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 
@@ -35,12 +35,12 @@ const WaterQuality = () => {
         {/* Analysis Options */}
         <div className="relative max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 px-4">
           {[
-            { name: "pH Measurement", link: "/ph-measurement" },
-            { name: "Turbidity Analysis", link: "/turbidity" },
-            { name: "Dissolved Oxygen (DO)", link: "/dissolved-oxygen" },
-            { name: "Conductivity & TDS", link: "/conductivity-tds" },
-            { name: "Chemical Oxygen Demand (COD)", link: "/cod" },
-            { name: "Biological Oxygen Demand (BOD)", link: "/bod" },
+            { name: "pH Measurement", link: "/waterqua/ph" },
+            { name: "Turbidity Analysis", link: "/waterqua/turbidity" },
+            { name: "Dissolved Oxygen (DO)", link: "/waterqua/do" },
+            { name: "Conductivity & TDS", link: "/waterqua/tds" },
+            { name: "Chemical Oxygen Demand (COD)", link: "/waterqua/cod" },
+            { name: "Biological Oxygen Demand (BOD)", link: "/waterqua/bod" },
           ].map((item, index) => (
             <Link
               key={index}

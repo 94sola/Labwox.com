@@ -20,10 +20,10 @@ const Application = () => {
         {/* Navigation */}
         <div className="relative flex items-center justify-start mb-10 max-w-7xl mx-auto px-4">
           <Link
-            to="/chemxpert"
+            to="/"
             className="flex items-center gap-2 hover:text-white text-[#FFC000] transition"
           >
-            <ArrowLeft size={20} /> Back to ChemXpert
+            <ArrowLeft size={20} /> Back
           </Link>
         </div>
 

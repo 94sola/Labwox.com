@@ -1,8 +1,9 @@
-import React, { useRef, useState } from "react"
-import logo from "../../assets/image/labwox..jpeg";
+import React, { useRef, useState } from "react";
 import image from "../../assets/image/water.png";
-import images from "../../assets/image/petroleum.jpg";
-import image2 from "../../assets/image/waste.jpg"; 
+import image1 from "../../assets/image/soil.jpg";
+import image2 from "../../assets/image/food.jpg";
+import image3 from "../../assets/image/fish.jpg";
+import logo from "../../assets/image/labwox..jpeg"; // ✅ Your logo
 
 import { Link } from "react-router-dom";
 import { ArrowLeft, Printer, ChevronDown } from "lucide-react";
@@ -10,28 +11,37 @@ import Wrapper from "../wrapper";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
 
-const Pcb = () => {
+const Pah = () => {
   const compounds = [
-    "PCB1",
-    "PCB5",
-    "PCB18",
-    "PCB29",
-    "PCB44",
-    "PCB52",
-    "PCB66",
-    "PCB87",
-    "PCB101",
-    "PCB110",
-    "PCB138",
-    "PCB141",
-    "PCB151",
-    "PCB153",
-    "PCB170",
-    "PCB180",
-    "PCB183",
-    "PCB187",
-    "PCB188",
+   "Isophorone",
+    "Acenaphthylene",
+    "Fluorene",
+    "Hexachlorobenzene",
+    "Phenanthrene",
+    "Anthracene",
+    "Benz[a]anthracene",
+    "Chrysene",
+    "Benzo[b]fluoranthene",
+    "Benzo[k]fluoranthene",
+    "Benzo[a]pyrene",
+    "Indeno(1,2,3-cd)pyrene",
+    "Dibenz[a,h]anthracene",
+    "Benzo[ghi]perylene",
+    "PCB 1",
+    "PCB 3",
+    "PCB 28",
+    "PCB-52",
+    "PCB 44",
+    "PCB-70",
+    "PCB 110",
+    "PCB 143",
+    "PCB 153",
+    "PCB 204",
+    "PCB 180",
+    "PCB 204",
+    "PCB 180",
   ];
+
 
   const firstSix = compounds.slice(0, 6);
   const remaining = compounds.slice(6); 
@@ -39,33 +49,50 @@ const Pcb = () => {
 
   const samplingDetails = [
      {
-      category: "Environmental Samples",
+      category: "Water (drinking, surface, groundwater)",
       img: image,
       details: [
-        "Water: Grab samples (1–2 L) in pre-baked amber glass bottles with Teflon-lined caps; keep at 4 °C and extract within 7 days.",
-        "Soil & Sediment: Stainless steel scoop or corer; collect 200–500 g in amber glass jars with Teflon-lined lids; refrigerate at 4 °C or freeze, keep in the dark",
-        "Dust: Vacuumed with clean filters or brushed into amber glass jars; store refrigerated, minimize holding time.",
+        "Use amber glass bottles (1 L or larger) with Teflon-lined caps (no plastics).",
+        "Collect without headspace; fill bottle completely.",
+        "Protect from sunlight (wrap in foil or use amber bottles).",
+        "Preserve: cool to ≤ 4 °C; no chemical preservatives normally added for PAHs/PCBs.",
+        "Transport on ice; analyze within holding time (usually ≤ 7–14 days).",
+        "Include field blanks and trip blanks.",
       ],
     },
     {
-      category: "Industrial and Waste Samples",
-      img: images,
+      category: "Soil and Sediment",
+      img: image1,
       details: [
-        "Transformer/Capacitor Oils: Collected in pre-cleaned amber glass bottles with Teflon-lined caps; fill completely to reduce",
-        "volatilization; store at 4 °C.",
-        "Hydraulic fluids, lubricants, waste oils, sludge: Same handling as oils; avoid plastics to prevent adsorption.",
-        "Building materials (caulks, sealants, paints): Chip or bulk.",
-        "sampling using solvent-cleaned tools; store in amber glass jars, refrigerated.",
+        "Collect with stainless steel or solvent-rinsed tools (scoop, trowel, corer).",
+        "Place in amber glass jars with Teflon-lined lids.",
+        "Fill the container fully to minimize headspace.",
+        "Avoid contact with plastics or painted surfaces.",
+        "Store at ≤ 4 °C; freeze for long-term storage.",
+        "Composite sampling may be required for site assessments.",
+        "Keep samples away from light and dust sources.",
       ],
     },
     {
-      category: "Food and Agricultural Samples",
+      category: "Food (fish, meat, dairy, grains, oils, vegetables)",
+      img: image3,
+      details: [
+        "Wrap solid samples in solvent-rinsed aluminum foil, then place in amber glass jars.",
+        "For oils/liquids, collect directly into amber glass jars",
+        "Avoid plastic bags or containers (risk of contamination/adsorption).",
+        "Keep at ≤ 4 °C; freeze high-fat foods and fish until extraction.",
+        "Minimize handling to avoid cross-contamination.",
+      ],
+    },
+    {
+      category: "Biological Tissue (fish, mussels, animal tissues)",
       img: image2,
       details: [
-        "Fish/Seafood: Whole fish or fillets (100–500 g), wrapped in solvent-rinsed aluminum foil or placed in amber glass; freeze at –20 °C.",
-        "Meat, Poultry, Dairy, Eggs: 100–500 g homogenized sample in glass jars; store frozen at –20 °C until extraction.",
+        "Tissues: Wrap in solvent-rinsed foil, place in amber glass jars, and freeze immediately (−20 °C or lower)",
+        "Protect all biologicals from light and contamination during collection.",
       ],
     },
+   
   ];
 
   const contentRef = useRef(null);
@@ -141,7 +168,7 @@ const Pcb = () => {
     // Restore UI buttons
     buttons.forEach((el) => (el.style.display = ""));
 
-    pdf.save("PCBs.pdf");
+    pdf.save("PAH-pcb-Mix.pdf");
   };
 
   return (
@@ -171,57 +198,57 @@ const Pcb = () => {
         {/* Header */}
         <div className="max-w-4xl mx-auto text-center my-12 px-4">
           <h1 className="text-5xl md:text-6xl font-thin text-[#153D63] mb-6">
-            PCBs
+            PAH and PCB Mix
           </h1>
           <p className="text-base md:text-lg text-gray-700 leading-relaxed max-w-4xl mx-auto">
-            <strong>PCBs</strong> (Polychlorinated Biphenyls) are highly toxic, persistent organic pollutants that were historically used in transformers, capacitors, hydraulic fluids, and other industrial applications due to their chemical stability and insulating properties. .
+            PAH and PCB mix contains a mixture of polycyclic aromatic hydrocarbons and polychlorinated biphenyl compounds. Two categories of toxic environmental pollutants that are a common focus of research.
           </p>
         </div>
 
-        {/* Available Compounds */}
-        <div className="mt-10 max-w-5xl mx-auto">
-          <h3 className="text-4xl font-thin text-[#153D63] mb-6 text-center">
-            Available Compounds
-          </h3>
-          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-4">
-            {firstSix.map((compound, index) => (
-              <div
-                key={index}
-                className="border border-gray-300 rounded-xl p-4 text-center text-gray-800 text-base font-normal shadow-sm hover:shadow-md hover:border-[#FFC000] transition"
+         {/* Available Compounds */}
+          <div className="mt-10 max-w-5xl mx-auto">
+            <h3 className="text-4xl font-thin text-[#153D63] mb-6 text-center">
+              Available Compounds
+            </h3>
+            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-4">
+              {firstSix.map((compound, index) => (
+                <div
+                  key={index}
+                  className="border border-gray-300 rounded-xl p-4 text-center text-gray-800 text-base font-normal shadow-sm hover:shadow-md hover:border-[#FFC000] transition"
+                >
+                  {compound}
+                </div>
+              ))}
+            </div>
+  
+            {/* Dropdown for Remaining */}
+            <div className="mt-6 text-center">
+              <button
+                onClick={() => setShowMore(!showMore)}
+                className="inline-flex items-center gap-2 px-4 py-3 bg-[#153D63] text-white rounded-xl shadow hover:bg-[#112f4c] transition"
               >
-                {compound}
-              </div>
-            ))}
+                <ChevronDown
+                  className={`w-5 h-5 transition-transform ${
+                    showMore ? "rotate-180" : ""
+                  }`}
+                />
+                {showMore ? "Show Less" : "Show More Compounds"}
+              </button>
+  
+              {showMore && (
+                <div className="mt-6 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-4 animate-fadeIn">
+                  {remaining.map((compound, index) => (
+                    <div
+                      key={index}
+                      className="border border-gray-300 rounded-xl p-4 text-center text-gray-800 text-base font-normal shadow-sm hover:shadow-md hover:border-[#FFC000] transition"
+                    >
+                      {compound}
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
-
-          {/* Dropdown for Remaining */}
-          <div className="mt-6 text-center">
-            <button
-              onClick={() => setShowMore(!showMore)}
-              className="inline-flex items-center gap-2 px-4 py-3 bg-[#153D63] text-white rounded-xl shadow hover:bg-[#112f4c] transition"
-            >
-              <ChevronDown
-                className={`w-5 h-5 transition-transform ${
-                  showMore ? "rotate-180" : ""
-                }`}
-              />
-              {showMore ? "Show Less" : "Show More Compounds"}
-            </button>
-
-            {showMore && (
-              <div className="mt-6 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-4 animate-fadeIn">
-                {remaining.map((compound, index) => (
-                  <div
-                    key={index}
-                    className="border border-gray-300 rounded-xl p-4 text-center text-gray-800 text-base font-normal shadow-sm hover:shadow-md hover:border-[#FFC000] transition"
-                  >
-                    {compound}
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
-        </div>
 
         {/* Analytical Overview Table */}
         <div className="max-w-5xl mx-auto px-4 py-10">
@@ -236,33 +263,41 @@ const Pcb = () => {
                     <td className="p-4 font-semibold border border-gray-300 w-1/3">
                       Sample Types
                     </td>
-                    <td className="p-4 border text-sm border-gray-300">
-                      Water [surface water, groundwater, drinking water, wastewater effluents] <br />
-                      Sediments – riverbeds, lakes, harbors (PCBs accumulate strongly in sediments)]<br />
-                      Dust – indoor dust from schools, offices, homes with old electrical equipment or sealants<br />
-                      Fish, meat, poultry, seafood – strong bioaccumulation in fatty tissues (major human exposure route) <br />
-                      Paints, sealants, caulks, and building materials – especially pre-1980s <br />
-                      Waste oils and sludge – refinery or industrial by-products <br />
-                      Transformer oils – dielectric fluids historically containing PCBs <br />
-                      Soil [contaminated sites, industrial areas, landfills]
+                    <td className="p-4 text-sm border border-gray-300">
+                      <span className="text-base font-medium">Water Samples:</span>{" "}
+                      Drinking water (tap, bottled, treated supplies).<br />
+                      Groundwater (especially near landfills, industrial zones, and agricultural sites).<br />
+                      Surface water (rivers, lakes, reservoirs, catchments for drinking water).<br />
+                      Wastewater effluents.  
+                      <br />
+                      <span className="text-base font-medium">Soil & Sediment Samples:</span>{" "}
+                      Soils near industrial or urban areas (especially near combustion sources, spills, or pesticide use).<br />
+                      River/lake sediments (long-term sinks for PAHs and PCBs).  
+                      <br />
+                      <span className="text-base font-medium">
+                        Food & Animal Tissue
+                      </span>{" "}
+                      IFish and aquatic organisms (bioaccumulation in fatty tissues). <br />
+                      Dairy, meat, and crops irrigated with contaminated water.  
                     </td>
                   </tr>
                   <tr className="bg-white hover:bg-gray-50 transition">
                     <td className="p-4 font-semibold border border-gray-300">
-                      Instrument Used
+                      Instruments Used
                     </td>
-                    <td className="p-4 border text-sm border-gray-300">Agilent 5977 GC-MSD or Thermo ISQ 7610</td>
+                    <td className="p-4 border border-gray-300 text-sm">
+                      Agilent 5977 GC-MSD or Thermo ISQ 7610
+                    </td>
                   </tr>
                   <tr className="bg-gray-50 hover:bg-gray-100 transition">
                     <td className="p-4 font-semibold border border-gray-300">
                       Sampling Information
                     </td>
                     <td className="p-4 border text-sm border-gray-300">
-                        Always use amber glass containers with Teflon-lined caps (never plastic). <br />
-                        Protect samples from light (PCBs degrade under UV). <br />
-                        Cool (4 °C) or freeze (–20 °C or below) for storage. <br />
-                        Minimize headspace in liquids to reduce volatilization.
-                      </td>
+                      Always use glass, not plastic (PCBs and PAHs adsorb to plastics).<br />
+                      Protect from light to prevent degradation.<br / >Cool or freeze as soon as possible.<br />
+                      Document source, matrix type, and collection date to ensure<br />Maintain strict chain of custody.<br />Include appropriate blanks (field, trip, method).
+                    </td>
                   </tr>
                 </tbody>
               </table>
@@ -319,14 +354,12 @@ const Pcb = () => {
             ))}
           </div>
         </div>
-      </div>
+      </section>
     </Wrapper>
   );
 };
 
-export default Pcb;
-
-
+export default Pah;
 
 
 

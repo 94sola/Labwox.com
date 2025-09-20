@@ -1,7 +1,8 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState } from "react"; 
 import image from "../../assets/image/water.png";
-import images from "../../assets/image/sediment.jpg";
-import image2 from "../../assets/image/fishh.jpg";
+import image1 from "../../assets/image/soil.jpg";
+import image2 from "../../assets/image/discharge.jpg";
+import image3 from "../../assets/image/pipewater.jpg";
 import logo from "../../assets/image/labwox..jpeg"; // ✅ Your logo
 
 import { Link } from "react-router-dom";
@@ -10,50 +11,64 @@ import Wrapper from "../wrapper";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
 
-const Tph = () => {
-  const compounds = [
-   "n-Alkanes [C10–C40]",
+const Bod = () => {
+  const bodParameters = [
+    "5-day BOD (BOD₅)",
+    "Ultimate BOD (BODᵤ)",
+    "Carbonaceous BOD (CBOD)",
+    "Nitrogenous BOD (NBOD)",
+    "Biodegradable Organic Matter",
+    "Dissolved Oxygen Depletion",
+    "Microbial Activity Indicators",
   ];
 
-  const samplingDetails = [
-     {
-      category: "Water (surface water, groundwater, wastewater)",
+  const bodDetails = [
+    {
+      category: "Surface & Ground Water",
       img: image,
       details: [
-        "Use glass bottles (1 L or larger) with Teflon-lined caps (no plastic).",
-        "Fill vials completely (no headspace) to minimize volatilization.",
-        "Preserve: add HCl to pH < 2 (for VOC fractions of TPH).",
-        "Cool to ≤ 4 °C immediately after collection.",
-        "Transport in dark conditions to minimize degradation.",
-        "Analyze within recommended holding times (typically ≤ 7–14 days depending on method).",
+        "Collect in clean, sterile glass or plastic BOD bottles (usually 300 mL).",
+        "Avoid trapping air bubbles when filling bottles.",
+        "Keep samples at ≤ 4 °C during transport to prevent microbial activity.",
+        "Do not add preservatives – analysis must begin within 48 hours.",
+        "Record sampling time, temperature, and source details.",
       ],
     },
     {
-      category: "Soil and Sediment",
-      img: images,
+      category: "Wastewater & Effluents",
+      img: image3,
       details: [
-        "Collect with stainless steel or solvent-rinsed tools (scoops, augers, corers).",
-        "Place in amber glass jars with Teflon-lined lids",
-        "Fill jars fully to minimize headspace.",
-        "Store at ≤ 4 °C; freeze if analysis will be delayed.",
-        "Avoid plastics or painted tools (possible contamination).",
+        "Use clean BOD bottles, ensuring no headspace is present.",
+        "Composite samples may be collected to represent variable discharges.",
+        "Store samples in ice or refrigeration (≤ 4 °C).",
+        "Analyze as soon as possible (≤ 48 hours).",
+        "Record plant process type and discharge conditions.",
       ],
     },
     {
-      category: "Biological Tissue (fish, mussels, animal tissues)",
+      category: "Industrial Discharges",
       img: image2,
       details: [
-        "Collect using solvent-rinsed stainless steel instruments.",
-        "Wrap tissues in solvent-rinsed aluminum foil; place in amber glass jars.s",
-        "Store frozen at −20 °C or lower until analysis.",
-        "Minimize exposure to air and light to prevent hydrocarbon loss.",
-        "Clearly label with species, tissue type, and date/location of collection.",
+        "Collect representative grab or composite samples.",
+        "Avoid exposure to direct sunlight or high temperatures.",
+        "Store at ≤ 4 °C and transport immediately to the lab.",
+        "Use standard 300 mL BOD bottles filled without bubbles.",
       ],
     },
-  ];
+    {
+      category: "Soil Leachates & Runoff",
+      img: image1,
+      details: [
+        "Collect runoff or leachate samples in clean bottles.",
+        "Filter only if specified in the test protocol.",
+        "Keep samples cool (≤ 4 °C) until analysis.",
+        "Analyze promptly for accurate microbial oxygen demand.",
+      ],
+    },
+    ];
 
   const contentRef = useRef(null);
-  const sampleRef = useRef(null); // ✅ New ref for sample type section
+  const sampleRef = useRef(null);
   const [openIndex, setOpenIndex] = useState(null);
 
   const toggleDropdown = (index) => {
@@ -64,13 +79,11 @@ const Tph = () => {
     const inputMain = contentRef.current;
     const inputSample = sampleRef.current;
 
-    // Temporarily hide UI-only buttons
     const buttons = document.querySelectorAll(".no-pdf");
     buttons.forEach((el) => (el.style.display = "none"));
 
     const pdf = new jsPDF("p", "mm", "a4", true);
 
-    // Helper for header/footer/watermark
     const addHeaderFooter = (pageNum) => {
       const logoWidth = 30;
       const logoHeight = 12;
@@ -92,7 +105,6 @@ const Tph = () => {
       pdf.restoreGraphicsState();
     };
 
-    // Capture main section
     const canvasMain = await html2canvas(inputMain, { scale: 2, useCORS: true });
     const imgDataMain = canvasMain.toDataURL("image/jpeg", 1.0);
     const imgWidth = 190;
@@ -100,7 +112,6 @@ const Tph = () => {
     pdf.addImage(imgDataMain, "JPEG", 10, 10, imgWidth, imgHeight, null, "FAST");
     addHeaderFooter(1);
 
-    // Capture sample type section separately
     pdf.addPage();
     const canvasSample = await html2canvas(inputSample, {
       scale: 2,
@@ -120,10 +131,9 @@ const Tph = () => {
     );
     addHeaderFooter(2);
 
-    // Restore UI buttons
     buttons.forEach((el) => (el.style.display = ""));
 
-    pdf.save("Tph.pdf");
+    pdf.save("BOD-Samples.pdf");
   };
 
   return (
@@ -133,13 +143,13 @@ const Tph = () => {
         ref={contentRef}
         className="bg-gradient-to-b from-white via-neutral-50 to-white py-12 lg:py-20"
       >
-        {/* Back & Print Actions (UI only) */}
+        {/* Back & Print */}
         <div className="max-w-6xl mx-auto px-4 mt-2 flex justify-between items-center no-pdf">
           <Link
-            to="/pollutantanaly"
+            to="/waterqua"
             className="inline-flex items-center italic gap-2 text-[#153D63] hover:text-[#FFC000] font-medium"
           >
-            <ArrowLeft className="w-5 h-5" /> Back to Pollutant Applications
+            <ArrowLeft className="w-5 h-5" /> Back to water quality Application
           </Link>
           <button
             onClick={handleDownloadPDF}
@@ -153,31 +163,36 @@ const Tph = () => {
         {/* Header */}
         <div className="max-w-4xl mx-auto text-center my-12 px-4">
           <h1 className="text-5xl md:text-6xl font-thin text-[#153D63] mb-6">
-            Total Petroleum Hydrocarbons (TPH)
+            BOD Samples
           </h1>
           <p className="text-base md:text-lg text-gray-700 leading-relaxed max-w-4xl mx-auto">
-            <strong>TPH</strong>(total petroleum hydrocarbons) represents a group of n-alkanes from C10-C40 often analysed in environmental media as indicators of petroleum contamination.
+            At <strong>ChemXpert</strong>, we provide accredited analysis of{" "}
+            <em>Biochemical Oxygen Demand (BOD)</em> in water, wastewater,
+            industrial effluents, and biological matrices. BOD testing is a key
+            indicator of organic pollution and microbial activity, supporting
+            environmental monitoring, treatment plant evaluation, and regulatory
+            compliance.
           </p>
         </div>
 
-        {/* Available Compounds */}
+        {/* Parameters */}
         <div className="mt-10 max-w-5xl mx-auto">
           <h3 className="text-4xl font-thin text-[#153D63] mb-6 text-center">
-            Available Compounds
+            BOD Parameters Measured
           </h3>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-            {compounds.map((compound, index) => (
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            {bodParameters.map((param, index) => (
               <div
                 key={index}
                 className="border border-gray-300 rounded-xl p-5 text-center text-gray-800 text-base font-normal shadow-sm hover:shadow-md hover:border-[#FFC000] transition"
               >
-                {compound}
+                {param}
               </div>
             ))}
           </div>
         </div>
 
-        {/* Analytical Overview Table */}
+        {/* Analytical Overview */}
         <div className="max-w-5xl mx-auto px-4 py-10">
           <div className="mt-8 max-w-4xl mx-auto px-4">
             <h3 className="text-3xl md:text-4xl font-thin text-[#153D63] mb-6 text-center">
@@ -188,37 +203,51 @@ const Tph = () => {
                 <tbody className="text-gray-700 text-base md:text-lg">
                   <tr className="bg-gray-50 hover:bg-gray-100 transition">
                     <td className="p-4 font-semibold border border-gray-300 w-1/3">
-                      Sample Types
+                        Sample Types
                     </td>
-                    <td className="p-4 border text-sm border-gray-300 space-y-2">
-                      <p>
-                        <span className="font-semibold">Environmental Samples</span> Soil – primary matrix in contaminated site assessments (leaks, spills, gas stations, oil fields)<br />.
-                        Sediment – accumulation in aquatic environments near industrial discharges or spills.<br />
-                        Surface water – rivers, lakes, and marine waters impacted by oil spills or runoff.<br />
-                        Groundwater – monitoring of underground storage tanks (USTs), refineries, and landfills.<br />
-                        Wastewater & effluents – petroleum refineries, petrochemical industries, and stormwater runoff.
-                      </p>
-                      <p>
-                        <span className="font-semibold">Biological Samples</span> <br />Tissues of aquatic organisms – fish, mussels, and benthic organisms exposed to oil pollution.
-                      </p>
-                    </td>
-                  </tr>
-                  <tr className="bg-white hover:bg-gray-50 transition">
-                    <td className="p-4 font-semibold border border-gray-300">
-                      Instrument Used
-                    </td>
-                    <td className="p-4 border text-sm border-gray-300">Agilent 8860 GC-FID</td>
-                  </tr>
-                  <tr className="bg-gray-50 hover:bg-gray-100 transition">
-                    <td className="p-4 font-semibold border border-gray-300">
-                      Sampling Information
-                    </td>
-                    <td className="p-4 border text-sm border-gray-300">
-                     Glass only (no plastics). <br />
-                      Avoid light & heat (hydrocarbons degrade/volatilize easily). <br />
-                      Cool or freeze as quickly as possible.
-                    </td>
-                  </tr>
+                        <td className="p-4 text-sm border border-gray-300">
+                            <span className="text-base font-medium">Environmental Samples</span><br />
+                            Drinking water (tap, bottled, well water).<br />
+                            Surface water (rivers, lakes, reservoirs).<br />
+                            Groundwater (aquifers, wells, boreholes).<br />
+                            Soil leachates (runoff from agricultural or landfill sites).<br />
+                            Sediment pore water for oxygen demand studies.<br /><br />
+
+                            <span className="text-base font-medium">Municipal Wastewater</span><br />
+                            Raw sewage (untreated wastewater).<br />
+                            Treated effluents from wastewater treatment plants.<br />
+                            Inflow and outflow monitoring for treatment efficiency.<br />
+                            Sludge supernatants and return activated sludge.<br /><br />
+
+                            <span className="text-base font-medium">Industrial & Process Wastewaters</span><br />
+                            Effluents from food and beverage industries.<br />
+                            Pulp and paper mill discharges.<br />
+                            Textile and dye industry effluents.<br />
+                            Chemical and pharmaceutical wastewater.<br />
+                            Leachates from solid waste or hazardous waste facilities.<br /><br />
+
+                            <span className="text-base font-medium">Agricultural Runoff</span><br />
+                            Drainage water from irrigation fields.<br />
+                            Livestock waste lagoons and slurry samples.<br />
+                            Fertilizer and pesticide runoff impacting nearby rivers.<br /><br />
+
+                            <span className="text-base font-medium">Biological Samples</span><br />
+                            Biomass suspensions from treatment plants.<br />
+                            Sludge digesters and fermentation broths.<br />
+                            Microbial inocula for BOD seeding studies.<br />
+                        </td>
+                    </tr>
+                    <tr className="bg-gray-50 hover:bg-gray-100 transition">
+                        <td className="p-4 font-semibold border border-gray-300">
+                        Sampling Guidelines
+                        </td>
+                        <td className="p-4 border text-sm border-gray-300">
+                        Collect samples in BOD bottles without air bubbles. <br />
+                        Do not add preservatives – analyze within 48 hours. <br />
+                        Store and transport at ≤ 4 °C. <br />
+                        Record source, time, and field conditions accurately.
+                        </td>
+                    </tr>
                 </tbody>
               </table>
             </div>
@@ -226,14 +255,14 @@ const Tph = () => {
         </div>
       </section>
 
-      {/* ✅ Sampling Details (new page in PDF) */}
-      <section ref={sampleRef} className="bg-white py-12 my-6 lg:py-20">
+      {/* ✅ BOD Details (new page in PDF) */}
+      <section ref={sampleRef} className="bg-white my-6 py-12 lg:py-20">
         <div className="mt-12 max-w-6xl mx-auto px-4">
           <h3 className="text-3xl md:text-4xl font-thin text-[#153D63] mb-10 text-center">
-            Select Sample Type
+            BOD Sample Collection Details
           </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {samplingDetails.map((sample, i) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
+            {bodDetails.map((sample, i) => (
               <div key={i} className="bg-white transition p-6">
                 <img
                   src={sample.img}
@@ -251,7 +280,6 @@ const Tph = () => {
                   />
                   {sample.category}
                 </button>
-                {/* Dropdown stays collapsed in UI unless clicked, and captured as-is in PDF */}
                 <div
                   className={`overflow-hidden transition-all duration-500 ease-in-out ${
                     openIndex === i
@@ -261,7 +289,7 @@ const Tph = () => {
                 >
                   <ul
                     className={`relative text-gray-700 text-sm md:text-base space-y-2 text-right px-2
-                      before:absolute before:top-0 before:left-0 before:w-1 before:bg-pink-500
+                      before:absolute before:top-0 before:left-0 before:w-1 before:bg-blue-500
                       before:transition-all before:duration-500
                       ${openIndex === i ? "before:h-full" : "before:h-0"}`}
                   >
@@ -279,10 +307,4 @@ const Tph = () => {
   );
 };
 
-export default Tph;
-
-
-
-
-
-
+export default Bod;

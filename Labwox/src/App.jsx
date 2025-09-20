@@ -21,7 +21,7 @@ import Chemical from './Component/phytochemical';
 import Application from './Component/application';
 import Faq from './Component/faq';
 import Food from './Component/composition/foodcomp';
-import Waterqua from './Component/waterquality';
+import Waterqua from './Component/Waterquality/waterquality';
 import Pollutantanaly from './Component/polluanalysis';
 import Pesticide from './Component/pest';
 import Composition from './Component/composition';
@@ -33,7 +33,7 @@ import Pthalate from './Component/pollutant/Ester';
 import Pah from './Component/pollutant/Mix';
 import Mixf from './Component/pollutant/Mixf';
 import Tph from './Component/pollutant/tph';
-import Mixg from './Component/pollutant/mixg';
+import Mixg from './Component/pollutant/pah and pcb';
 import Pcb from './Component/pollutant/pcb';
 import Pbde from './Component/pollutant/PBDEs';
 import Voc from './Component/pollutant/voc';
@@ -50,7 +50,16 @@ import Phosphate from './Component/pesticide/phosphate';
 import Phytochemical from './Component/composition/Phytochem';
 import Fames from './Component/composition/Foodanalysis/fames';
 import Mineral from './Component/composition/Foodanalysis/minerals';
+import Oil from './Component/composition/Foodanalysis/oil';
+import Proximate from './Component/composition/Foodanalysis/proximate';
 import Heavymetals from './Component/pollutant/HeavyMetals';  
+import Dissolved from './Component/Waterquality/do';
+import Cod from './Component/Waterquality/cod';
+import Bod from './Component/Waterquality/bod';
+import Ph from './Component/Waterquality/ph';
+import Turbidity from './Component/Waterquality/turbidity';
+import Tds from './Component/Waterquality/tds';  
+
 
 
 function App() {
@@ -87,9 +96,9 @@ function App() {
             {/* Food Sample Pages */}
             <Route path="/pollutant/phthalate" element={<Pthalate />} />
             <Route path="/pollutant/pah" element={<Pah />} />
-            <Route path="/pollutant/pahmix" element={<Mixf />} />
+            <Route path="/pollutant/pahmixf" element={<Mixf />} />
             <Route path="/pollutant/tph" element={<Tph />} />
-            <Route path="/pollutant/pahmixg" element={<Mixg />} />
+            <Route path="/pollutant/pahmix" element={<Mixg />} />
             <Route path="/pollutant/pcb" element={<Pcb />} />
             <Route path="/pollutant/voc" element={<Voc />} />
             <Route path="/pesticide/single" element={<Single />} />
@@ -105,11 +114,19 @@ function App() {
             <Route path="/composition/food" element={<Food />} />
             <Route path="/composition/food/fame" element={<Fames />} />
             <Route path="/composition/food/mineral" element={<Mineral />} />
+            <Route path="/composition/food/oil" element={<Oil />} />
+            <Route path="/composition/food/proximate" element={<Proximate />} />
             <Route path="/composition/metal" element={<Metal />} />
             <Route path="/composition/ash" element={<Ash />} />
             <Route path="/composition/Phytochemical" element={<Phytochemical />} />
             <Route path="/pollutant/Heavymetals" element={<Heavymetals />} />
             <Route path="/pollutant/pbde" element={<Pbde />} />
+            <Route path="/waterqua/do" element={<Dissolved />} />
+            <Route path="/waterqua/tds" element={<Tds />} />
+            <Route path="/waterqua/ph" element={<Ph />} />
+            <Route path="/waterqua/cod" element={<Cod />} />
+            <Route path="/waterqua/bod" element={<Bod />} />
+            <Route path="/waterqua/turbidity" element={<Turbidity />} />
             
           </Routes>
         </div>

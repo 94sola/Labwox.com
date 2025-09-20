@@ -7,8 +7,8 @@ import { ArrowLeft } from "lucide-react";
 const applications = [
   { name: "Phthalate Esters", link: "/pollutant/phthalate" },
   { name: "PAHs Mix E", link: "/pollutant/pah" },
-  { name: "PAHs Mix F", link: "/pollutant/pahmix" },
-  { name: "PAH and PCB Mix G", link: "/pollutant/pahmixg" },
+  { name: "PAHs Mix F", link: "/pollutant/pahmixf" },
+  { name: "PAH and PCB Mix", link: "/pollutant/pahmix" },
   { name: "TPH", link: "/pollutant/tph" },
   { name: "PCBs", link: "/pollutant/pcb" },
   { name: "VOCs", link: "/pollutant/voc" },
