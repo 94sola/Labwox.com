@@ -344,7 +344,7 @@ const Voc = () => {
             ))}
           </div>
         </div>
-      </div>
+      </section>
     </Wrapper>
   );
 };

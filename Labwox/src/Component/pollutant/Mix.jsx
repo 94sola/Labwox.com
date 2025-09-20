@@ -1,22 +1,14 @@
 import React, { useRef, useState } from "react";
-import image from "../../assets/image/water.png";
-import image1 from "../../assets/image/soil.jpg";
-import image2 from "../../assets/image/food.jpg";
-import image3 from "../../assets/image/dust.jpg";
-import image4 from "../../assets/image/petroleum.jpg";
-import image5 from "../../assets/image/fish.jpg";
-import logo from "../../assets/image/labwox..jpeg"; // ✅ Your logo
-
-import image from "../../assets/image/water.png";
-import image1 from "../../assets/image/soil.jpg";
-import image2 from "../../assets/image/food.jpg";
-import image3 from "../../assets/image/dust.jpg";
-import image4 from "../../assets/image/petroleum.jpg";
-import image5 from "../../assets/image/fish.jpg";
-import logo from "../../assets/image/labwox..jpeg"; // ✅ Your logo
+// import image from "../../assets/image/water.png";
+// import image1 from "../../assets/image/soil.jpg";
+// import image2 from "../../assets/image/food.jpg";
+// import image3 from "../../assets/image/dust.jpg";
+// import image4 from "../../assets/image/petroleum.jpg";
+// import image5 from "../../assets/image/fish.jpg";
+// import logo from "../../assets/image/labwox..jpeg"; // ✅ Your logo
 
 import { Link } from "react-router-dom";
-import { ArrowLeft, Printer, ChevronDown } from "lucide-react";
+import { ArrowLeft, Printer, ChevronDown, Droplets, Mountain, Wind, Flame, UtensilsCrossed, Fish } from "lucide-react";
 import Wrapper from "../wrapper";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
@@ -126,7 +118,7 @@ const Pah = () => {
 
 
   const contentRef = useRef(null);
-  const sampleRef = useRef(null); // ✅ New ref for sample type section
+  // const sampleRef = useRef(null); // ✅ New ref for sample type section
   const [openIndex, setOpenIndex] = useState(null);
 
   const [showMore, setShowMore] = useState(false);
@@ -153,7 +145,7 @@ const Pah = () => {
     let position = 20;
     let page = 1;
 
-    const footerText = `© ${new Date().getFullYear()} Labwox Limited, all rights reserved.`;
+    // const footerText = `© ${new Date().getFullYear()} Labwox Limited, all rights reserved.`;
 
     const addHeaderFooter = (pageNum) => {
       pdf.setFont("helvetica", "bold");
@@ -232,7 +224,7 @@ const Pah = () => {
             Available Compounds
           </h3>
           <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-4">
-            {firstSix.map((compound, index) => (
+            {compounds.slice(0, 6).map((compound, index) => (
               <div
                 key={index}
                 className="border border-gray-300 rounded-xl p-4 text-center text-gray-800 text-base font-medium shadow-sm hover:shadow-md hover:border-[#FFC000] transition"
@@ -258,7 +250,7 @@ const Pah = () => {
 
             {showMore && (
               <div className="mt-6 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-4 animate-fadeIn">
-                {remaining.map((compound, index) => (
+                {compounds.slice(6).map((compound, index) => (
                   <div
                     key={index}
                     className="border border-gray-300 rounded-xl p-4 text-center text-gray-800 text-base font-normal shadow-sm hover:shadow-md hover:border-[#FFC000] transition"
@@ -382,7 +374,6 @@ const Pah = () => {
           </div>
         </div>
 
-      </section>
     </Wrapper>
   );
 };

@@ -319,7 +319,7 @@ const Pcb = () => {
             ))}
           </div>
         </div>
-      </div>
+      </section>
     </Wrapper>
   );
 };
