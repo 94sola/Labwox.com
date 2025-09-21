@@ -1,8 +1,8 @@
 import React, { useRef, useState } from "react";
 import image from "../../assets/image/water.png";
 import image1 from "../../assets/image/soil.jpg";
-import image2 from "../../assets/image/food.jpg";
-import image3 from "../../assets/image/fish.jpg";
+import image2 from "../../assets/image/Aquatic animal  tissue.jpg";
+import image3 from "../../assets/image/food.jpg";
 import logo from "../../assets/image/labwox..jpeg"; // ✅ Your logo
 
 import { Link } from "react-router-dom";
@@ -264,20 +264,23 @@ const Pah = () => {
                       Sample Types
                     </td>
                     <td className="p-4 text-sm border border-gray-300">
-                      <span className="text-base font-medium">Water Samples:</span>{" "}
-                      Drinking water (tap, bottled, treated supplies).<br />
-                      Groundwater (especially near landfills, industrial zones, and agricultural sites).<br />
+                      <span className="text-base font-normal">Water:</span>{" "}
+                      samples include drinking water (tap, bottled, treated supplies).<br />
+                      groundwater (especially near landfills, industrial zones, and agricultural sites).<br />
                       Surface water (rivers, lakes, reservoirs, catchments for drinking water).<br />
                       Wastewater effluents.  
                       <br />
-                      <span className="text-base font-medium">Soil & Sediment Samples:</span>{" "}
+                      <span className="text-base font-normal">Soil and Sediment Samples:</span>{" "}
                       Soils near industrial or urban areas (especially near combustion sources, spills, or pesticide use).<br />
                       River/lake sediments (long-term sinks for PAHs and PCBs).  
                       <br />
-                      <span className="text-base font-medium">
-                        Food & Animal Tissue
+                      <span className="text-base font-normal">
+                        Animal Tissue:
                       </span>{" "}
-                      IFish and aquatic organisms (bioaccumulation in fatty tissues). <br />
+                      Fish and aquatic organisms (bioaccumulation in fatty tissues). <br />
+                       <span className="text-base font-normal">
+                        Food : 
+                      </span>{" "}
                       Dairy, meat, and crops irrigated with contaminated water.  
                     </td>
                   </tr>
@@ -296,7 +299,7 @@ const Pah = () => {
                     <td className="p-4 border text-sm border-gray-300">
                       Always use glass, not plastic (PCBs and PAHs adsorb to plastics).<br />
                       Protect from light to prevent degradation.<br / >Cool or freeze as soon as possible.<br />
-                      Document source, matrix type, and collection date to ensure<br />Maintain strict chain of custody.<br />Include appropriate blanks (field, trip, method).
+                      Include appropriate blanks (field, trip, method).
                     </td>
                   </tr>
                 </tbody>
@@ -312,7 +315,7 @@ const Pah = () => {
           <h3 className="text-3xl md:text-4xl font-thin text-[#153D63] mb-10 text-center">
             Select Sample Type
           </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 gap-8">
             {samplingDetails.map((sample, i) => (
               <div key={i} className="bg-white transition p-6">
                 <img

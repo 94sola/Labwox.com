@@ -1,29 +1,16 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import cre from "../assets/image/about-chem.jpg";
-import pre from "../assets/image/labwox1.jpg";
-import pri from "../assets/image/labwox2.jpg";
 import nur from "../assets/image/son-4.jpg";
-import crea from "../assets/image/labwox5.jpg";
-import nurs from "../assets/image/labwox3.jpg";
 import afters from "../assets/image/son-7.jpg";
 import prise from "../assets/image/son-8.jpg";
 import uni from "../assets/image/unilag-training.jpg";
-import pics from "../assets/image/labsoft1.jpg";
-import pic from "../assets/image/labwox4.jpg";
+import vid from "../assets/image/vid1.mp4";
 import Wrapper from "./wrapper";
 
 const images = [
-  { src: crea, label: "Standards Organization of Nigeria (SON)" },
-  { src: nurs, label: "Standards Organization of Nigeria (SON)" },
   { src: afters, label: "Standards Organization of Nigeria (SON)" },
   { src: prise, label: "Standards Organization of Nigeria (SON)" },
-  { src: cre, label: " Standards Organization of Nigeria (SON)" },
-  { src: pri, label: "Standards Organization of Nigeria (SON)" },
-  { src: nur, label: "tandards Organization of Nigeria (SON)" },
-  { src: pre, label: "Standards Organization of Nigeria (SON)" },
-  { src: pics, label: " Nigeria Institute of medical research(NIMR)" },
-  { src: pic, label: "Nigeria Institute of medical research(NIMR)" },
+  { src: nur, label: "Standards Organization of Nigeria (SON)" },
   { src: uni, label: "University of Lagos (UNILAG)" },
 ];
 
@@ -41,9 +28,9 @@ const Gallery = () => {
   return (
     <Wrapper>
       <div className="bg-[#153D63] py-16 px-6 sm:px-10 lg:px-16 flex flex-col items-center">
-        {/* Section Header */}
+        {/* ===== Section Header ===== */}
         <motion.h1
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white text-center mb-12 relative inline-block"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-thin text-white text-center mb-12 relative inline-block"
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.8 }}
@@ -51,7 +38,7 @@ const Gallery = () => {
           Our Media
         </motion.h1>
 
-        {/* Sliding Images */}
+        {/* ===== Sliding Images ===== */}
         <div className="relative w-full max-w-full sm:max-w-md md:max-w-xl lg:max-w-4xl overflow-hidden">
           <motion.img
             key={currentIndex}
@@ -64,12 +51,47 @@ const Gallery = () => {
             transition={{ duration: 0.8 }}
             onClick={() => setSelectedImage(images[currentIndex].src)}
           />
-          <div className="text-center mt-2">
-            <p className="text-lg font-semibold text-gray-50">{images[currentIndex].label}</p>
+          <div className="text-center mt-3">
+            <p className="text-lg font-normal text-gray-50">
+              {images[currentIndex].label}
+            </p>
           </div>
         </div>
 
-        {/* Fullscreen Image */}
+        {/* ===== Video Section ===== */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+          className="mt-16 w-full max-w-full sm:max-w-md md:max-w-2xl lg:max-w-4xl"
+        >
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-white text-center mb-6">
+            Watch Labwox in Action
+          </h2>
+
+          <div className="rounded-xl overflow-hidden shadow-2xl border-4 border-white/20">
+            <video
+              src={vid}
+              autoPlay
+              muted
+              loop
+              controls
+              preload="metadata"
+              className="w-full h-[260px] sm:h-[380px] md:h-[480px] object-cover"
+            >
+              Your browser does not support the video tag.
+            </video>
+          </div>
+
+          <p className="text-gray-200 text-center mt-4 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
+            Discover how Labwox empowers institutions with advanced training,
+            expert-led workshops, and hands-on learning experiences that drive
+            innovation and skill development.
+          </p>
+        </motion.div>
+
+        {/* ===== Fullscreen Image View ===== */}
         <AnimatePresence>
           {selectedImage && (
             <motion.div
@@ -82,7 +104,7 @@ const Gallery = () => {
               <motion.img
                 src={selectedImage}
                 alt="Fullscreen"
-                className="w-auto max-w-full max-h-full object-contain"
+                className="w-auto max-w-full max-h-full object-contain rounded-lg"
                 initial={{ scale: 0.8 }}
                 animate={{ scale: 1 }}
                 exit={{ scale: 0.8 }}
@@ -91,7 +113,7 @@ const Gallery = () => {
           )}
         </AnimatePresence>
       </div>
-    </Wrapper> 
+    </Wrapper>
   );
 };
 

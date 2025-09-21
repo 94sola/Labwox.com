@@ -1,10 +1,11 @@
 import React, { useRef, useState } from "react";
 import image from "../../assets/image/water.png";
 import image1 from "../../assets/image/soil.jpg";
-import image2 from "../../assets/image/food.jpg";
+import image2 from "../../assets/image/fishh.jpg";
 import image3 from "../../assets/image/dust.jpg";
 import image4 from "../../assets/image/petroleum.jpg";
-import image5 from "../../assets/image/fish.jpg";
+import image6 from "../../assets/image/Combustion.jpg";
+import image5 from "../../assets/image/Aquatic animal  tissue.jpg";
 import logo from "../../assets/image/labwox..jpeg"; // ✅ Your logo
 
 import { Link } from "react-router-dom";
@@ -15,7 +16,7 @@ import html2canvas from "html2canvas";
 
 const Pah = () => {
   const compounds = [
-   "Naphthalene",
+    "Naphthalene",
     "Acenaphthylene",
     "Acenaphthene",
     "Fluorene",
@@ -35,7 +36,7 @@ const Pah = () => {
 
 
   const firstSix = compounds.slice(0, 6);
-  const remaining = compounds.slice(6); 
+  const remaining = compounds.slice(6);
 
   const samplingDetails = [
      {
@@ -49,7 +50,7 @@ const Pah = () => {
       ],
     },
     {
-      category: "Soil & Sediments",
+      category: "Soil and Sediments",
       img: image1,
       details: [
         "Method: Collect with stainless scoop/corer",
@@ -80,7 +81,7 @@ const Pah = () => {
       ],
     },
     {
-      category: "Food",
+      category: "Food (smoked/grilled meat, fish, oils, grains)",
       img: image2,
       details: [
         "Amount: 100–500 g or mL, homogenized.",
@@ -90,7 +91,7 @@ const Pah = () => {
       ],
     },
     {
-      category: "Biota",
+      category: "Aquatic animal  tissue",
       img: image5,
       details: [
         "Method: Whole tissue or specific organ (liver, muscle, fat).",
@@ -98,6 +99,16 @@ const Pah = () => {
         "Container: Solvent-rinsed amber glass jars.",
         "Storage: Freeze at –20 °C or lower until extraction.",
         "Precaution: Minimize degradation by light and heat.",
+      ],
+    }, 
+    {
+      category: "Combustion Residues (ash, soot, coal, char)",
+      img: image6,
+      details: [
+        "Amount: 50–200 g.",
+        "Container: Amber glass jars.",
+        "Storage: 4 °C or freeze, dark conditions.",
+        "Precaution: Avoid cross-contamination with ambient dust.",
       ],
     },
   ];
@@ -208,12 +219,7 @@ const Pah = () => {
             PAH Mix F
           </h1>
           <p className="text-base md:text-lg text-gray-700 leading-relaxed max-w-4xl mx-auto">
-             <strong>PAH Mix F</strong> represents a significant group of polycyclic
-            aromatic hydrocarbons that are monitored due to their persistence,
-            bioaccumulation, and potential health effects. At Chemxpert, we provide
-            state-of-the-art analytical solutions to detect, quantify, and monitor PAH
-            Mix F compounds across environmental, food, biological, and consumer
-            product samples.
+            <strong>PAH</strong> are widespread environmental contaminants found in air, soil, and water, and can also be ingested through contaminated food, such as grilled meats. Some PAHs are considered carcinogenic,
           </p>
         </div>
 
@@ -248,7 +254,7 @@ const Pah = () => {
             </button>
 
             {showMore && (
-              <div className="mt-6 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 animate-fadeIn">
+              <div className="mt-6 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-4 animate-fadeIn">
                 {remaining.map((compound, index) => (
                   <div
                     key={index}
@@ -261,7 +267,6 @@ const Pah = () => {
             )}
           </div>
         </div>
-
 
         {/* Analytical Overview Table */}
         <div className="max-w-5xl mx-auto px-4 py-10">
@@ -277,14 +282,14 @@ const Pah = () => {
                       Sample Types
                     </td>
                     <td className="p-4 text-sm border border-gray-300">
-                      Water [surface water, groundwater, drinking water, wastewater effluents] <br />
-                      Soil & Sediments [especially near industrial, urban, and oil-polluted areas] <br />
-                      Dust [household dust, street dust, road-deposited sediments] <br />
-                      Crude oil & refined petroleum products [gasoline, diesel, kerosene, lubricating oils] <br />
-                      Industrial effluents & sludges [coking plants, petroleum refineries, creosote waste] <br />
-                      Edible oils [especially recycled frying oils] <br />
+                      <span className="text-base font-medium">Water: </span>surface water, groundwater, drinking water, wastewater effluents. <br />
+                      <span className="text-base font-medium">Soil and Sediments:</span> especially near industrial, urban, and oil-polluted areas. <br />
+                      <span className="text-base font-medium">Dust:</span> household dust, street dust, road-deposited sediments. <br />
+                      <span className="text-base font-medium">Crude oil & refined petroleum products: </span> gasoline, diesel, kerosene, lubricating oils. <br />
+                      <span className="text-base font-medium">Industrial effluents & sludges:</span> coking plants, petroleum refineries, creosote waste. <br />
+                      Edible oils especially recycled frying oils. <br />
                       Smoked and grilled foods – fish, meat <br />
-                      Cereals and grains [contamination during drying, processing, or packaging]
+                      Cereals and grains contamination during drying, processing, or packaging.
                     </td>
                   </tr>
                   <tr className="bg-white hover:bg-gray-50 transition">

@@ -21,12 +21,12 @@ import Chemical from './Component/phytochemical';
 import Application from './Component/application';
 import Faq from './Component/faq';
 import Food from './Component/Foodanalysis/foodcomp';
-import Waterqua from './Component/waterquality';
+import Waterqua from './Component/Foodanalysis/waterquality';
 import Pollutantanaly from './Component/polluanalysis';
 import Pesticide from './Component/pest';
 import Composition from './Component/composition';
 import Metal from './Component/composition/Ore';
-import Ash from './Component/composition/ash';
+import Foodwater from './Component/foodwater';
 
 // ✅ Fixed casing here
 import Pthalate from './Component/pollutant/Ester';
@@ -80,11 +80,13 @@ function App() {
             <Route path="/consulting" element={<Consulting />} />
             <Route path="/universities" element={<Universities />} />
             <Route path="/laboratory" element={<Laboratory />} />
-            <Route path="/waterqua" element={<Waterqua />} />
+            <Route path="/food/waterqua" element={<Waterqua />} />
+            <Route path="/foodwater" element={<Foodwater />} />
             <Route path="/pollutantanaly" element={<Pollutantanaly />} />
             <Route path="/pesticide" element={<Pesticide />} />
             <Route path="/phytochemical" element={<Chemical />} />
             <Route path="/composition" element={<Composition />} />
+
             
             {/* Food Sample Pages */}
             <Route path="/pollutant/phthalate" element={<Pthalate />} />
@@ -104,13 +106,12 @@ function App() {
             <Route path="/pesticide/phosphate" element={<Phosphate />} />
             <Route path="/pesticide/pyrethroids" element={<Pyrethroids />} />
             <Route path="/pesticide/chlorine" element={<Chlorine />} />
-            <Route path="/composition/food" element={<Food />} />
-            <Route path="/composition/food/fame" element={<Fames />} />
-            <Route path="/composition/food/mineral" element={<Mineral />} />
-            <Route path="/composition/food/oil" element={<Oil />} />
-            <Route path="/composition/food/proximate" element={<Proximate />} />
+            <Route path="/food/foodananlysis" element={<Food />} />
+            <Route path="/food/foodananlysis/fame" element={<Fames />} />
+            <Route path="/food/foodananlysis/mineral" element={<Mineral />} />
+            <Route path="/food/foodananlysis/oil" element={<Oil />} />
+            <Route path="/food/foodananlysis/proximate" element={<Proximate />} />
             <Route path="/composition/metal" element={<Metal />} />
-            <Route path="/composition/ash" element={<Ash />} />
             <Route path="/composition/Phytochemical" element={<Phytochemical />} />
             <Route path="/pollutant/Heavymetals" element={<Heavymetals />} />
             <Route path="/pollutant/pbde" element={<Pbde />} />

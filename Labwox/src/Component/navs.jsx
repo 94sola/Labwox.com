@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { FlaskConical, Atom, ServerCog } from 'lucide-react';
 
 import labwoxImg from '../assets/image/labwox.jpg';
-import chemxpertImg from '../assets/image/about-chem.jpg';
+import chemxpertImg from '../assets/image/labwox4.jpg';
 import labsoftImg from '../assets/image/labsoft.jpg';
 
 const Tooltip = ({ text }) => (
