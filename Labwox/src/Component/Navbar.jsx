@@ -25,12 +25,6 @@ const Navbar = () => {
   };
 
   const menuItems = {
-    Resources: [
-      { label: 'Method Development and Validation', link: '/mdv' },
-      { label: 'Pollutants Research', link: '/pollutant' },
-      { label: 'Food Contaminants Research', link: '/contaminant' },
-      { label: 'Phytochemical Research', link: '/phyto' },
-    ],
     Company: [
       { label: 'Gallery', link: '/gallery' },
       { label: 'Aim & Vision', link: '/aim' },

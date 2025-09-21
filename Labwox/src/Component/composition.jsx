@@ -2,19 +2,21 @@ import React from "react";
 import Wrapper from "./wrapper";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
+import compo from "../assets/image/Combustion.jpg";
 
 const Composition = () => {
-  const analysisOptions = [
+  const Analysis = [
     { name: "Phytochemical Analysis", link: "/composition/Phytochemical" },
     { name: "Elemental Analysis of Ores", link: "/composition/metal" },
-    { name: "Ash Content", link: "/composition/ash" },
   ];
 
   return (
     <Wrapper>
-      <section className="relative w-full py-16 lg:py-24 bg-gradient-to-b from-black via-neutral-950 to-black overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-10 pointer-events-none bg-[url('/molecule-pattern.svg')] bg-repeat" />
+      <section className="relative w-full py-24 sm:py-28 lg:py-36 overflow-hidden bg-fixed bg-center bg-cover mb-10"
+        style={{ backgroundImage: `url(${compo})` }}
+      >
+        {/* Dark Overlay for Contrast */}
+        <div className="absolute inset-0 bg-neutral-800/70 backdrop-blur-[2px]" />
 
         {/* Navigation - Only Previous */}
         <div className="relative flex items-center justify-start mb-10 max-w-7xl mx-auto px-4">
@@ -39,16 +41,16 @@ const Composition = () => {
         </div>
 
         {/* Analysis Options */}
-        <div className="relative max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 px-4">
-          {analysisOptions.map((item, index) => (
+        <div className="relative max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-8 px-4 sm:px-6 lg:px-8">
+          {Analysis.map((item, index) => (
             <Link
               key={index}
               to={item.link}
-              className={`bg-neutral-900 border border-neutral-800 hover:border-[#FFC000] 
-                rounded-xl p-6 text-center text-white hover:shadow-lg hover:shadow-[#ffc00033] transition
-                ${index === analysisOptions.length - 1 ? "md:col-span-2 md:w-1/2 md:mx-auto" : ""}`}
+              className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-5 sm:p-7 text-center text-white hover:bg-[#FFC000]/20 hover:border-[#FFC000] hover:shadow-lg hover:shadow-[#ffc00055] transition duration-300"
             >
-              <h2 className="text-xl font-semibold">{item.name}</h2>
+              <h2 className="text-lg sm:text-xl md:text-2xl font-semibold tracking-wide">
+                {item.name}
+              </h2>
             </Link>
           ))}
         </div>

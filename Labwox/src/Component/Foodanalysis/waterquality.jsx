@@ -1,13 +1,13 @@
 import React, { useRef, useState } from "react"; 
-import image from "../assets/image/water.png";
-import image1 from "../assets/image/soil.jpg";
-import image2 from "../assets/image/discharge.jpg";
-import image3 from "../assets/image/pipewater.jpg";
-import logo from "../assets/image/labwox..jpeg"; // ✅ Your logo
+import image from "../../assets/image/water.png";
+import image1 from "../../assets/image/soil.jpg";
+import image2 from "../../assets/image/discharge.jpg";
+import image3 from "../../assets/image/pipewater.jpg";
+import logo from "../../assets/image/labwox..jpeg"; // ✅ Your logo
 
 import { Link } from "react-router-dom";
 import { ArrowLeft, Printer, ChevronDown } from "lucide-react";
-import Wrapper from "./wrapper";
+import Wrapper from ".././wrapper";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
 
@@ -21,50 +21,51 @@ const Water = () => {
     "Biological Oxygen Demand (BOD)",
   ];
 
-  const bodDetails = [
+  // ✅ Changed bodDetails → waterQualityDetails
+  const waterQualityDetails = [
     {
       category: "Surface & Ground Water",
       img: image,
       details: [
-        "Collect in clean, sterile glass or plastic BOD bottles (usually 300 mL).",
+        "Collect in clean, sterile glass or plastic bottles (typically 300 mL).",
         "Avoid trapping air bubbles when filling bottles.",
         "Keep samples at ≤ 4 °C during transport to prevent microbial activity.",
         "Do not add preservatives – analysis must begin within 48 hours.",
-        "Record sampling time, temperature, and source details.",
+        "Record sampling time, location, temperature, and source details.",
       ],
     },
     {
-      category: "Wastewater & Effluents",
+      category: "Municipal Wastewater & Effluents",
       img: image3,
       details: [
-        "Use clean BOD bottles, ensuring no headspace is present.",
+        "Use clean bottles, ensuring no headspace is present.",
         "Composite samples may be collected to represent variable discharges.",
         "Store samples in ice or refrigeration (≤ 4 °C).",
         "Analyze as soon as possible (≤ 48 hours).",
-        "Record plant process type and discharge conditions.",
+        "Record plant type, inflow conditions, and discharge information.",
       ],
     },
     {
       category: "Industrial Discharges",
       img: image2,
       details: [
-        "Collect representative grab or composite samples.",
-        "Avoid exposure to direct sunlight or high temperatures.",
-        "Store at ≤ 4 °C and transport immediately to the lab.",
-        "Use standard 300 mL BOD bottles filled without bubbles.",
+        "Collect representative grab or composite samples depending on discharge patterns.",
+        "Avoid exposure to sunlight or elevated temperatures.",
+        "Store at ≤ 4 °C and transport immediately to the laboratory.",
+        "Use standard bottles filled without bubbles to prevent oxygen interference.",
       ],
     },
     {
-      category: "Soil Leachates & Runoff",
+      category: "Soil Leachates & Agricultural Runoff",
       img: image1,
       details: [
-        "Collect runoff or leachate samples in clean bottles.",
-        "Filter only if specified in the test protocol.",
-        "Keep samples cool (≤ 4 °C) until analysis.",
-        "Analyze promptly for accurate microbial oxygen demand.",
+        "Collect runoff or leachate samples in clean, inert containers.",
+        "Filter only if specified in the analysis protocol.",
+        "Keep samples cooled at ≤ 4 °C until laboratory testing.",
+        "Analyze promptly for accurate nutrient, pesticide, or microbial assessment.",
       ],
     },
-    ];
+  ];
 
   const contentRef = useRef(null);
   const sampleRef = useRef(null);
@@ -145,10 +146,10 @@ const Water = () => {
         {/* Back & Print */}
         <div className="max-w-6xl mx-auto px-4 mt-2 flex justify-between items-center no-pdf">
           <Link
-            to="/application"
+            to="/foodwater"
             className="inline-flex items-center italic gap-2 text-[#153D63] hover:text-[#FFC000] font-medium"
           >
-            <ArrowLeft className="w-5 h-5" /> Back to application
+            <ArrowLeft className="w-5 h-5" /> Back to Food and water analysis
           </Link>
           <button
             onClick={handleDownloadPDF}
@@ -162,18 +163,17 @@ const Water = () => {
         {/* Header */}
         <div className="max-w-4xl mx-auto text-center my-12 px-4">
           <h1 className="text-5xl md:text-6xl font-thin text-[#153D63] mb-6">
-           Water Quality Analysis
+            Water Quality Analysis
           </h1>
           <p className="text-base md:text-lg text-gray-700 leading-relaxed max-w-4xl mx-auto">
             At <strong>ChemXpert</strong>, we provide accurate and reliable water quality evaluation. We deliver high-precision testing of key parameters to ensure your water meets environmental regulations and health safety standards.
-            compliance.
           </p>
         </div>
 
         {/* Parameters */}
         <div className="mt-10 max-w-5xl mx-auto">
           <h3 className="text-4xl font-thin text-[#153D63] mb-6 text-center">
-            BOD Parameters Measured
+            Key Parameters Measured
           </h3>
           <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-4">
             {bodParameters.map((param, index) => (
@@ -187,7 +187,7 @@ const Water = () => {
           </div>
         </div>
 
-        {/* Analytical Overview */}
+        {/* Water Quality Overview */}
         <div className="max-w-5xl mx-auto px-4 py-10">
           <div className="mt-8 max-w-4xl mx-auto px-4">
             <h3 className="text-3xl md:text-4xl font-thin text-[#153D63] mb-6 text-center">
@@ -198,51 +198,46 @@ const Water = () => {
                 <tbody className="text-gray-700 text-base md:text-lg">
                   <tr className="bg-gray-50 hover:bg-gray-100 transition">
                     <td className="p-4 font-semibold border border-gray-300 w-1/3">
-                        Sample Types
+                      Sample Types
                     </td>
-                        <td className="p-4 text-sm border border-gray-300">
-                            <span className="text-base font-medium">Environmental Samples</span><br />
-                            Drinking water (tap, bottled, well water).<br />
-                            Surface water (rivers, lakes, reservoirs).<br />
-                            Groundwater (aquifers, wells, boreholes).<br />
-                            Soil leachates (runoff from agricultural or landfill sites).<br />
-                            Sediment pore water for oxygen demand studies.<br /><br />
+                    <td className="p-4 text-sm border border-gray-300">
+                      <span className="text-base font-medium">Environmental Samples</span><br />
+                      Drinking water (tap, bottled, well water).<br />
+                      Surface water (rivers, lakes, reservoirs).<br />
+                      Groundwater (aquifers, wells, boreholes).<br />
+                      Soil leachates (runoff from agricultural or landfill sites).<br />
+                      Sediment pore water for oxygen demand studies.<br /><br />
 
-                            <span className="text-base font-medium">Municipal Wastewater</span><br />
-                            Raw sewage (untreated wastewater).<br />
-                            Treated effluents from wastewater treatment plants.<br />
-                            Inflow and outflow monitoring for treatment efficiency.<br />
-                            Sludge supernatants and return activated sludge.<br /><br />
+                      <span className="text-base font-medium">Municipal Wastewater</span><br />
+                      Raw sewage (untreated wastewater).<br />
+                      Treated effluents from wastewater treatment plants.<br />
+                      Inflow and outflow monitoring for treatment efficiency.<br />
+                      Sludge supernatants and return activated sludge.<br /><br />
 
-                            <span className="text-base font-medium">Industrial & Process Wastewaters</span><br />
-                            Effluents from food and beverage industries.<br />
-                            Pulp and paper mill discharges.<br />
-                            Textile and dye industry effluents.<br />
-                            Chemical and pharmaceutical wastewater.<br />
-                            Leachates from solid waste or hazardous waste facilities.<br /><br />
+                      <span className="text-base font-medium">Industrial & Process Wastewaters</span><br />
+                      Effluents from food and beverage industries.<br />
+                      Pulp and paper mill discharges.<br />
+                      Textile and dye industry effluents.<br />
+                      Chemical and pharmaceutical wastewater.<br />
+                      Leachates from solid waste or hazardous waste facilities.<br /><br />
 
-                            <span className="text-base font-medium">Agricultural Runoff</span><br />
-                            Drainage water from irrigation fields.<br />
-                            Livestock waste lagoons and slurry samples.<br />
-                            Fertilizer and pesticide runoff impacting nearby rivers.<br /><br />
-
-                            <span className="text-base font-medium">Biological Samples</span><br />
-                            Biomass suspensions from treatment plants.<br />
-                            Sludge digesters and fermentation broths.<br />
-                            Microbial inocula for BOD seeding studies.<br />
-                        </td>
-                    </tr>
-                    <tr className="bg-gray-50 hover:bg-gray-100 transition">
-                        <td className="p-4 font-semibold border border-gray-300">
-                        Sampling Guidelines
-                        </td>
-                        <td className="p-4 border text-sm border-gray-300">
-                        Collect samples in BOD bottles without air bubbles. <br />
-                        Do not add preservatives – analyze within 48 hours. <br />
-                        Store and transport at ≤ 4 °C. <br />
-                        Record source, time, and field conditions accurately.
-                        </td>
-                    </tr>
+                      <span className="text-base font-medium">Agricultural Runoff</span><br />
+                      Drainage water from irrigation fields.<br />
+                      Livestock waste lagoons and slurry samples.<br />
+                      Fertilizer and pesticide runoff impacting nearby rivers.
+                    </td>
+                  </tr>
+                  <tr className="bg-gray-50 hover:bg-gray-100 transition">
+                    <td className="p-4 font-semibold border border-gray-300">
+                      Sampling Information
+                    </td>
+                    <td className="p-4 border text-sm border-gray-300">
+                      Collect samples in clean bottles without air bubbles. <br />
+                      Do not add preservatives – analyze within 48 hours. <br />
+                      Store and transport at ≤ 4 °C. <br />
+                      Record source, time, and field conditions accurately.
+                    </td>
+                  </tr>
                 </tbody>
               </table>
             </div>
@@ -250,14 +245,14 @@ const Water = () => {
         </div>
       </section>
 
-      {/* ✅ BOD Details (new page in PDF) */}
+      {/* ✅ Water Quality Details (new page in PDF) */}
       <section ref={sampleRef} className="bg-white my-6 py-12 lg:py-20">
         <div className="mt-12 max-w-6xl mx-auto px-4">
           <h3 className="text-3xl md:text-4xl font-thin text-[#153D63] mb-10 text-center">
-            BOD Sample Collection Details
+           Select Sample Type
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
-            {bodDetails.map((sample, i) => (
+            {waterQualityDetails.map((sample, i) => (
               <div key={i} className="bg-white transition p-6">
                 <img
                   src={sample.img}

@@ -1,12 +1,8 @@
-import React, { useRef, useState } from "react"; 
+import React, { useRef, useState } from "react";
 import image from "../../assets/image/plant.jpg";
 import image1 from "../../assets/image/herbs.jpg";
-import image2 from "../../assets/image/Tea.jpg";
-import image3 from "../../assets/image/waste.jpg";
-import image4 from "../../assets/image/medicine.jpg";
-import image5 from "../../assets/image/biological.jpg";
-import logo from "../../assets/image/labwox..jpeg"; // ✅ Your logo
-
+import image2 from "../../assets/image/oil.jpg"
+import logo from "../../assets/image/labwox..jpeg";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Printer, ChevronDown } from "lucide-react";
 import Wrapper from "../wrapper";
@@ -15,26 +11,16 @@ import html2canvas from "html2canvas";
 
 const Phytochemical = () => {
   const compounds = [
-    "Alkaloids",
-    "Flavonoids",
-    "Tannins",
-    "Phenolic Compounds",
     "Terpenoids",
-    "Saponins",
-    "Glycosides",
-    "Steroids",
-    "Lignans",
-    "Coumarins",
-    "Anthocyanins",
-    "Isoflavones",
-    "Quinones",
-    "Chlorophyll Derivatives",
-    "Carotenoids",
+    "Phytosterols",
+    "Volatile alkaloids",
+    "Volatile plant esters",
+    "Aldehydes",
+    "Ketones",
   ];
 
-
-  const firstEight = compounds.slice(0, 8);
-  const remaining = compounds.slice(8); 
+  const firstThree = compounds.slice(0, 3);
+  const remaining = compounds.slice(3);
 
   const samplingDetails = [
     {
@@ -57,39 +43,13 @@ const Phytochemical = () => {
       ],
     },
     {
-      category: "Food & Beverages (Tea, Juices, Extracts)",
+      category: "Essential Oils",
       img: image2,
       details: [
-        "Use sterilized glass containers for liquids.",
-        "Avoid plastic bottles to prevent chemical contamination.",
-        "Refrigerate samples ≤ 4 °C until analysis.",
-        "For oily extracts, freeze at –20 °C to prevent degradation.",
-      ],
-    },
-    {
-      category: "Pharmaceutical & Herbal Formulations",
-      img: image4,
-      details: [
-        "Collect samples in their original sealed packaging where possible.",
-        "Record batch number, manufacturer, and date of manufacture.",
-        "For capsules/tablets, transfer into clean glass containers if needed.",
-      ],
-    },
-    {
-      category: "Waste & By-products",
-      img: image3,
-      details: [
-        "Collect residues from herbal extraction or food processing plants in glass containers.",
-        "Record extraction method, solvent used, and processing conditions.",
-      ],
-    },
-    {
-      category: "Biological Samples (for metabolite studies)",
-      img: image5,
-      details: [
-        "Collect blood, urine, or tissue samples in clean glass vials.",
-        "Freeze immediately at –20 °C or lower to preserve phytochemical metabolites.",
-        "Label clearly with subject ID and sampling conditions.",
+        "Store essential oils in tightly sealed amber glass bottles to avoid light degradation.",
+        "Keep at temperatures below 25°C and away from heat or direct sunlight.",
+        "Avoid contamination—use sterile droppers or pipettes during handling.",
+        "Label each bottle clearly with plant source, extraction method, and date of distillation.",
       ],
     },
   ];
@@ -97,8 +57,6 @@ const Phytochemical = () => {
   const contentRef = useRef(null);
   const sampleRef = useRef(null);
   const [openIndex, setOpenIndex] = useState(null);
-  
-  const [showMore, setShowMore] = useState(false);
 
   const toggleDropdown = (index) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -193,59 +151,41 @@ const Phytochemical = () => {
           <h1 className="text-5xl md:text-6xl font-thin text-[#153D63] mb-6">
             Phytochemical Analysis
           </h1>
-          <p className="text-base md:text-lg text-gray-700 leading-relaxed max-w-4xl mx-auto">
-            <strong>Phytochemical Analysis</strong> plays a vital role in identifying,
-            isolating, and quantifying bioactive compounds from plants, herbs,
-            foods, and natural products. At{" "}
-            <span className="text-[#153D63] font-semibold">Chemxpert</span>, we
-            provide advanced phytochemical profiling to ensure authenticity,
-            safety, and efficacy across research, food, nutraceutical, and
-            pharmaceutical applications.
+          <p className="text-base md:text-lg text-gray-700 leading-relaxed max-w-xl mx-auto">
+            <strong>Phytochemical Analysis</strong> plays a vital role in
+            identifying, isolating, and quantifying bioactive compounds from
+            plants, herbs, foods, and natural products.
           </p>
         </div>
 
         {/* Available Compounds */}
-        <div className="mt-10 max-w-5xl mx-auto">
+        <div className="mt-10 max-w-5xl mx-auto text-center">
           <h3 className="text-4xl font-thin text-[#153D63] mb-6 text-center">
             Available Compounds
           </h3>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-            {firstEight.map((compound, index) => (
+
+          {/* First 3 compounds */}
+          <div className="flex flex-wrap justify-center gap-4 mb-6">
+            {firstThree.map((compound, index) => (
               <div
                 key={index}
-                className="border border-gray-300 rounded-xl p-4 text-center text-gray-800 text-base font-normal shadow-sm hover:shadow-md hover:border-[#FFC000] transition"
+                className="border border-gray-300 rounded-xl px-6 py-3 text-center text-gray-800 text-base font-normal shadow-sm hover:shadow-md hover:border-[#FFC000] transition"
               >
                 {compound}
               </div>
             ))}
           </div>
 
-          {/* Dropdown for Remaining */}
-          <div className="mt-6 text-center">
-            <button
-              onClick={() => setShowMore(!showMore)}
-              className="inline-flex items-center gap-2 px-4 py-3 bg-[#153D63] text-white rounded-xl shadow hover:bg-[#112f4c] transition"
-            >
-              <ChevronDown
-                className={`w-5 h-5 transition-transform ${
-                  showMore ? "rotate-180" : ""
-                }`}
-              />
-              {showMore ? "Show Less" : "Show More Compounds"}
-            </button>
-
-            {showMore && (
-              <div className="mt-6 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 animate-fadeIn">
-                {remaining.map((compound, index) => (
-                  <div
-                    key={index}
-                    className="border border-gray-300 rounded-xl p-4 text-center text-gray-800 text-base font-normal shadow-sm hover:shadow-md hover:border-[#FFC000] transition"
-                  >
-                    {compound}
-                  </div>
-                ))}
+          {/* Remaining compounds */}
+          <div className="flex flex-wrap justify-center gap-4">
+            {remaining.map((compound, index) => (
+              <div
+                key={index}
+                className="border border-gray-300 rounded-xl px-6 py-3 text-center text-gray-800 text-base font-normal shadow-sm hover:shadow-md hover:border-[#FFC000] transition"
+              >
+                {compound}
               </div>
-            )}
+            ))}
           </div>
         </div>
 
@@ -263,23 +203,13 @@ const Phytochemical = () => {
                       Sample Types
                     </td>
                     <td className="p-4 text-sm border border-gray-300">
-                      <span className="text-base font-medium">Plant Parts</span>{" "}
-                      Leaves, roots, stems, bark, seeds, flowers.
+                      <span className="text-base font-normal">
+                        Plant material (fresh or dried)
+                      </span>
                       <br />
-                      <span className="text-base font-medium">
-                        Herbal & Nutraceutical Products
-                      </span>{" "}
-                      Capsules, powders, tinctures, syrups, teas.
-                      <br />
-                      <span className="text-base font-medium">
-                        Food & Beverages
-                      </span>{" "}
-                      Juices, oils, extracts, fermented drinks.
-                      <br />
-                      <span className="text-base font-medium">
-                        Biological Samples
-                      </span>{" "}
-                      Blood, urine, tissues for metabolite profiling.
+                      <span className="text-base font-normal">
+                        Essential Oils, Plant Extracts
+                      </span>
                     </td>
                   </tr>
                   <tr className="bg-white hover:bg-gray-50 transition">

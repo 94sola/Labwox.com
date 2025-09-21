@@ -91,7 +91,7 @@ const Labwox = () => {
             <span className="hidden sm:inline"></span>
           </Link>
           <Link
-            to="/explore"
+            to="/consulting"
             className="flex items-center gap-2 px-4 py-2 bg-[#153D63] text-white font-medium text-sm sm:text-base rounded-md hover:bg-[#102B4E] transition-all duration-200 shadow hover:shadow-md"
           >
             <span className="hidden sm:inline"></span>
