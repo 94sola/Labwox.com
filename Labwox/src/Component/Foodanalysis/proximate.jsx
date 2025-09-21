@@ -1,5 +1,5 @@
-import React, { useRef, useState } from "react";
-import image from "../../assets/image/plant.jpg";
+import React, { useRef} from "react";
+import image from "../../assets/image/cereals.jpg";
 import image1 from "../../assets/image/food.jpg";
 import image3 from "../../assets/image/beverages.jpg";
 import logo from "../../assets/image/labwox..jpeg"; // ✅ Your logo
@@ -8,6 +8,10 @@ import { ArrowLeft, Printer, ChevronDown } from "lucide-react";
 import Wrapper from "../wrapper";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
+
+import AvailableCompounds from "../ui/available";
+import AnalyticalOverview from "../ui/AnalyticalOverview";
+import SamplingGuidelines from "../ui/sampling";
 
 const Proximate = () => {
   const compounds = [
@@ -18,7 +22,51 @@ const Proximate = () => {
     "Fat",
     "Crude Fiber",
   ];
+  
 
+  const overviewData = [
+    {
+      title: "Sample Types",
+      content: (
+        <>
+          <span className="text-sm font-medium">Cereals & Grains:</span>{" "}
+          Used to determine energy content and shelf-life stability.
+          <br />
+          <span className="text-sm font-medium">
+            Processed Foods:
+          </span>{" "}
+          Used for quality assurance, labeling, and regulatory
+          compliance.
+          <br />
+          <span className="text-sm font-medium">Beverages:</span>{" "}
+          Assessed for total solids and nutrient contribution.
+        </>
+      ),
+    },
+    {
+      title: "Instruments Used",
+      content: (
+        <>
+          Oven drying for Moisture, Muffle furnace for Ash, Kjeldahl/Dumas for Protein, Soxhlet for Fat, Gravimetric for Fiber, and difference calculation for Carbohydrates.<br />
+          <span className="text-base font-medium">Energy Calculation (Atwater Factors)</span>
+          Energy (kcal/100g) = (Protein × 4) + (Fat × 9) + (Carbohydrate × 4) <br />
+          Example: A food with 10 g protein, 5 g fat, and 20 g
+          carbohydrate provides: (10×4) + (5×9) + (20×4) = 40 + 45 + 80 = 165 kcal/100g
+        </>
+      ),
+    },
+    {
+      title: "Sampling Information",
+      content: (
+        <>
+          Collect representative portions in airtight containers.<br />
+          Avoid contamination or moisture absorption.<br /> Refrigerate
+          perishables at ≤ 4 °C until analysis.<br /> Label with batch
+          number, source, and collection date.
+        </>
+      ),
+    },
+  ];
   const samplingDetails = [
     {
       category: "Cereals & Grains",
@@ -53,31 +101,18 @@ const Proximate = () => {
   ];
 
   const contentRef = useRef(null);
-  const sampleRef = useRef(null);
-  const [openIndex, setOpenIndex] = useState(null);
-
-  const toggleDropdown = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
-
+  const sampleRef = useRef(null); // ✅ New ref for sample type section
   const handleDownloadPDF = async () => {
     const inputMain = contentRef.current;
     const inputSample = sampleRef.current;
 
-    // Hide buttons while exporting
     const buttons = document.querySelectorAll(".no-pdf");
     buttons.forEach((el) => (el.style.display = "none"));
 
     const pdf = new jsPDF("p", "mm", "a4", true);
 
     const addHeaderFooter = (pageNum) => {
-      const logoWidth = 30;
-      const logoHeight = 12;
-
-      // Header logo
-      pdf.addImage(logo, "PNG", 15, 8, logoWidth, logoHeight);
-
-      // Footer text
+      pdf.addImage(logo, "PNG", 15, 8, 30, 12);
       pdf.setFontSize(11);
       pdf.setTextColor(60);
       pdf.text(
@@ -87,8 +122,6 @@ const Proximate = () => {
         { align: "center" }
       );
       pdf.text(`Page ${pageNum}`, 105, 290, { align: "center" });
-
-      // Watermark
       pdf.saveGraphicsState();
       pdf.setGState(new pdf.GState({ opacity: 0.1 }));
       pdf.setFontSize(60);
@@ -100,7 +133,6 @@ const Proximate = () => {
       pdf.restoreGraphicsState();
     };
 
-    // Main content
     const canvasMain = await html2canvas(inputMain, { scale: 2, useCORS: true });
     const imgDataMain = canvasMain.toDataURL("image/jpeg", 1.0);
     const imgWidth = 190;
@@ -108,28 +140,13 @@ const Proximate = () => {
     pdf.addImage(imgDataMain, "JPEG", 10, 10, imgWidth, imgHeight, null, "FAST");
     addHeaderFooter(1);
 
-    // Sample content
     pdf.addPage();
-    const canvasSample = await html2canvas(inputSample, {
-      scale: 2,
-      useCORS: true,
-    });
+    const canvasSample = await html2canvas(inputSample, { scale: 2, useCORS: true });
     const imgDataSample = canvasSample.toDataURL("image/jpeg", 1.0);
-    const imgHeightSample =
-      (canvasSample.height * imgWidth) / canvasSample.width;
-    pdf.addImage(
-      imgDataSample,
-      "JPEG",
-      10,
-      10,
-      imgWidth,
-      imgHeightSample,
-      null,
-      "FAST"
-    );
+    const imgHeightSample = (canvasSample.height * imgWidth) / canvasSample.width;
+    pdf.addImage(imgDataSample, "JPEG", 10, 10, imgWidth, imgHeightSample, null, "FAST");
     addHeaderFooter(2);
 
-    // Restore buttons
     buttons.forEach((el) => (el.style.display = ""));
 
     pdf.save("Proximate-Analysis.pdf");
@@ -145,7 +162,7 @@ const Proximate = () => {
         {/* Back & Print Actions */}
         <div className="max-w-6xl mx-auto px-4 mt-2 flex justify-between items-center no-pdf">
           <Link
-            to="/composition/food"
+            to="/food/foodananlysis"
             className="inline-flex items-center italic gap-2 text-[#153D63] hover:text-[#FFC000] font-medium"
           >
             <ArrowLeft className="w-5 h-5" /> Back to Food Analysis applications
@@ -160,7 +177,7 @@ const Proximate = () => {
 
         {/* Header */}
         <div className="max-w-4xl mx-auto text-center my-12 px-4">
-          <h1 className="text-5xl md:text-6xl font-thin text-[#153D63] mb-6">
+          <h1 className="text-4xl md:text-5xl font-thin text-[#153D63] mb-6">
             Proximate Analysis of Foods
           </h1>
           <p className="text-base md:text-lg text-gray-700 leading-relaxed max-w-4xl mx-auto">
@@ -174,142 +191,12 @@ const Proximate = () => {
           </p>
         </div>
 
-        {/* Available Compounds */}
-        <div className="mt-10 max-w-3xl mx-auto">
-          <h3 className="text-4xl font-thin text-[#153D63] mb-6 text-center">
-           Available Compounds
-          </h3>
-          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-4">
-            {compounds.map((compound, index) => (
-              <div
-                key={index}
-                className="border border-gray-300 rounded-xl p-3 text-center text-gray-800 text-base font-normal shadow-sm hover:shadow-md hover:border-[#FFC000] transition"
-              >
-                {compound}
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Analytical Overview */}
-        <div className="max-w-5xl mx-auto px-4 py-10">
-          <div className="mt-8 max-w-4xl mx-auto px-4">
-            <h3 className="text-3xl md:text-4xl font-thin text-[#153D63] mb-6 text-center">
-              Analytical Overview
-            </h3>
-            <div className="overflow-x-auto shadow-lg rounded-xl">
-              <table className="w-full border-collapse">
-                <tbody className="text-gray-700 text-base md:text-lg">
-                  <tr className="bg-gray-50 hover:bg-gray-100 transition">
-                    <td className="p-4 font-semibold border border-gray-300 w-1/3">
-                      Sample Types
-                    </td>
-                    <td className="p-4 text-sm border border-gray-300">
-                      <span className="text-base font-medium">
-                        Cereals & Grains:
-                      </span>{" "}
-                      Used to determine energy content and shelf-life stability.
-                      <br />
-                      <span className="text-base font-medium">
-                        Processed Foods:
-                      </span>{" "}
-                      Used for quality assurance, labeling, and regulatory
-                      compliance.
-                      <br />
-                      <span className="text-base font-medium">Beverages:</span>{" "}
-                      Assessed for total solids and nutrient contribution.
-                    </td>
-                  </tr>
-                  <tr className="bg-white hover:bg-gray-50 transition">
-                    <td className="p-4 font-semibold border border-gray-300">
-                      Instruments / Methods
-                    </td>
-                    <td className="p-4 border border-gray-300 text-sm">
-                      Oven drying for Moisture, Muffle furnace for Ash,
-                      Kjeldahl/Dumas for Protein, Soxhlet for Fat, Gravimetric
-                      for Fiber, and difference calculation for Carbohydrates.
-                    </td>
-                  </tr>
-                  <tr className="bg-gray-50 hover:bg-gray-100 transition">
-                    <td className="p-4 font-semibold border border-gray-300">
-                      Energy Calculation (Atwater Factors)
-                    </td>
-                    <td className="p-4 border text-sm border-gray-300">
-                      Energy (kcal/100g) = (Protein × 4) + (Fat × 9) +
-                      (Carbohydrate × 4) <br />
-                      Example: A food with 10 g protein, 5 g fat, and 20 g
-                      carbohydrate provides: (10×4) + (5×9) + (20×4) = 40 + 45 +
-                      80 = 165 kcal/100g
-                    </td>
-                  </tr>
-                  <tr className="bg-white hover:bg-gray-50 transition">
-                    <td className="p-4 font-semibold border border-gray-300">
-                      Sampling Information
-                    </td>
-                    <td className="p-4 border text-sm border-gray-300">
-                      Collect representative portions in airtight containers.
-                      Avoid contamination or moisture absorption. Refrigerate
-                      perishables at ≤ 4 °C until analysis. Label with batch
-                      number, source, and collection date.
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
+        <AvailableCompounds compounds={compounds} />
+        <AnalyticalOverview overview={overviewData} />
       </section>
 
-      {/* Sampling Guidelines */}
-      <section ref={sampleRef} className="bg-white my-6 py-12 lg:py-20">
-        <div className="mt-12 max-w-6xl mx-auto px-4">
-          {/* ✅ Updated heading */}
-          <h3 className="text-3xl md:text-4xl font-thin text-[#153D63] mb-10 text-center">
-            Select Sample Type
-          </h3>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {samplingDetails.map((sample, i) => (
-              <div key={i} className="bg-white transition p-6">
-                <img
-                  src={sample.img}
-                  alt={`${sample.category} icon`}
-                  className="w-48 h-32 mx-auto transition-transform duration-300 hover:scale-110 hover:rotate-6 rounded-lg"
-                />
-                <button
-                  onClick={() => toggleDropdown(i)}
-                  className="mt-4 flex items-center justify-center gap-2 text-xl font-thin text-[#153D63] w-full"
-                >
-                  <ChevronDown
-                    className={`w-5 h-5 transition-transform ${
-                      openIndex === i ? "rotate-180" : ""
-                    }`}
-                  />
-                  {sample.category}
-                </button>
-                <div
-                  className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                    openIndex === i
-                      ? "max-h-96 opacity-100 mt-4"
-                      : "max-h-0 opacity-0"
-                  }`}
-                >
-                  <ul
-                    className={`relative text-gray-700 text-sm md:text-base space-y-2 text-right px-2 
-                      before:absolute before:top-0 before:left-0 before:w-1 before:bg-pink-500 
-                      before:transition-all before:duration-500 ${
-                        openIndex === i ? "before:h-full" : "before:h-0"
-                      }`}
-                  >
-                    {sample.details.map((d, j) => (
-                      <li key={j}>{d}</li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+      <section ref={sampleRef} className="bg-white py-12 my-6 lg:py-20">
+        <SamplingGuidelines samples={samplingDetails} />
       </section>
     </Wrapper>
   );

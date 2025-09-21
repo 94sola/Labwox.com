@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './Component/Navbar';
 import Footer from './Component/footer';
 import Navs from './Component/navs';
@@ -21,12 +21,12 @@ import Chemical from './Component/phytochemical';
 import Application from './Component/application';
 import Faq from './Component/faq';
 import Food from './Component/Foodanalysis/foodcomp';
-import Waterqua from './Component/waterquality';
+import Waterqua from './Component/Foodanalysis/waterquality';
 import Pollutantanaly from './Component/polluanalysis';
 import Pesticide from './Component/pest';
 import Composition from './Component/composition';
 import Metal from './Component/composition/Ore';
-import Ash from './Component/composition/ash';
+import Foodwater from './Component/foodwater';
 
 // ✅ Fixed casing here
 import Pthalate from './Component/pollutant/Ester';
@@ -52,19 +52,18 @@ import Fames from './Component/Foodanalysis/fames';
 import Mineral from './Component/Foodanalysis/minerals';
 import Oil from './Component/Foodanalysis/oil';
 import Proximate from './Component/Foodanalysis/proximate';
-import Heavymetals from './Component/pollutant/HeavyMetals'; 
-
+import Heavymetals from './Component/pollutant/HeavyMetals';
 
 function App() {
   return (
     <Router>
       <div className="relative bg-[#efebe7] min-h-screen">
-        {/* Sticky or Fixed Navigation */}
+        {/* Sticky Navigation */}
         <Navs />
         <Navbar />
 
-        {/* Main Content Area */}
-        <div className="pt-[5rem]"> {/* Pushes page content below sticky nav */}
+        {/* Main Page Content */}
+        <div className="pt-[5rem]">
           <Routes>
             <Route path="/" element={<Labwox />} />
             <Route path="/explore" element={<Explore />} />
@@ -80,13 +79,14 @@ function App() {
             <Route path="/consulting" element={<Consulting />} />
             <Route path="/universities" element={<Universities />} />
             <Route path="/laboratory" element={<Laboratory />} />
-            <Route path="/waterqua" element={<Waterqua />} />
+            <Route path="/food/waterqua" element={<Waterqua />} />
+            <Route path="/foodwater" element={<Foodwater />} />
             <Route path="/pollutantanaly" element={<Pollutantanaly />} />
             <Route path="/pesticide" element={<Pesticide />} />
             <Route path="/phytochemical" element={<Chemical />} />
             <Route path="/composition" element={<Composition />} />
-            
-            {/* Food Sample Pages */}
+
+            {/* Pollutant Pages */}
             <Route path="/pollutant/phthalate" element={<Pthalate />} />
             <Route path="/pollutant/pah" element={<Pah />} />
             <Route path="/pollutant/pahmixf" element={<Mixf />} />
@@ -94,6 +94,10 @@ function App() {
             <Route path="/pollutant/pahmix" element={<Mixg />} />
             <Route path="/pollutant/pcb" element={<Pcb />} />
             <Route path="/pollutant/voc" element={<Voc />} />
+            <Route path="/pollutant/pbde" element={<Pbde />} />
+            <Route path="/pollutant/Heavymetals" element={<Heavymetals />} />
+
+            {/* Pesticide Pages */}
             <Route path="/pesticide/single" element={<Single />} />
             <Route path="/pesticide/multi" element={<Multi />} />
             <Route path="/pesticide/mixa" element={<Mixa />} />
@@ -104,21 +108,21 @@ function App() {
             <Route path="/pesticide/phosphate" element={<Phosphate />} />
             <Route path="/pesticide/pyrethroids" element={<Pyrethroids />} />
             <Route path="/pesticide/chlorine" element={<Chlorine />} />
-            <Route path="/composition/food" element={<Food />} />
-            <Route path="/composition/food/fame" element={<Fames />} />
-            <Route path="/composition/food/mineral" element={<Mineral />} />
-            <Route path="/composition/food/oil" element={<Oil />} />
-            <Route path="/composition/food/proximate" element={<Proximate />} />
+
+            {/* Food Analysis Pages */}
+            <Route path="/food/foodananlysis" element={<Food />} />
+            <Route path="/food/foodananlysis/fame" element={<Fames />} />
+            <Route path="/food/foodananlysis/mineral" element={<Mineral />} />
+            <Route path="/food/foodananlysis/oil" element={<Oil />} />
+            <Route path="/food/foodananlysis/proximate" element={<Proximate />} />
+
+            {/* Composition Pages */}
             <Route path="/composition/metal" element={<Metal />} />
-            <Route path="/composition/ash" element={<Ash />} />
             <Route path="/composition/Phytochemical" element={<Phytochemical />} />
-            <Route path="/pollutant/Heavymetals" element={<Heavymetals />} />
-            <Route path="/pollutant/pbde" element={<Pbde />} />
-            
           </Routes>
         </div>
 
-        {/* Footer stays at the botto3 */}
+        {/* Footer */}
         <Footer />
       </div>
     </Router>
