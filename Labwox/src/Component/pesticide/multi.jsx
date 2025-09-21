@@ -2,14 +2,17 @@ import React from "react";
 import Wrapper from "../wrapper";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
+import multi from "../../assets/image/pesticide.jpg";
 
 const Multi = () => {
   return (
     <Wrapper>
-      <section className="relative w-full py-16 lg:py-24 bg-gradient-to-b from-black via-neutral-950 to-black overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-10 pointer-events-none bg-[url('/grid-pattern.svg')] bg-repeat" />
-
+      <section className="relative w-full py-24 sm:py-28 lg:py-36 overflow-hidden bg-fixed bg-center bg-cover mb-10"
+          style={{ backgroundImage: `url(${multi})` }}
+        >
+          {/* Dark Overlay for Contrast */}
+          <div className="absolute inset-0 bg-neutral-800/70 backdrop-blur-[2px]" />
+     
         {/* Navigation */}
         <div className="relative flex items-center justify-start mb-10 max-w-7xl mx-auto px-4">
           <Link
@@ -44,7 +47,7 @@ const Multi = () => {
             <Link
               key={index}
               to={item.link}
-              className="bg-neutral-900 border border-neutral-800 hover:border-[#FFC000] rounded-xl p-6 text-center text-white hover:shadow-lg hover:shadow-[#ffc00033] transition"
+              className="bbg-neutral-700/60 backdrop-blur-sm border border-white/20 rounded-xl p-5 sm:p-7 text-center text-white hover:bg-[#FFC000]/20 hover:border-[#FFC000] hover:shadow-lg hover:shadow-[#ffc00055] transition duration-300"
             >
               <h2 className="text-xl font-semibold">{item.name}</h2>
             </Link>
