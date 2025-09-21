@@ -237,14 +237,14 @@ const Pcb = () => {
                       Sample Types
                     </td>
                     <td className="p-4 border text-sm border-gray-300">
-                      Water [surface water, groundwater, drinking water, wastewater effluents] <br />
-                      Sediments – riverbeds, lakes, harbors (PCBs accumulate strongly in sediments)]<br />
-                      Dust – indoor dust from schools, offices, homes with old electrical equipment or sealants<br />
-                      Fish, meat, poultry, seafood – strong bioaccumulation in fatty tissues (major human exposure route) <br />
-                      Paints, sealants, caulks, and building materials – especially pre-1980s <br />
-                      Waste oils and sludge – refinery or industrial by-products <br />
-                      Transformer oils – dielectric fluids historically containing PCBs <br />
-                      Soil [contaminated sites, industrial areas, landfills]
+                      Water: surface water, groundwater, drinking water, wastewater effluents <br />
+                      Sediments: riverbeds, lakes, harbors (PCBs accumulate strongly in sediments)<br />
+                      Dust: indoor dust from schools, offices, homes with old electrical equipment or sealants<br />
+                      Fish, meat, poultry, seafood: strong bioaccumulation in fatty tissues (major human exposure route) <br />
+                      Paints, sealants, caulks, and building materials: especially pre-1980s <br />
+                      Waste oils and sludge: refinery or industrial by-products <br />
+                      Transformer oils: dielectric fluids historically containing PCBs <br />
+                      Soil: contaminated sites, industrial areas, landfills
                     </td>
                   </tr>
                   <tr className="bg-white hover:bg-gray-50 transition">

@@ -4,7 +4,7 @@ import image1 from "../../assets/image/soil.jpg";
 import image2 from "../../assets/image/beverages.jpg";
 import image3 from "../../assets/image/waste.jpg";
 import image4 from "../../assets/image/product.jpg";
-import image5 from "../../assets/image/biological.jpg";
+import image5 from "../../assets/image/fishh.jpg";
 import logo from "../../assets/image/labwox..jpeg"; // ✅ Your logo
 
 import { Link } from "react-router-dom";
@@ -53,7 +53,7 @@ const Ester = () => {
       details: [
         "Collect with stainless steel or Teflon tools (no plastic scoops)",
         "Store in solvent-rinsed glass jars",
-        "Keep refrigerated until extraction.e",
+        "Keep refrigerated until extraction.",
       ],
     },
     {
@@ -85,14 +85,12 @@ const Ester = () => {
       ],
     },
     {
-      category: "Biological Samples",
+      category: "Aquatic Animal Tissue",
       img: image5,
       details: [
-        "Urine: collect in phthalate-free glass containers (trace-metal or phthalate-clean certified).",
-        "Freeze immediately (–20 °C or lower).",
-        "Blood/serum: collect in glass vacutainers (avoid plastic stoppers with phthalates). Store frozen",
-        "Breast milk: glass jars with Teflon-lined lids; freeze immediately.",
-        "Tissues: wrap in solvent-rinsed aluminum foil, then place in glass jars; freeze.",
+        "wrap in solvent-rinsed aluminum foil",
+        "place in glass jars and  freeze.",
+        "Ensure only metallic or glass tools or containers are in contact with the sample.",
       ],
     },
   ];
@@ -204,10 +202,7 @@ const Ester = () => {
             Phthalate Esters
           </h1>
           <p className="text-base md:text-lg text-gray-700 leading-relaxed max-w-4xl mx-auto">
-            <strong>Phthalate esters</strong> are synthetic plasticizers widely
-            used in consumer and industrial products. At Chemxpert, we offer
-            accredited services to detect and measure phthalates in
-            environmental, food, biological, and product samples.
+            <strong>Phthalate esters</strong> are synthetic plasticizers widely used in consumer and industrial products.Phthalates are known to be endocrine disruptors, meaning they can interfere with the body's hormonal functions.
           </p>
         </div>
 
@@ -272,28 +267,28 @@ const Ester = () => {
                     </td>
                     <td className="p-4 text-sm border border-gray-300">
                       <span className="text-base font-medium">
-                        Environmental Samples
+                        Environmental Samples:
                       </span>
                       Drinking water, surface water, groundwater, soil, sediment.
                       <br />
                       <span className="text-base font-medium">
-                        Food and Agricultural Products
+                        Food and Agricultural Products:
                       </span>
                       Oils, packaged foods, infant formula, dairy, meat, fish,
                       beverages.
                       <br />
                       <span className="text-base font-medium">
-                        Consumer & Industrial Products
+                        Consumer & Industrial Products:
                       </span>
                       Plastics, cosmetics, pharmaceuticals, toys, medical devices.
                       <br />
                       <span className="text-base font-medium">
-                        E-waste & Industrial Samples
+                        E-waste & Industrial Samples:
                       </span>
                       Recycling residues, incinerator ash, industrial effluents.
                       <br />
                       <span className="text-base font-medium">
-                        Waste & Indoor Sources
+                        Waste & Indoor Sources:
                       </span>
                       Household/office dust, runoff, incinerator residues.
                     </td>

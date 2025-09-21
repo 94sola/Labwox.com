@@ -264,22 +264,22 @@ const Heavymetals = () => {
                      Sample Types
                     </td>
                     <td className="p-4 text-sm border border-gray-300">
-                      <span className="text-base font-medium">Environmental Samples</span>Drinking water (tap, bottled, well water)<br />
+                      <span className="text-base font-medium">Environmental Samples:</span>Drinking water (tap, bottled, well water)<br />
                       Surface water (rivers, lakes, reservoirs).<br />
                       Groundwater (aquifers, wells)<br />
                       Soil (contaminated sites, landfills, industrial zones)<br />
                       Sediment (near industrial discharges or waste sites) <br />
-                      <span className="text-base font-medium">Food and Agricultural Products</span> <br />Cereals and grains (rice, maize, wheat).<br />
+                      <span className="text-base font-medium">Food and Agricultural Products:</span> <br />Cereals and grains (rice, maize, wheat).<br />
                       Vegetables and fruits.<br />
                       Animal products (milk, meat, eggs, fish, seafood).<br />
                       Oils and fats (edible oils, cooking fats).<br />
                       Fertilizers and agricultural inputs.<br />
-                      <span className="text-base font-medium">Industrial & Waste Samples</span>Industrial effluents and process waters<br />
+                      <span className="text-base font-medium">Industrial & Waste Samples:</span>Industrial effluents and process waters<br />
                       Leachates from landfills.<br />
                       Wastewater treatment plant influents/effluents.<br />
                       Hazardous waste samples (sludges, tars, solvents).<br />Building materials (paints, adhesives, flooring, sealants)<br />                      <span className="text-base font-medium">E-waste & Industrial Samples</span> <br />Recycling plant dust and residues – hotspots of PBDE contamination.<br />
                       Geological materials (rocks, ores, minerals <br />
-                      <span className="text-base font-medium">Biological Material</span><br />Animal Tissue<br />
+                      <span className="text-base font-medium">Biological Material:</span><br />Animal Tissue<br />
                       Plant materials (leaves, roots, medicinal herbs)
                     </td>
                   </tr>
