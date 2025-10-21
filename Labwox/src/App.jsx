@@ -1,3 +1,4 @@
+
 import {Route, Routes } from 'react-router-dom';
 import Navbar from './Component/Navbar';
 import Footer from './Component/footer';
@@ -52,7 +53,7 @@ import Fames from './Component/Foodanalysis/fames';
 import Mineral from './Component/Foodanalysis/minerals';
 import Oil from './Component/Foodanalysis/oil';
 import Proximate from './Component/Foodanalysis/proximate';
-import Heavymetals from './Component/pollutant/HeavyMetals'; 
+import Heavymetals from './Component/pollutant/HeavyMetals';
 import Contact from './pages/Contact';
 import { ToastContainer } from 'react-toastify';
 import { useAnalytics } from './Component/hooks/useAnalytics';
@@ -61,13 +62,14 @@ function App() {
   useAnalytics()
   return (
       <div className="relative bg-[#efebe7] min-h-screen">
+        {/* Sticky Navigation */}
         <ToastContainer />
         {/* Sticky or Fixed Navigation */}
         <Navs />
         <Navbar />
 
-        {/* Main Content Area */}
-        <div className="pt-[5rem]"> {/* Pushes page content below sticky nav */}
+        {/* Main Page Content */}
+        <div className="pt-[5rem]">
           <Routes>
             <Route path="/" element={<Labwox />} />
             <Route path="/explore" element={<Explore />} />
@@ -86,10 +88,14 @@ function App() {
             <Route path="/laboratory" element={<Laboratory />} />
             <Route path="/food/waterqua" element={<Waterqua />} />
             <Route path="/foodwater" element={<Foodwater />} />
+            <Route path="/food/waterqua" element={<Waterqua />} />
+            <Route path="/foodwater" element={<Foodwater />} />
             <Route path="/pollutantanaly" element={<Pollutantanaly />} />
             <Route path="/pesticide" element={<Pesticide />} />
             <Route path="/phytochemical" element={<Chemical />} />
             <Route path="/composition" element={<Composition />} />
+
+            {/* Pollutant Pages */}
 
             
             {/* Food Sample Pages */}
@@ -100,6 +106,10 @@ function App() {
             <Route path="/pollutant/pahmix" element={<Mixg />} />
             <Route path="/pollutant/pcb" element={<Pcb />} />
             <Route path="/pollutant/voc" element={<Voc />} />
+            <Route path="/pollutant/pbde" element={<Pbde />} />
+            <Route path="/pollutant/Heavymetals" element={<Heavymetals />} />
+
+            {/* Pesticide Pages */}
             <Route path="/pesticide/single" element={<Single />} />
             <Route path="/pesticide/multi" element={<Multi />} />
             <Route path="/pesticide/mixa" element={<Mixa />} />
@@ -110,6 +120,15 @@ function App() {
             <Route path="/pesticide/phosphate" element={<Phosphate />} />
             <Route path="/pesticide/pyrethroids" element={<Pyrethroids />} />
             <Route path="/pesticide/chlorine" element={<Chlorine />} />
+
+            {/* Food Analysis Pages */}
+            <Route path="/food/foodananlysis" element={<Food />} />
+            <Route path="/food/foodananlysis/fame" element={<Fames />} />
+            <Route path="/food/foodananlysis/mineral" element={<Mineral />} />
+            <Route path="/food/foodananlysis/oil" element={<Oil />} />
+            <Route path="/food/foodananlysis/proximate" element={<Proximate />} />
+
+            {/* Composition Pages */}
             <Route path="/food/foodananlysis" element={<Food />} />
             <Route path="/food/foodananlysis/fame" element={<Fames />} />
             <Route path="/food/foodananlysis/mineral" element={<Mineral />} />
@@ -117,13 +136,10 @@ function App() {
             <Route path="/food/foodananlysis/proximate" element={<Proximate />} />
             <Route path="/composition/metal" element={<Metal />} />
             <Route path="/composition/Phytochemical" element={<Phytochemical />} />
-            <Route path="/pollutant/Heavymetals" element={<Heavymetals />} />
-            <Route path="/pollutant/pbde" element={<Pbde />} />
-            
           </Routes>
         </div>
 
-        {/* Footer stays at the botto3 */}
+        {/* Footer */}
         <Footer />
       </div>
   );

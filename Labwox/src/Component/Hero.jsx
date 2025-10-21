@@ -14,6 +14,28 @@ const HeavyMetalLabel = ({ symbol, label, className, color, delay = 0 }) => (
   </div>
 );
 
+// ✅ Tailwind-based animations directly injected
+const styles = `
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes scroll-right {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+.animate-scroll-left {
+  animation: scroll-left 30s linear infinite;
+}
+.animate-scroll-right {
+  animation: scroll-right 30s linear infinite;
+}
+.group:hover .animate-scroll-left,
+.group:hover .animate-scroll-right {
+  animation-play-state: paused;
+}
+`;
+
 const Labwox = () => {
   const bannerTexts = [
     "PAHs",
@@ -22,7 +44,7 @@ const Labwox = () => {
     "Organochlorine Pesticides",
     "VOCs",
     "Headspace",
-    "Organophosphate pesticides",
+    "Organophosphate Pesticides",
     "Water Quality",
     "Physicochemical Properties",
     "TPHs",
@@ -35,13 +57,15 @@ const Labwox = () => {
     "Nitrates",
     "Dissolved Oxygen",
     "PBDEs",
-    "Phthalate Esters", 
+    "Phthalate Esters",
   ];
 
   return (
     <Wrapper>
-      {/* Desktop Layout */}
-      <div className="relative bg-white px-8 py-10 lg:pb-40 lg:pt-28 lg:rounded-t-[40px] shadow-xl flex flex-col justify-center overflow-hidden hidden lg:block">
+      
+      <style>{styles}</style>
+
+      <div className="relative bg-white px-8 py-10 lg:pb-40 lg:pt-8 lg:rounded-t-[40px] shadow-xl flex flex-col justify-center overflow-hidden hidden lg:block">
         {/* Decorative SVGs */}
         <div className="absolute top-10 left-10 opacity-60 z-0 animate-spinSlow">
           <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#b8149d" strokeWidth="1.5">
@@ -74,7 +98,7 @@ const Labwox = () => {
                 Classic Research, Modern Tools
               </h1>
               <p className="text-base md:text-2xl font-light text-gray-700 leading-relaxed">
-                Labwox offers a unique solution to support researchers <br /> in executing high-quality scientific work. 
+                Labwox offers a unique solution to support researchers <br /> in executing high-quality scientific work.
               </p>
               <Link
                 to="/application"
@@ -93,11 +117,16 @@ const Labwox = () => {
           </div>
         </div>
 
-        {/* Scrolling Banner Desktop */}
-        <div className="w-full mt-20 bg-neutral-100 py-2 overflow-hidden">
-          <div className="inline-flex gap-8 animate-scroll whitespace-nowrap text-[#153D63] text-xl font-thin px-4">
-            {bannerTexts.map((text, index) => (
-              <span key={index}>{text}</span>
+        {/* ✅ Scrolling Banner Desktop (scrolls left, pauses on hover) */}
+        <div className="group w-full mt-20 bg-neutral-100 py-3 overflow-hidden relative border-t border-gray-200">
+          <div className="flex whitespace-nowrap animate-scroll-left text-[#153D63] text-xl font-light tracking-wide px-6 gap-10">
+            {[...bannerTexts, ...bannerTexts].map((text, index) => (
+              <span
+                key={index}
+                className="hover:text-[#b8149d] transition-colors duration-300"
+              >
+                {text}
+              </span>
             ))}
           </div>
         </div>
@@ -110,7 +139,7 @@ const Labwox = () => {
         <HeavyMetalLabel symbol="Sb" label="Antimony" className="bottom-[4%] left-[5%]" color="text-teal-500" delay={2.0} />
       </div>
 
-      {/* Mobile Layout */}
+      {/* ================= MOBILE LAYOUT ================= */}
       <div className="block lg:hidden bg-white px-4 py-12 space-y-12">
         <div className="space-y-6 text-gray-800">
           <h1 className="text-4xl font-medium text-neutral-900 leading-snug">
@@ -135,11 +164,16 @@ const Labwox = () => {
           />
         </div>
 
-        {/* Scrolling Banner Mobile */}
-        <div className="w-full bg-neutral-100 py-3 overflow-hidden">
-          <div className="inline-flex gap-4 animate-scroll whitespace-nowrap text-[#153D63] text-lg font-thin px-4">
-            {bannerTexts.map((text, index) => (
-              <span key={index}>{text}</span>
+        {/* ✅ Scrolling Banner Mobile (scrolls right, pauses on hover) */}
+        <div className="group w-full bg-neutral-100 py-3 overflow-hidden relative border-t border-gray-200">
+          <div className="flex whitespace-nowrap animate-scroll-right text-[#153D63] text-lg font-light tracking-wide px-4 gap-8">
+            {[...bannerTexts, ...bannerTexts].map((text, index) => (
+              <span
+                key={index}
+                className="hover:text-[#b8149d] transition-colors duration-300"
+              >
+                {text}
+              </span>
             ))}
           </div>
         </div>

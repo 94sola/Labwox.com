@@ -201,7 +201,7 @@ const Pah = () => {
         ref={contentRef}
         className="bg-gradient-to-b from-white via-neutral-50 to-white py-12 lg:py-20"
       >
-        {/* Back & Print Actions (UI only) */}
+       
         <div className="max-w-6xl mx-auto px-4 mt-2 flex justify-between items-center no-pdf">
           <Link
             to="/pollutantanaly"

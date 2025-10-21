@@ -136,7 +136,7 @@ const Mineral = () => {
         {/* Back & Print Actions */}
         <div className="max-w-6xl mx-auto px-4 mt-2 flex justify-between items-center no-pdf">
           <Link
-            to="/composition/food"
+            to="/food/foodananlysis"
             className="inline-flex items-center italic gap-2 text-[#153D63] hover:text-[#FFC000] font-medium"
           >
             <ArrowLeft className="w-5 h-5" /> Back to Food Analysis applications

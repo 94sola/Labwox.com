@@ -1,54 +1,59 @@
-import React, { useRef, useState } from "react";
-import image from "../../assets/image/water.png";
-import image1 from "../../assets/image/soil.jpg";
-import image2 from "../../assets/image/Aquatic animal  tissue.jpg";
-import image3 from "../../assets/image/food.jpg";
-import logo from "../../assets/image/labwox..jpeg"; // ✅ Your logo
-
+import React, { useRef } from "react";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Printer, ChevronDown } from "lucide-react";
+import { ArrowLeft, Printer } from "lucide-react";
 import Wrapper from "../wrapper";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
 
+import logo from "../../assets/image/labwox..jpeg";
+import image from "../../assets/image/water.png";
+import image1 from "../../assets/image/soil.jpg";
+import image2 from "../../assets/image/Aquatic animal  tissue.jpg";
+import image3 from "../../assets/image/food.jpg";
+
+import AvailableCompounds from "../ui/AvailableCompounds";
+import AnalyticalOverview from "../ui/AnalyticalOverview";
+import SamplingGuidelines from "../ui/SamplingGuidelines";
+
 const Pah = () => {
+  const contentRef = useRef(null);
+  const sampleRef = useRef(null);
+
+  // Compounds
   const compounds = [
-   "Isophorone",
-    "Acenaphthylene",
-    "Fluorene",
-    "Hexachlorobenzene",
-    "Phenanthrene",
-    "Anthracene",
-    "Benz[a]anthracene",
-    "Chrysene",
-    "Benzo[b]fluoranthene",
-    "Benzo[k]fluoranthene",
-    "Benzo[a]pyrene",
-    "Indeno(1,2,3-cd)pyrene",
-    "Dibenz[a,h]anthracene",
-    "Benzo[ghi]perylene",
-    "PCB 1",
-    "PCB 3",
-    "PCB 28",
-    "PCB-52",
-    "PCB 44",
-    "PCB-70",
-    "PCB 110",
-    "PCB 143",
-    "PCB 153",
-    "PCB 204",
-    "PCB 180",
-    "PCB 204",
-    "PCB 180",
+    "Isophorone", "Acenaphthylene", "Fluorene", "Hexachlorobenzene", "Phenanthrene", "Anthracene",
+    "Benz[a]anthracene", "Chrysene", "Benzo[b]fluoranthene", "Benzo[k]fluoranthene", "Benzo[a]pyrene",
+    "Indeno(1,2,3-cd)pyrene", "Dibenz[a,h]anthracene", "Benzo[ghi]perylene",
+    "PCB 1", "PCB 3", "PCB 28", "PCB-52", "PCB 44", "PCB-70", "PCB 110", "PCB 143", "PCB 153",
+    "PCB 204", "PCB 180"
   ];
 
+  // Analytical overview data
+  const overviewData = [
+    {
+      title: "Sample Types",
+      content: (
+        <>
+          <span className="font-normal">Water:</span> samples include drinking water (tap, bottled, treated), groundwater (near landfills, industrial, agriculture), surface water (rivers, lakes, reservoirs), wastewater effluents.<br />
+          <span className="font-normal">Soil and Sediment:</span> soils near industrial/urban areas, river/lake sediments.<br />
+          <span className="font-normal">Animal Tissue:</span> fish and aquatic organisms.<br />
+          <span className="font-normal">Food:</span> dairy, meat, crops irrigated with contaminated water.
+        </>
+      ),
+    },
+    {
+      title: "Instruments Used",
+      content: "Agilent 5977 GC-MSD or Thermo ISQ 7610",
+    },
+    {
+      title: "Sampling Information",
+      content: "Always use glass, not plastic. Protect from light. Cool or freeze immediately. Include appropriate blanks (field, trip, method).",
+    },
+  ];
 
-  const firstSix = compounds.slice(0, 6);
-  const remaining = compounds.slice(6); 
-
-
+  // Sampling details
   const samplingDetails = [
-     {
+    {
       category: "Water (drinking, surface, groundwater)",
       img: image,
       details: [
@@ -78,7 +83,7 @@ const Pah = () => {
       img: image3,
       details: [
         "Wrap solid samples in solvent-rinsed aluminum foil, then place in amber glass jars.",
-        "For oils/liquids, collect directly into amber glass jars",
+        "For oils/liquids, collect directly into amber glass jars.",
         "Avoid plastic bags or containers (risk of contamination/adsorption).",
         "Keep at ≤ 4 °C; freeze high-fat foods and fish until extraction.",
         "Minimize handling to avoid cross-contamination.",
@@ -88,34 +93,21 @@ const Pah = () => {
       category: "Biological Tissue (fish, mussels, animal tissues)",
       img: image2,
       details: [
-        "Tissues: Wrap in solvent-rinsed foil, place in amber glass jars, and freeze immediately (−20 °C or lower)",
+        "Wrap tissues in solvent-rinsed foil, place in amber jars, and freeze immediately (−20 °C or lower).",
         "Protect all biologicals from light and contamination during collection.",
       ],
     },
-   
   ];
-
-  const contentRef = useRef(null);
-  const sampleRef = useRef(null); // ✅ New ref for sample type section
-  const [openIndex, setOpenIndex] = useState(null);
-
-  const [showMore, setShowMore] = useState(false);
-
-  const toggleDropdown = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
 
   const handleDownloadPDF = async () => {
     const inputMain = contentRef.current;
     const inputSample = sampleRef.current;
 
-    // Temporarily hide UI-only buttons
     const buttons = document.querySelectorAll(".no-pdf");
     buttons.forEach((el) => (el.style.display = "none"));
 
     const pdf = new jsPDF("p", "mm", "a4", true);
 
-    // Helper for header/footer/watermark
     const addHeaderFooter = (pageNum) => {
       const logoWidth = 30;
       const logoHeight = 12;
@@ -137,7 +129,7 @@ const Pah = () => {
       pdf.restoreGraphicsState();
     };
 
-    // Capture main section
+    // Main section
     const canvasMain = await html2canvas(inputMain, { scale: 2, useCORS: true });
     const imgDataMain = canvasMain.toDataURL("image/jpeg", 1.0);
     const imgWidth = 190;
@@ -145,40 +137,22 @@ const Pah = () => {
     pdf.addImage(imgDataMain, "JPEG", 10, 10, imgWidth, imgHeight, null, "FAST");
     addHeaderFooter(1);
 
-    // Capture sample type section separately
+    // Sampling section
     pdf.addPage();
-    const canvasSample = await html2canvas(inputSample, {
-      scale: 2,
-      useCORS: true,
-    });
+    const canvasSample = await html2canvas(inputSample, { scale: 2, useCORS: true });
     const imgDataSample = canvasSample.toDataURL("image/jpeg", 1.0);
     const imgHeightSample = (canvasSample.height * imgWidth) / canvasSample.width;
-    pdf.addImage(
-      imgDataSample,
-      "JPEG",
-      10,
-      10,
-      imgWidth,
-      imgHeightSample,
-      null,
-      "FAST"
-    );
+    pdf.addImage(imgDataSample, "JPEG", 10, 10, imgWidth, imgHeightSample, null, "FAST");
     addHeaderFooter(2);
 
-    // Restore UI buttons
     buttons.forEach((el) => (el.style.display = ""));
-
     pdf.save("PAH-pcb-Mix.pdf");
   };
 
   return (
     <Wrapper hideHeader>
       {/* Main Section */}
-      <section
-        ref={contentRef}
-        className="bg-gradient-to-b from-white via-neutral-50 to-white py-12 lg:py-20"
-      >
-        {/* Back & Print Actions (UI only) */}
+      <section ref={contentRef} className="bg-gradient-to-b from-white via-neutral-50 to-white py-12 lg:py-20">
         <div className="max-w-6xl mx-auto px-4 mt-2 flex justify-between items-center no-pdf">
           <Link
             to="/pollutantanaly"
@@ -205,165 +179,17 @@ const Pah = () => {
           </p>
         </div>
 
-         {/* Available Compounds */}
-          <div className="mt-10 max-w-5xl mx-auto">
-            <h3 className="text-4xl font-thin text-[#153D63] mb-6 text-center">
-              Available Compounds
-            </h3>
-            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-4">
-              {firstSix.map((compound, index) => (
-                <div
-                  key={index}
-                  className="border border-gray-300 rounded-xl p-4 text-center text-gray-800 text-base font-normal shadow-sm hover:shadow-md hover:border-[#FFC000] transition"
-                >
-                  {compound}
-                </div>
-              ))}
-            </div>
-  
-            {/* Dropdown for Remaining */}
-            <div className="mt-6 text-center">
-              <button
-                onClick={() => setShowMore(!showMore)}
-                className="inline-flex items-center gap-2 px-4 py-3 bg-[#153D63] text-white rounded-xl shadow hover:bg-[#112f4c] transition"
-              >
-                <ChevronDown
-                  className={`w-5 h-5 transition-transform ${
-                    showMore ? "rotate-180" : ""
-                  }`}
-                />
-                {showMore ? "Show Less" : "Show More Compounds"}
-              </button>
-  
-              {showMore && (
-                <div className="mt-6 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-4 animate-fadeIn">
-                  {remaining.map((compound, index) => (
-                    <div
-                      key={index}
-                      className="border border-gray-300 rounded-xl p-4 text-center text-gray-800 text-base font-normal shadow-sm hover:shadow-md hover:border-[#FFC000] transition"
-                    >
-                      {compound}
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
-          </div>
-
-        {/* Analytical Overview Table */}
-        <div className="max-w-5xl mx-auto px-4 py-10">
-          <div className="mt-8 max-w-4xl mx-auto px-4">
-            <h3 className="text-3xl md:text-4xl font-thin text-[#153D63] mb-6 text-center">
-              Analytical Overview
-            </h3>
-            <div className="overflow-x-auto shadow-lg rounded-xl">
-              <table className="w-full border-collapse">
-                <tbody className="text-gray-700 text-base md:text-lg">
-                  <tr className="bg-gray-50 hover:bg-gray-100 transition">
-                    <td className="p-4 font-semibold border border-gray-300 w-1/3">
-                      Sample Types
-                    </td>
-                    <td className="p-4 text-sm border border-gray-300">
-                      <span className="text-base font-normal">Water:</span>{" "}
-                      samples include drinking water (tap, bottled, treated supplies).<br />
-                      groundwater (especially near landfills, industrial zones, and agricultural sites).<br />
-                      Surface water (rivers, lakes, reservoirs, catchments for drinking water).<br />
-                      Wastewater effluents.  
-                      <br />
-                      <span className="text-base font-normal">Soil and Sediment Samples:</span>{" "}
-                      Soils near industrial or urban areas (especially near combustion sources, spills, or pesticide use).<br />
-                      River/lake sediments (long-term sinks for PAHs and PCBs).  
-                      <br />
-                      <span className="text-base font-normal">
-                        Animal Tissue:
-                      </span>{" "}
-                      Fish and aquatic organisms (bioaccumulation in fatty tissues). <br />
-                       <span className="text-base font-normal">
-                        Food : 
-                      </span>{" "}
-                      Dairy, meat, and crops irrigated with contaminated water.  
-                    </td>
-                  </tr>
-                  <tr className="bg-white hover:bg-gray-50 transition">
-                    <td className="p-4 font-semibold border border-gray-300">
-                      Instruments Used
-                    </td>
-                    <td className="p-4 border border-gray-300 text-sm">
-                      Agilent 5977 GC-MSD or Thermo ISQ 7610
-                    </td>
-                  </tr>
-                  <tr className="bg-gray-50 hover:bg-gray-100 transition">
-                    <td className="p-4 font-semibold border border-gray-300">
-                      Sampling Information
-                    </td>
-                    <td className="p-4 border text-sm border-gray-300">
-                      Always use glass, not plastic (PCBs and PAHs adsorb to plastics).<br />
-                      Protect from light to prevent degradation.<br / >Cool or freeze as soon as possible.<br />
-                      Include appropriate blanks (field, trip, method).
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
+        {/* Reusable Components */}
+        <AvailableCompounds compounds={compounds} />
+        <AnalyticalOverview overview={overviewData} />
       </section>
 
-      {/* ✅ Sampling Details (new page in PDF) */}
+      {/* Sampling Section */}
       <section ref={sampleRef} className="bg-white py-12 my-6 lg:py-20">
-        <div className="mt-12 max-w-6xl mx-auto px-4">
-          <h3 className="text-3xl md:text-4xl font-thin text-[#153D63] mb-10 text-center">
-            Select Sample Type
-          </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 gap-8">
-            {samplingDetails.map((sample, i) => (
-              <div key={i} className="bg-white transition p-6">
-                <img
-                  src={sample.img}
-                  alt={`${sample.category} icon`}
-                  className="w-48 h-32 mx-auto transition-transform duration-300 hover:scale-110 hover:rotate-6 rounded-lg"
-                />
-                <button
-                  onClick={() => toggleDropdown(i)}
-                  className="mt-4 flex items-center justify-center gap-2 text-xl font-thin text-[#153D63] w-full"
-                >
-                  <ChevronDown
-                    className={`w-5 h-5 transition-transform ${
-                      openIndex === i ? "rotate-180" : ""
-                    }`}
-                  />
-                  {sample.category}
-                </button>
-                {/* Dropdown stays collapsed in UI unless clicked, and captured as-is in PDF */}
-                <div
-                  className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                    openIndex === i
-                      ? "max-h-96 opacity-100 mt-4"
-                      : "max-h-0 opacity-0"
-                  }`}
-                >
-                  <ul
-                    className={`relative text-gray-700 text-sm md:text-base space-y-2 text-right px-2
-                      before:absolute before:top-0 before:left-0 before:w-1 before:bg-pink-500
-                      before:transition-all before:duration-500
-                      ${openIndex === i ? "before:h-full" : "before:h-0"}`}
-                  >
-                    {sample.details.map((d, j) => (
-                      <li key={j}>{d}</li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+        <SamplingGuidelines samples={samplingDetails} />
       </section>
     </Wrapper>
   );
 };
 
 export default Pah;
-
-
-
-
