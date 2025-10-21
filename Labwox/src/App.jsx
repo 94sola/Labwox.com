@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import {Route, Routes } from 'react-router-dom';
 import Navbar from './Component/Navbar';
 import Footer from './Component/footer';
 import Navs from './Component/navs';
@@ -53,12 +53,15 @@ import Mineral from './Component/Foodanalysis/minerals';
 import Oil from './Component/Foodanalysis/oil';
 import Proximate from './Component/Foodanalysis/proximate';
 import Heavymetals from './Component/pollutant/HeavyMetals'; 
-
+import Contact from './pages/Contact';
+import { ToastContainer } from 'react-toastify';
+import { useAnalytics } from './Component/hooks/useAnalytics';
 
 function App() {
+  useAnalytics()
   return (
-    <Router>
       <div className="relative bg-[#efebe7] min-h-screen">
+        <ToastContainer />
         {/* Sticky or Fixed Navigation */}
         <Navs />
         <Navbar />
@@ -70,6 +73,7 @@ function App() {
             <Route path="/explore" element={<Explore />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
             <Route path="/faq" element={<Faq />} />
             <Route path="/application" element={<Application />} />
             <Route path="/aim" element={<Aim />} />
@@ -122,7 +126,6 @@ function App() {
         {/* Footer stays at the botto3 */}
         <Footer />
       </div>
-    </Router>
   );
 }
 
