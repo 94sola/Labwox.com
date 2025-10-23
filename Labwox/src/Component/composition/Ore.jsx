@@ -143,8 +143,9 @@ const Ore = () => {
   };
 
   return (
+    
     <Wrapper hideHeader>
-      {/* Main Section */}
+          
       <section
         ref={contentRef}
         className="bg-gradient-to-b from-white via-neutral-50 to-white py-12 lg:py-20"
@@ -168,7 +169,7 @@ const Ore = () => {
 
         {/* Header */}
         <div className="max-w-4xl mx-auto text-center my-12 px-4">
-          <h1 className="text-4xl md:text-5xl font-thin text-[#153D63] mb-6">
+          <h1 className="text-5xl md:text-6xl font-thin text-[#153D63] mb-6">
             Elemental Analysis of Ores
           </h1>
           <p className="text-base md:text-lg text-gray-700 leading-relaxed max-w-4xl mx-auto">
@@ -182,6 +183,7 @@ const Ore = () => {
         <AnalyticalOverview overview={overviewData} />
       </section>
 
+    
       <section ref={sampleRef} className="bg-white py-12 my-6 lg:py-20">
         <SamplingGuidelines samples={samplingDetails} />
       </section>

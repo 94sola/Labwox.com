@@ -99,12 +99,7 @@ const Mixf = () => {
       pdf.addImage(logo, "PNG", 15, 8, 30, 12);
       pdf.setFontSize(11);
       pdf.setTextColor(60);
-      pdf.text(
-        `© ${new Date().getFullYear()} Labwox Limited, all rights reserved.`,
-        105,
-        280,
-        { align: "center" }
-      );
+      pdf.text(`© ${new Date().getFullYear()} Labwox Limited, all rights reserved.`, 105, 280, { align: "center" });
       pdf.text(`Page ${pageNum}`, 105, 290, { align: "center" });
       pdf.saveGraphicsState();
       pdf.setGState(new pdf.GState({ opacity: 0.1 }));
