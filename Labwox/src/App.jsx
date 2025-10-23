@@ -3,6 +3,7 @@ import Navbar from './Component/Navbar';
 import Footer from './Component/footer';
 import Navs from './Component/navs';
 import './index.css';
+import { useAnalytics } from "./Component/hooks/useAnalytics";
 
 // Pages
 import Labsoft from './Component/labsoft';
@@ -19,6 +20,7 @@ import Gallery from './Component/gallery';
 import Aim from './Component/aim';
 import Chemical from './Component/phytochemical';
 import Application from './Component/application';
+import Contact from './Component/Contact';
 import Faq from './Component/faq';
 import Food from './Component/Foodanalysis/foodcomp';
 import Waterqua from './Component/Foodanalysis/waterquality';
@@ -27,6 +29,7 @@ import Pesticide from './Component/pest';
 import Composition from './Component/composition';
 import Metal from './Component/composition/Ore';
 import Foodwater from './Component/foodwater';
+
 
 // ✅ Fixed casing here
 import Pthalate from './Component/pollutant/Ester';
@@ -55,8 +58,8 @@ import Proximate from './Component/Foodanalysis/proximate';
 import Heavymetals from './Component/pollutant/HeavyMetals';
 
 function App() {
+  useAnalytics()
   return (
-    <Router>
       <div className="relative bg-[#efebe7] min-h-screen">
         {/* Sticky Navigation */}
         <Navs />
@@ -69,6 +72,7 @@ function App() {
             <Route path="/explore" element={<Explore />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
             <Route path="/faq" element={<Faq />} />
             <Route path="/application" element={<Application />} />
             <Route path="/aim" element={<Aim />} />
@@ -125,7 +129,6 @@ function App() {
         {/* Footer */}
         <Footer />
       </div>
-    </Router>
   );
 }
 
