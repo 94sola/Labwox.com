@@ -10,7 +10,7 @@ import compositional from "../assets/image/compositional.png";
 
 const items = [
   {
-    title: " Environmental pollutants",
+    title: " Environmental Pollutants",
     image: pollutant,
     description:
       "Identify and quantify pollutants in soil, air, and water. Our capabilities cover hydrocarbons, volatile and semi-volatile compounds, and persistent organic pollutants for comprehensive environmental assessment.",
