@@ -11,7 +11,6 @@ import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
 
 import AvailableCompounds from "../ui/elements";
-import AnalyticalOverview from "../ui/AnalyticalOverview";
 import SamplingGuidelines from "../ui/sampling";
 
 const Mineral = () => {
@@ -28,43 +27,6 @@ const Mineral = () => {
   "Se (Selenium)",
 ];
 
-
-  const overviewData = [
-    {
-      title: "Sample Types",
-      content: (
-        <>
-         <span className="text-sm font-medium">Plant & Food Samples:</span>{" "}
-          Includes cereals, legumes, fruits, vegetables, milk,
-          meat, seafood, and processed foods. <br />These analyses help
-          evaluate dietary mineral intake, nutritional quality, and
-          authenticity of fortified foods.
-          <br />
-          <span className="text-sm font-medium">Supplements:</span>{" "}
-          Covers multivitamin/mineral products, fortified powders,
-          capsules, and beverages.<br /> Analysis ensures label accuracy,
-          verifies dosage claims, and checks for toxic contaminants
-          like lead or cadmium.
-        </>
-      ),
-    },
-    {
-      title: "Instruments Used",
-      content: "Agilent 720 ICP-OES",
-    },
-    {
-      title: "Sampling Information",
-      content: (
-        <>
-          Collect solid foods in clean polyethylene bags and water
-          samples in acid-washed plastic bottles.<br /> Acidify water with
-          HNO₃ if required.<br /> Store biological samples frozen at –80
-          °C.<br /> Record sample type, origin, and collection details to
-          maintain traceability and accuracy in mineral analysis.
-        </>
-      ),
-    },
-  ];
   const samplingDetails = [
     {
       category: "Plant-based Foods",
@@ -155,7 +117,7 @@ const Mineral = () => {
       {/* Main Section */}
       <section
         ref={contentRef}
-        className="bg-gradient-to-b from-white via-neutral-50 to-white py-12 lg:py-20"
+        className="bg-gradient-to-b from-white via-neutral-50 to-white mb-10 py-12 lg:py-20"
       >
         {/* Back & Print Actions */}
         <div className="max-w-6xl mx-auto px-4 mt-2 flex justify-between items-center no-pdf">
@@ -190,14 +152,11 @@ const Mineral = () => {
             nutritional labeling, and clinical research studies.
           </p>
         </div>
-
         <AvailableCompounds compounds={compounds} />
-        <AnalyticalOverview overview={overviewData} />
-      </section>
-
       
-      <section ref={sampleRef} className="bg-white py-12 my-6 lg:py-20">
-        <SamplingGuidelines samples={samplingDetails} />
+        <div ref={sampleRef} className="bg-white py-12 my-6 lg:py-20">
+          <SamplingGuidelines samples={samplingDetails} />
+        </div>
       </section>
     </Wrapper>
   );
