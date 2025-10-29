@@ -10,7 +10,6 @@ import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
 
 import AvailableCompounds from "../ui/available";
-import AnalyticalOverview from "../ui/AnalyticalOverview";
 import SamplingGuidelines from "../ui/sampling";
 
 const Proximate = () => {
@@ -24,49 +23,6 @@ const Proximate = () => {
   ];
   
 
-  const overviewData = [
-    {
-      title: "Sample Types",
-      content: (
-        <>
-          <span className="text-sm font-medium">Cereals & Grains:</span>{" "}
-          Used to determine energy content and shelf-life stability.
-          <br />
-          <span className="text-sm font-medium">
-            Processed Foods:
-          </span>{" "}
-          Used for quality assurance, labeling, and regulatory
-          compliance.
-          <br />
-          <span className="text-sm font-medium">Beverages:</span>{" "}
-          Assessed for total solids and nutrient contribution.
-        </>
-      ),
-    },
-    {
-      title: "Instruments Used",
-      content: (
-        <>
-          Oven drying for Moisture, Muffle furnace for Ash, Kjeldahl/Dumas for Protein, Soxhlet for Fat, Gravimetric for Fiber, and difference calculation for Carbohydrates.<br />
-          <span className="text-base font-medium">Energy Calculation (Atwater Factors)</span>
-          Energy (kcal/100g) = (Protein × 4) + (Fat × 9) + (Carbohydrate × 4) <br />
-          Example: A food with 10 g protein, 5 g fat, and 20 g
-          carbohydrate provides: (10×4) + (5×9) + (20×4) = 40 + 45 + 80 = 165 kcal/100g
-        </>
-      ),
-    },
-    {
-      title: "Sampling Information",
-      content: (
-        <>
-          Collect representative portions in airtight containers.<br />
-          Avoid contamination or moisture absorption.<br /> Refrigerate
-          perishables at ≤ 4 °C until analysis.<br /> Label with batch
-          number, source, and collection date.
-        </>
-      ),
-    },
-  ];
   const samplingDetails = [
     {
       category: "Cereals & Grains",
@@ -154,12 +110,10 @@ const Proximate = () => {
 
   return (
     <Wrapper hideHeader>
-      {/* Main Section */}
       <section
         ref={contentRef}
-        className="bg-gradient-to-b from-white via-neutral-50 to-white py-12 lg:py-20"
+        className="bg-gradient-to-b from-white via-neutral-50 to-white mb-10 py-12 lg:py-20"
       >
-        {/* Back & Print Actions */}
         <div className="max-w-6xl mx-auto px-4 mt-2 flex justify-between items-center no-pdf">
           <Link
             to="/food/foodananlysis"
@@ -175,7 +129,6 @@ const Proximate = () => {
           </button>
         </div>
 
-        {/* Header */}
         <div className="max-w-4xl mx-auto text-center my-12 px-4">
           <h1 className="text-4xl md:text-5xl font-thin text-[#153D63] mb-6">
             Proximate Analysis of Foods
@@ -192,11 +145,10 @@ const Proximate = () => {
         </div>
 
         <AvailableCompounds compounds={compounds} />
-        <AnalyticalOverview overview={overviewData} />
-      </section>
-
-      <section ref={sampleRef} className="bg-white py-12 my-6 lg:py-20">
-        <SamplingGuidelines samples={samplingDetails} />
+      
+        <div ref={sampleRef} className="py-10 lg:py-14">
+          <SamplingGuidelines samples={samplingDetails} />
+        </div>
       </section>
     </Wrapper>
   );

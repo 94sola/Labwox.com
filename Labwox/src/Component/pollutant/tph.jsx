@@ -11,46 +11,12 @@ import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
 
 import AvailableCompounds from "../ui/available";
-import AnalyticalOverview from "../ui/AnalyticalOverview";
 import SamplingGuidelines from "../ui/sampling";
 
 const Tph = () => {
   const compounds = [
    "n-Alkanes [C10–C40]",
   ];
-
-
-  const overviewData = [
-    {
-      title: "Sample Types",
-      content: (
-        <>
-          <span className="text-sm font-medium">Environmental Samples:</span>{" "} 
-          Soil primary matrix in contaminated site assessments (leaks, spills, gas stations, oil fields)<br />
-          Sediment accumulation in aquatic environments near industrial discharges or spills.<br />
-          Surface water rivers, lakes, and marine waters impacted by oil spills or runoff.<br />
-          Groundwater monitoring of underground storage tanks (USTs), refineries, and landfills.<br />
-          Wastewater & effluents petroleum refineries, petrochemical industries, and stormwater runoff.<br />
-          <span className="text-sm font-medium">Biological Samples:</span>{" "}
-          Tissues of aquatic organisms fish, mussels, and benthic organisms exposed to oil pollution.
-        </>
-      ),
-    },
-    {
-      title: "Instruments Used",
-      content: "Agilent 8860 GC-FID",
-    },
-    {
-      title: "Sampling Information",
-      content: (
-        <>
-          Glass only (no plastics). <br />
-          Avoid light & heat (hydrocarbons degrade/volatilize easily). <br />
-          Cool or freeze as quickly as possible.
-        </>
-      ),
-    },
-  ]; 
 
   const samplingDetails = [
      {
@@ -143,12 +109,10 @@ const Tph = () => {
 
   return (
     <Wrapper hideHeader>
-      {/* Main Section */}
       <section
         ref={contentRef}
-        className="bg-gradient-to-b from-white via-neutral-50 to-white py-12 lg:py-20"
+        className="bg-gradient-to-b from-white via-neutral-50 to-white mb-10 py-12 lg:py-20"
       >
-        {/* Back & Print Actions (UI only) */}
         <div className="max-w-6xl mx-auto px-4 mt-2 flex justify-between items-center no-pdf">
           <Link
             to="/pollutantanaly"
@@ -164,8 +128,7 @@ const Tph = () => {
             Download PDF
           </button>
         </div>
-
-        {/* Header */}
+         
         <div className="max-w-4xl mx-auto text-center my-12 px-4">
           <h1 className="text-4xl md:text-5xl font-thin text-[#153D63] mb-6">
             Total Petroleum Hydrocarbons (TPH)
@@ -176,12 +139,10 @@ const Tph = () => {
         </div>
         
         <AvailableCompounds compounds={compounds} />
-        <AnalyticalOverview overview={overviewData} />
-      </section>
-
       
-      <section ref={sampleRef} className="bg-white py-12 my-6 lg:py-20">
-        <SamplingGuidelines samples={samplingDetails} />
+        <div ref={sampleRef} className="py-12 lg:py-20">
+          <SamplingGuidelines samples={samplingDetails} />
+        </div>
       </section>
     </Wrapper>
   );

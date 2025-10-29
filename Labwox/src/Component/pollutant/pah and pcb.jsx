@@ -12,7 +12,6 @@ import image2 from "../../assets/image/Aquatic animal  tissue.jpg";
 import image3 from "../../assets/image/food.jpg";
 
 import AvailableCompounds from "../ui/AvailableCompounds";
-import AnalyticalOverview from "../ui/AnalyticalOverview";
 import SamplingGuidelines from "../ui/SamplingGuidelines";
 
 const Pah = () => {
@@ -28,34 +27,7 @@ const Pah = () => {
     "PCB 204", "PCB 180"
   ];
 
-  // Analytical overview data
-  const overviewData = [
-    {
-      title: "Sample Types",
-      content: (
-        <>
-          <span className="text-sm font-medium">Water:</span> {" "}
-          samples include drinking water (tap, bottled, treated), groundwater (near landfills, industrial, agriculture), surface water (rivers, lakes, reservoirs), wastewater effluents.<br />
-          <span className="text-sm font-medium">Soil and Sediment:</span> {" "}
-          soils near industrial/urban areas, river/lake sediments.<br />
-          <span className="text-sm font-medium">Animal Tissue:</span> {" "}
-          fish and aquatic organisms.<br />
-          <span className="text-sm font-medium">Food:</span>{" "}
-          dairy, meat, crops irrigated with contaminated water.
-        </>
-      ),
-    },
-    {
-      title: "Instruments Used",
-      content: "Agilent 5977 GC-MSD or Thermo ISQ 7610",
-    },
-    {
-      title: "Sampling Information",
-      content: "Always use glass, not plastic. Protect from light. Cool or freeze immediately. Include appropriate blanks (field, trip, method).",
-    },
-  ];
-
-  // Sampling details
+  
   const samplingDetails = [
     {
       category: "Water (drinking, surface, groundwater)",
@@ -156,7 +128,7 @@ const Pah = () => {
   return (
     <Wrapper hideHeader>
       {/* Main Section */}
-      <section ref={contentRef} className="bg-gradient-to-b from-white via-neutral-50 to-white py-12 lg:py-20">
+      <section ref={contentRef} className="bg-gradient-to-b from-white via-neutral-50 mb-10 to-white py-12 lg:py-20">
         <div className="max-w-6xl mx-auto px-4 mt-2 flex justify-between items-center no-pdf">
           <Link
             to="/pollutantanaly"
@@ -176,21 +148,19 @@ const Pah = () => {
         {/* Header */}
         <div className="max-w-4xl mx-auto text-center my-12 px-4">
           <h1 className="text-4xl md:text-5xl font-thin text-[#153D63] mb-6">
-            PAH and PCB Mix
+            PAHs and PCBs by GC-MSD
           </h1>
           <p className="text-base md:text-lg text-gray-700 leading-relaxed max-w-4xl mx-auto">
-            PAH and PCB mix contains a mixture of polycyclic aromatic hydrocarbons and polychlorinated biphenyl compounds. Two categories of toxic environmental pollutants that are a common focus of research.
+            Analyse a mix of selected PAH and PCB compounds in various matrix types with our validated method based on EPA 525.03.
           </p>
         </div>
 
         {/* Reusable Components */}
         <AvailableCompounds compounds={compounds} />
-        <AnalyticalOverview overview={overviewData} />
-      </section>
-
-      {/* Sampling Section */}
-      <section ref={sampleRef} className="bg-white py-12 my-6 lg:py-20">
-        <SamplingGuidelines samples={samplingDetails} />
+      
+        <div ref={sampleRef} className="py-10 lg:py-14">
+          <SamplingGuidelines samples={samplingDetails} />
+        </div>
       </section>
     </Wrapper>
   );

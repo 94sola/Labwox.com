@@ -13,7 +13,6 @@ import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
 
 import AvailableCompounds from "../ui/AvailableCompounds";
-import AnalyticalOverview from "../ui/AnalyticalOverview";
 import SamplingGuidelines from "../ui/sampling";
 
 const Heavymetals = () => {
@@ -39,52 +38,7 @@ const Heavymetals = () => {
     "Manganese (Mn)",
   ];
 
-  const overviewData = [
-    {
-      title: "Sample Types",
-      content: (
-        <>
-          <span className="text-sm font-medium">Environmental Samples:</span> {" "}
-          Drinking water (tap, bottled, well water)<br />
-          Surface water (rivers, lakes, reservoirs).<br />
-          Groundwater (aquifers, wells)<br />
-          Soil (contaminated sites, landfills, industrial zones)<br />
-          Sediment (near industrial discharges or waste sites) <br />
-          <span className="text-sm font-medium">Food and Agricultural Products:</span>{" "}
-          Cereals and grains (rice, maize, wheat).<br />
-          Vegetables and fruits.<br />
-          Animal products (milk, meat, eggs, fish, seafood).<br />
-          Oils and fats (edible oils, cooking fats).<br />
-          Fertilizers and agricultural inputs.<br />
-          <span className="text-sm font-medium">Industrial & Waste Samples:</span>{" "}
-          Industrial effluents and process waters<br />
-          Leachates from landfills.<br />
-          Wastewater treatment plant influents/effluents.<br />
-          Hazardous waste samples (sludges, tars, solvents).<br />Building materials (paints, adhesives, flooring, sealants)<br />                      <span className="text-base font-medium">E-waste & Industrial Samples</span> <br />Recycling plant dust and residues – hotspots of PBDE contamination.<br />
-          Geological materials (rocks, ores, minerals <br />
-          <span className="text-sm font-medium">Biological Material:</span>{" "}
-          Animal Tissue<br />
-          Plant materials (leaves, roots, medicinal herbs)
-        </>
-      ),
-    },
-    {
-      title: "Instruments Used",
-      content: "Agilent 720 ICP-OES",
-    },
-    {
-      title: "Sampling Information",
-      content: (
-        <>
-          Always use acid-washed, trace-metal-clean containers.<br />
-          Wear powder-free gloves to avoid contamination.<br />
-          Document time, location, storage conditions.<br />
-          Minimize exposure to dust, metals, or contact with metallic surfaces.
-        </>
-      ),
-    },
-  ];
-
+  
   const samplingDetails = [
     {
       category: "Water(surface, ground, drinking, wastewater)",
@@ -190,12 +144,11 @@ const Heavymetals = () => {
 
   return (
     <Wrapper hideHeader>
-      {/* Main Section */}
+
       <section
         ref={contentRef}
-        className="bg-gradient-to-b from-white via-neutral-50 to-white py-12 lg:py-20"
+        className="bg-gradient-to-b from-white via-neutral-50 to-white mb-10 py-12 lg:py-20"
       >
-        {/* Back & Print Actions (UI only) */}
         <div className="max-w-6xl mx-auto px-4 mt-2 flex justify-between items-center no-pdf">
           <Link
             to="/pollutantanaly"
@@ -212,7 +165,6 @@ const Heavymetals = () => {
           </button>
         </div>
 
-        {/* Header */}
         <div className="max-w-4xl mx-auto text-center my-12 px-4">
           <h1 className="text-5xl md:text-6xl font-thin text-[#153D63] mb-6">
             Heavy Metals
@@ -227,14 +179,11 @@ const Heavymetals = () => {
           </p>
         </div>
 
-        {/* ✅ Reusable Components */}
         <AvailableCompounds compounds={compounds} />
-        <AnalyticalOverview overview={overviewData} />
-      </section>
-
-      {/* ✅ Sampling Section */}
-      <section ref={sampleRef} className="bg-white py-12 my-6 lg:py-20">
-        <SamplingGuidelines samples={samplingDetails} />
+     
+        <div ref={sampleRef} className="py-10 lg:py-14">
+          <SamplingGuidelines samples={samplingDetails} />
+        </div>
       </section>
     </Wrapper>
   );

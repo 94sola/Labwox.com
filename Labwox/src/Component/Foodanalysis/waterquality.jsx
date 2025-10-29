@@ -172,7 +172,6 @@ const Water = () => {
 
   return (
     <Wrapper hideHeader>
-      {/* Main Section */}
       <section
         ref={contentRef}
         className="bg-gradient-to-b from-white via-neutral-50 to-white py-12 lg:py-20"

@@ -165,15 +165,10 @@ const Fame = () => {
         {/* Header */}
         <div className="max-w-4xl mx-auto text-center my-12 px-4">
           <h1 className="text-4xl md:text-5xl font-thin text-[#153D63] mb-6">
-            Fatty Acid Methyl Esters (FAMEs)
+            FAMEs Analysis by  GC-FID
           </h1>
           <p className="text-base md:text-lg text-gray-700 leading-relaxed max-w-4xl mx-auto">
-            <strong>FAMEs</strong> are essential derivatives of fatty acids widely analyzed in
-            nutrition, biodiesel quality control, food science, pharmaceuticals, and
-            clinical research. At <strong>ChemXpert</strong>, we use advanced
-            chromatographic techniques (<em>GC-FID, GC-MS</em>) to profile fatty acid
-            composition with precision, helping industries ensure compliance,
-            product authenticity, and scientific accuracy.
+            We quantify the percentage composition of  37 fatty acids found in foods. We also categorise them into SFA, TFA, MUFA and PUFA. following the WHO protocol.
           </p>
         </div>
 

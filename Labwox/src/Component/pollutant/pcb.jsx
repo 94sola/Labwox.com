@@ -11,7 +11,6 @@ import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
 
 import AvailableCompounds from "../ui/AvailableCompounds";
-import AnalyticalOverview from "../ui/AnalyticalOverview";
 import SamplingGuidelines from "../ui/sampling";
 
 
@@ -38,48 +37,7 @@ const Pcb = () => {
     "PCB188",
   ];
 
-   const overviewData = [
-    {
-      title: "Sample Types",
-      content: (
-        <>
-          <span className="text-sm font-medium">Water:</span>{" "}
-          surface water, groundwater, drinking water, wastewater effluents <br />
-          <span className="text-sm font-medium">Sediments: </span> {" "}
-          riverbeds, lakes, harbors (PCBs accumulate strongly in sediments)<br />
-          <span className="text-sn font-medium">Dust:</span>{" "}
-          indoor dust from schools, offices, homes with old electrical equipment or sealants<br />
-          <span className="text-sm font-medium">Fish, meat, poultry, seafood:</span>{" "}
-          strong bioaccumulation in fatty tissues (major human exposure route) <br />
-          <span className="text-sm font-medium">Paints, sealants, caulks, and building materials:</span>{" "}
-          especially pre-1980s<br />
-          <span className="text-sm font-medium"> Waste oils and sludge:</span>{" "}
-          refinery or industrial by-products<br />
-          <span className="text-sm font-medium">Transformer oils:</span>{" "}
-          dielectric fluids historically containing PCBs <br />
-          <span className="text-sm font-medium">Soil: </span>{" "}
-          contaminated sites, industrial areas, landfills
-        </>
-      ),
-    },
-    {
-      title: "Instruments Used",
-      content: "Agilent 5977 GC-MSD or Thermo ISQ 7610",
-    },
-    {
-      title: "Sampling Information",
-      content: (
-        <>
-          Always use amber glass containers with Teflon-lined caps (never plastic). <br />
-          Protect samples from light (PCBs degrade under UV). <br />
-          Cool (4 °C) or freeze (–20 °C or below) for storage. <br />
-          Minimize headspace in liquids to reduce volatilization.
-        </>
-      ),
-    },
-  ]; 
-
-
+   
   const samplingDetails = [
      {
       category: "Environmental Samples",
@@ -164,12 +122,10 @@ const Pcb = () => {
 
   return (
     <Wrapper hideHeader>
-      {/* Main Section */}
       <section
         ref={contentRef}
-        className="bg-gradient-to-b from-white via-neutral-50 to-white py-12 lg:py-20"
+        className="bg-gradient-to-b from-white via-neutral-50 to-white mb-10 py-12 lg:py-20"
       >
-        {/* Back & Print Actions (UI only) */}
         <div className="max-w-6xl mx-auto px-4 mt-2 flex justify-between items-center no-pdf">
           <Link
             to="/pollutantanaly"
@@ -186,7 +142,6 @@ const Pcb = () => {
           </button>
         </div>
 
-        {/* Header */}
         <div className="max-w-4xl mx-auto text-center my-12 px-4">
           <h1 className="text-4xl md:text-5xl font-thin text-[#153D63] mb-6">
             PCBs
@@ -196,15 +151,11 @@ const Pcb = () => {
           </p>
         </div>
 
-        
-       {/* ✅ Reusable Components */}
         <AvailableCompounds compounds={compounds} />
-        <AnalyticalOverview overview={overviewData} />
-      </section>
-
-      {/* ✅ Sampling Section */}
-      <section ref={sampleRef} className="bg-white py-12 my-6 lg:py-20">
-        <SamplingGuidelines samples={samplingDetails} />
+      
+        <div ref={sampleRef} className="py-12 lg:py-20">
+          <SamplingGuidelines samples={samplingDetails} />
+        </div>
       </section>
     </Wrapper>
   );

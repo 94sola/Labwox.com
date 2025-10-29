@@ -29,50 +29,6 @@ const Pbde = () => {
     "PBB-153",
   ];
 
-  const overviewData = [
-    {
-      title: "Sample Types",
-      content: (
-        <>
-          <span className="text-sm font-medium">Environmental Samples:</span>{" "}
-          Surface water & groundwater near e-waste sites, landfills, and industrial discharges <br />
-          Wastewater & sewage sludge PBDEs accumulate in biosolids.<br />
-          Soil & sediments long-term sinks for PBDEs, especially near urban/industrial areas<br />
-          Household & office dust one of the most significant non-dietary exposure pathways<br />
-          <span className="text-sm font-medium">Food & Consumer Products:</span> {" "}
-          Fish & seafood bioaccumulation in aquatic organisms.<br />
-          Meat, dairy, and eggs accumulation in animal fat.<br />
-          Packaged foods possible migration from materials treated with PBDEs.<br />
-          Plastic products, electronics, textiles, and furniture foam  primary sources of PBDE release.<br />
-          <span className="text-sm font-medium">Biological Samples:</span>{" "}
-          Human breast milk  widely monitored as an indicator of infant exposure.<br />
-          Blood serum & plasma biomonitoring of general and occupational exposure.<br />
-          Hair and nails sometimes used as non-invasive biomarkers.<br />
-          Adipose tissue long-term accumulation site in the body<br />
-          <span className="text-sm font-medium">E-waste & Industrial Samples:</span>{" "}
-          Recycling plant dust and residues hotspots of PBDE contamination.<br />
-          Ash and combustion residues  from incineration of PBDE-treated materials.<br />
-          Industrial effluents  discharges from manufacturing or dismantling electronics and plastics.
-        </>
-      ),
-    },
-    {
-      title: "Instruments Used",
-      content: "Agilent 5977 GC-MSD or Thermo ISQ 7610",
-    },
-    {
-      title: "Sampling Information",
-      content: (
-        <>
-          Use amber glass containers with solvent-rinsed Teflon-lined caps (never plastic).<br />
-          Avoid contamination: PBDEs are ubiquitous in dust, plastics, and lab air.<br />
-          Keep samples away from light to prevent degradation. <br />
-          Store at ≤ 4 °C short term; freeze biologicals and sediments for long-term storage.
-        </>
-      ),
-    },
-  ];
-
 
   const samplingDetails = [
      {
@@ -176,12 +132,10 @@ const Pbde = () => {
 
   return (
     <Wrapper hideHeader>
-      {/* Main Section */}
       <section
         ref={contentRef}
-        className="bg-gradient-to-b from-white via-neutral-50 to-white py-12 lg:py-20"
+        className="bg-gradient-to-b from-white via-neutral-50 to-white mb-10 py-12 lg:py-20"
       >
-        {/* Back & Print Actions (UI only) */}
         <div className="max-w-6xl mx-auto px-4 mt-2 flex justify-between items-center no-pdf">
           <Link
             to="/pollutantanaly"
@@ -198,7 +152,6 @@ const Pbde = () => {
           </button>
         </div>
 
-        {/* Header */}
         <div className="max-w-4xl mx-auto text-center my-12 px-4">
           <h1 className="text-4xl md:text-5xl font-thin text-[#153D63] mb-6">
             Polybrominated Diphenyl Ethers (PBDEs)
@@ -212,14 +165,11 @@ const Pbde = () => {
           </p>
         </div>
 
-        {/* ✅ Reusable Components */}
         <AvailableCompounds compounds={compounds} />
-        <AnalyticalOverview overview={overviewData} />
-      </section>
-
-      {/* ✅ Sampling Section */}
-      <section ref={sampleRef} className="bg-white py-12 my-6 lg:py-20">
-        <SamplingGuidelines samples={samplingDetails} />
+      
+        <div ref={sampleRef} className="py-12 lg:py-20">
+          <SamplingGuidelines samples={samplingDetails} />
+        </div>
       </section>
     </Wrapper>
   );

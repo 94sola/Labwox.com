@@ -11,7 +11,6 @@ import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
 
 import AvailableCompounds from "../ui/AvailableCompounds";
-import AnalyticalOverview from "../ui/AnalyticalOverview";
 import SamplingGuidelines from "../ui/sampling";
 
 const Voc = () => {
@@ -51,43 +50,7 @@ const Voc = () => {
     "1,2,3-Trichlorobenzene",
   ];
 
-  const overviewData = [
-    {
-      title: "Sample Types",
-      content: (
-        <>
-          <span className="text-sm font-medium">Environmental Samples:</span>{" "}
-          Air (indoor, outdoor, workplace air), drinking water (tap,
-          bottled, well water),<br /> surface water (rivers, lakes, reservoirs), groundwater (aquifers, wells), soil (contaminated sites,
-          landfills, industrial zones),<br /> sediment (near industrial discharges or waste sites).<br />
-          <span className="text-sm font-medium">Food & Beverages:</span>{" "} 
-          Bottled water (regulated for VOCs like benzene, toluene,
-          chloroform),<br /> alcoholic beverages (beer, wine, spirits),<br /> juices and soft drinks (packaging-related VOCs), <br />oils and fats
-          (volatile residues), <br />packaged foods (migration of VOCs from packaging materials).<br />
-          <span className="text-sm font-medium">Industrial & Waste Samples:</span>{" "} 
-          Industrial effluents, landfill leachates, wastewater<br />
-          plant influents/effluents,<br /> hazardous waste (sludges, tars, solvents), <br />building materials (paints, adhesives, flooring).
-          
-        </>
-      ),
-    },
-    {
-      title: "Instruments Used",
-      content: "Agilent 8860 Headspace GC-FID",
-    },
-    {
-      title: "Sampling Information",
-      content: (
-        <>
-          Use glass, not plastic (unless specialized bags/canisters are required). <br />
-          No headspace whenever possible. <br />
-          Keep samples cool (≤ 4 °C) and out of light. <br />
-          Avoid sources of contamination (fuels, solvents, adhesives).
-</>
-      ),
-    },
-  ];
-  
+      
   const samplingDetails = [
      {
       category: "Drinking Water & Environmental Water",
@@ -176,10 +139,9 @@ const Voc = () => {
 
   return (
     <Wrapper hideHeader>
-      {/* Main Section */}
       <section
         ref={contentRef}
-        className="bg-gradient-to-b from-white via-neutral-50 to-white py-12 lg:py-20"
+        className="bg-gradient-to-b from-white via-neutral-50 to-white py-12 mb-10 lg:py-20"
       >
         {/* Back & Print Actions (UI only) */}
         <div className="max-w-6xl mx-auto px-4 mt-2 flex justify-between items-center no-pdf">
@@ -201,25 +163,21 @@ const Voc = () => {
         {/* Header */}
         <div className="max-w-4xl mx-auto text-center my-12 px-4">
           <h1 className="text-4xl md:text-5xl font-thin text-[#153D63] mb-6">
-            Volatile Organic Compounds (VOCs)
+            VOCs by Headspace GC-FID
           </h1>
           <p className="text-base md:text-lg text-gray-700 leading-relaxed max-w-4xl mx-auto">
-            VOCs are a diverse group of carbon-based chemicals that easily evaporate at room temperature.
-            They are found in petroleum products, solvents, paints, cleaning agents, and many industrial processes.
-            Due to their volatility and toxicity, accurate sampling and analysis are critical for environmental and health monitoring.
+           Detect and quantify over 30 VOCs in addition to the BTEX compounds with our Agilent 8860 GC-FID coupled with a headspace sampler.
           </p>
         </div>
 
         
-      {/* ✅ Reusable Components */}
         <AvailableCompounds compounds={compounds} />
-        <AnalyticalOverview overview={overviewData} />
-      </section>
 
-      {/* ✅ Sampling Section */}
-      <section ref={sampleRef} className="bg-white py-12 my-6 lg:py-20">
-        <SamplingGuidelines samples={samplingDetails} />
-      </section>
+        <div ref={sampleRef} className="py-10 lg:py-14">
+          <SamplingGuidelines samples={samplingDetails} />
+        </div>
+      </section>  
+
     </Wrapper>
   );
 };

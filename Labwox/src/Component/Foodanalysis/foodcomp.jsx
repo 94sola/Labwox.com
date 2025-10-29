@@ -18,11 +18,8 @@ const Food = () => {
       <section className="relative w-full py-24 sm:py-28 lg:py-36 overflow-hidden bg-fixed bg-center bg-cover mb-10"
           style={{ backgroundImage: `url(${food})` }}
         >
-          {/* Dark Overlay for Contrast */}
           <div className="absolute inset-0 bg-neutral-800/70 backdrop-blur-[2px]" />
 
-          
-        {/* Navigation - Only Previous */}
         <div className="relative flex items-center justify-start mb-10 max-w-7xl mx-auto px-4">
           <Link
             to="/foodwater"

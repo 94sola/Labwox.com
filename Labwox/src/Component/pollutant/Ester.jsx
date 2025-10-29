@@ -17,7 +17,6 @@ import image5 from "../../assets/image/fishh.jpg";
 
 // Reusable UI Components
 import AvailableCompounds from "../ui/AvailableCompounds";
-import AnalyticalOverview from "../ui/AnalyticalOverview";
 import SamplingGuidelines from "../ui/sampling";
 
 const Ester = () => {
@@ -43,47 +42,6 @@ const Ester = () => {
     "Dinonyl phthalate (DINP)",
   ];
 
- 
-  const overviewData = [
-    {
-      title: "Sample Types",
-      content: (
-        <>
-          <span className="text-sm font-medium">Environmental Samples:</span>{" "}
-          Drinking water, surface water, groundwater, soil, sediment.<br />
-          <span className="text-sm font-medium">
-            Food and Agricultural Products:
-          </span>{" "}
-          Oils, packaged foods, infant formula, dairy, meat, fish, beverages.<br />
-          <span className="text-sm font-medium">
-            Consumer & Industrial Products:
-          </span>{" "}
-          Plastics, cosmetics, pharmaceuticals, toys, medical devices.<br />
-          <span className="text-sm font-medium">
-            E-waste & Industrial Samples:
-          </span>{" "}
-          Recycling residues, incinerator ash, industrial effluents.<br />
-          <span className="text-sm font-medium">Waste & Indoor Sources:</span>{" "}
-          Household/office dust, runoff, incinerator residues.
-        </>
-      ),
-    },
-    {
-      title: "Instruments Used",
-      content: "Agilent 5977 GC-MS",
-    },
-    {
-      title: "Sampling Information",
-      content: (
-        <>
-          Avoid plastic containers – may leach phthalates.<br />
-          Use amber glass jars with Teflon caps.<br />
-          Store ≤ 4 °C or freeze long-term.<br />
-          Protect from light and document storage conditions.
-        </>
-      ),
-    },
-  ];
 
   const samplingDetails = [
     {
@@ -199,7 +157,7 @@ const Ester = () => {
       {/* ✅ Main Section */}
       <section
         ref={contentRef}
-        className="bg-gradient-to-b from-white via-neutral-50 to-white py-12 lg:py-20"
+        className="bg-gradient-to-b from-white via-neutral-50 to-white py-12 lg:py-20 mb-10"
       >
         {/* Navigation + Print */}
         <div className="max-w-6xl mx-auto px-4 mt-2 flex justify-between items-center no-pdf">
@@ -221,22 +179,17 @@ const Ester = () => {
         {/* Header */}
         <div className="max-w-4xl mx-auto text-center my-12 px-4">
           <h1 className="text-4xl md:text-5xl font-thin text-[#153D63] mb-6">
-            Phthalate Esters
+            Phthalate Esters by GC-MSD
           </h1>
           <p className="text-base md:text-lg text-gray-700 leading-relaxed max-w-4xl mx-auto">
-            <strong>Phthalate esters</strong> are synthetic plasticizers widely used
-            in consumer and industrial products. They are known endocrine disruptors,
-            interfering with the body’s hormonal balance.
+            Quantify 15 phthalate esters in various matrices with our validated method based on EPA 8061.
           </p>
         </div>
         
         <AvailableCompounds compounds={compounds} />
-        <AnalyticalOverview overview={overviewData} />
-      </section>
-
-    
-      <section ref={sampleRef} className="bg-white py-12 my-6 lg:py-20">
-        <SamplingGuidelines samples={samplingDetails} />
+        <div ref={sampleRef} className="py-10 lg:py-14">
+          <SamplingGuidelines samples={samplingDetails} />
+        </div>
       </section>
     </Wrapper>
   );

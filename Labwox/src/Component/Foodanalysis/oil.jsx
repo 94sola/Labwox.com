@@ -23,41 +23,6 @@ const Oil = () => {
     "Iodine value",
   ];
 
-  const overviewData = [
-    {
-      title: "Sample Types",
-      content: (
-        <>
-         <span className="text-sm font-medium">Plant Oils:</span>{" "}
-          Crude and refined vegetable oils including palm, soybean,
-          sunflower, olive, and groundnut oils.<br /> Analysis helps assess
-          nutritional quality, oxidation stability, and purity.
-          <br />
-          <span className="text-sm font-medium">Fats & Blends:</span>{" "}
-          Margarines, shortenings, butter, and oil blends.<br /> Testing
-          ensures compliance with food standards and verifies
-          authenticity.
-        </>
-      ),
-    },
-    {
-      title: "Instruments Used",
-      content: "Agilent 5977 GC-MS",
-    },
-    {
-      title: "Sampling Information",
-      content: (
-        <>
-          Collect oil in amber glass or food-grade plastic bottles.<br />
-          Avoid exposure to sunlight and store at room temperature
-          or refrigerated as required.<br /> Record oil type, source,
-          production batch, and storage conditions for reliable
-          analysis.
-        </>
-      ),
-    },
-  ];
-
   const samplingDetails = [
     {
       category: "Plant-based Oils",
@@ -184,12 +149,10 @@ const Oil = () => {
         </div>
 
         <AvailableCompounds compounds={compounds} />
-        <AnalyticalOverview overview={overviewData} />
-      </section>
-
       
-      <section ref={sampleRef} className="bg-white py-12 my-6 lg:py-20">
-        <SamplingGuidelines samples={samplingDetails} />
+        <div ref={sampleRef} className="py-10 lg:py-14">
+          <SamplingGuidelines samples={samplingDetails} />
+        </div>
       </section>
     </Wrapper>
   );

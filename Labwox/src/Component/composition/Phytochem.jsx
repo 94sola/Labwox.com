@@ -132,13 +132,11 @@ const Phytochemical = () => {
 
         {/* Header */}
         <div className="max-w-4xl mx-auto text-center my-12 px-4">
-          <h1 className="text-5xl md:text-6xl font-thin text-[#153D63] mb-6">
-            Phytochemical Analysis by Gc - Ms
+          <h1 className="text-4xl md:text-5xl font-thin text-[#153D63] mb-6">
+            Phytochemical Analysis by GC-MSD
           </h1>
           <p className="text-base md:text-lg text-gray-700 leading-relaxed max-w-xl mx-auto">
-            <strong>Phytochemical Analysis</strong> plays a vital role in
-            identifying, isolating, and quantifying bioactive compounds from
-            plants, herbs, foods, and natural products.
+            Scan for a wide range of volatile and semi-volatile plant compounds and obtain semi-quantitative data using GC-MSD.
           </p>
         </div>
 

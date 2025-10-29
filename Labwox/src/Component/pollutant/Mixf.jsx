@@ -18,7 +18,6 @@ import image6 from "../../assets/image/Combustion.jpg";
 
 // Reusable UI Components
 import AvailableCompounds from "../ui/AvailableCompounds";
-import AnalyticalOverview from "../ui/AnalyticalOverview";
 import SamplingGuidelines from "../ui/sampling";
 
 const Mixf = () => {
@@ -44,43 +43,7 @@ const Mixf = () => {
     "Benzo(g,h,i)perylene",
   ];
 
-  const overviewData = [
-    {
-      title: "Sample Types",
-      content: (
-        <>
-          <span className="text-sm font-medium">Water:</span>{" "} 
-          surface water, groundwater, drinking water, wastewater effluents.<br />
-          <span className="text-sm font-medium">Soil and Sediments:</span> {" "}
-          especially near industrial, urban, and oil-polluted areas.<br />
-          <span className="text-sm font-medium">Dust:</span> {" "}
-          household dust, street dust, road-deposited sediments.<br />
-          <span className="text-sm font-medium">{" "}
-          Crude oil & refined petroleum products:</span>{" "}
-          gasoline, diesel, kerosene, lubricating oils.<br />
-          <span className="text-sm font-medium">{" "}
-          Industrial effluents & sludges:</span> coking plants, petroleum refineries, creosote waste.<br />
-          Smoked and grilled foods – fish, meat.<br />
-          Edible oils, cereals, and grains contamination during drying, processing, or packaging.
-        </>
-      ),
-    },
-    {
-      title: "Instruments Used",
-      content: "Agilent 5977 GC-MSD or Thermo ISQ 7610",
-    },
-    {
-      title: "Sampling Information",
-      content: (
-      <>
-        Amber glass + Teflon-lined lids prevent contamination and photodegradation.<br />
-        Cooling (4 °C) or freezing extends holding times.<br />
-        Light protection is critical.
-      </>
-      ),
-    },
-  ];
-
+  
   const samplingDetails = [
     { category: "Water", img: image, details: [ "Volume: 1–2 L grab samples", "Container: Amber glass bottles with Teflon caps", "Preservation: Store at 4 °C, extract within 7 days", "Precaution: Minimize headspace to reduce volatilization", ], }, { category: "Soil and Sediments", img: image1, details: [ "Method: Collect with stainless scoop/corer", "Amount: 50 g (depending on heterogeneity)", "Container: Amber glass jars with Teflon lids", "Preservation: Refrigerate at 4 °C, extract within 14 days", "Precaution: Avoid plastics, prevent light exposure", ], }, { category: "Dust", img: image3, details: [ "Method: Vacuum sampling with clean filter or sweep/brush", "Amount: 10–50 g typical", "Container: Amber glass jars", "Storage: 4 °C, dark, minimize holding time", ], }, { category: "Petroleum Products", img: image4, details: [ "Method: Grab samples with glass or stainless steel sampler.", "Volume: 100–500 mL.", "Container: Amber glass bottles, Teflon-lined caps.", "Storage: 4 °C, no headspace for volatile-rich samples.", ], }, { category: "Food (smoked/grilled meat, fish, oils, grains)", img: image2, details: [ "Amount: 100–500 g or mL, homogenized.", "Container: Pre-baked amber glass jars or solvent-rinsed containers.", "Storage: Freeze at –20 °C until extraction.", "Precaution: Avoid contamination from smoke/dust during sampling.", ], }, { category: "Aquatic animal tissue", img: image5, details: [ "Method: Whole tissue or specific organ (liver, muscle, fat).", "Amount: 20–100 g depending on species.", "Container: Solvent-rinsed amber glass jars.", "Storage: Freeze at –20 °C or lower until extraction.", "Precaution: Minimize degradation by light and heat.", ], }, { category: "Combustion Residues (ash, soot, coal, char)", img: image6, details: [ "Amount: 50–200 g.", "Container: Amber glass jars.", "Storage: 4 °C or freeze, dark conditions.", "Precaution: Avoid cross-contamination with ambient dust.", ], },
 
@@ -132,8 +95,7 @@ const Mixf = () => {
 
   return (
     <Wrapper hideHeader>
-      {/* Main Section */}
-      <section ref={contentRef} className="bg-gradient-to-b from-white via-neutral-50 to-white py-12 lg:py-20">
+      <section ref={contentRef} className="bg-gradient-to-b from-white via-neutral-50 to-white mb-10 py-12 lg:py-20">
         <div className="max-w-6xl mx-auto px-4 mt-2 flex justify-between items-center no-pdf">
           <Link to="/pollutantanaly" className="inline-flex items-center italic gap-2 text-[#153D63] hover:text-[#FFC000] font-medium">
             <ArrowLeft className="w-5 h-5" /> Back to Pollutant Applications
@@ -152,12 +114,9 @@ const Mixf = () => {
         </div>
 
         <AvailableCompounds compounds={compounds} />
-        <AnalyticalOverview overview={overviewData} />
-      </section>
-
-      {/* Sampling Section */}
-      <section ref={sampleRef} className="bg-white py-12 my-6 lg:py-20">
-        <SamplingGuidelines samples={samplingDetails} />
+        <div ref={sampleRef} className="py-10 lg:py-14">
+          <SamplingGuidelines samples={samplingDetails} />
+        </div>
       </section>
     </Wrapper>
   );

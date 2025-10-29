@@ -16,7 +16,6 @@ import html2canvas from "html2canvas";
 
 
 import AvailableCompounds from "../ui/AvailableCompounds";
-import AnalyticalOverview from "../ui/AnalyticalOverview";
 import SamplingGuidelines from "../ui/sampling";
 
 const Pah = () => {
@@ -45,42 +44,6 @@ const Pah = () => {
     "Benzo[ghi]perylene",
     "Dibenz[a,l]pyrene",
     "Dibenz[a,h]pyrene",
-  ];
-
-  const overviewData = [
-    {
-      title: "Sample Types",
-      content: (
-        <>
-          <span className="text-sm font-medium">Water: </span>{" "}
-          surface water, groundwater, drinking water, wastewater effluents. <br />
-          <span className="text-sm font-medium">Soil and Sediments:</span>{" "} 
-          especially near industrial, urban, and oil-polluted areas. <br />
-          <span className="text-sm font-medium">Dust:</span> {" "}
-           household dust, street dust, road-deposited sediments. <br />
-          <span className="text-sm font-medium">Crude oil & refined petroleum products:</span>{" "}
-           gasoline, diesel, kerosene, lubricating oils. <br />
-          <span className="text-sm font-medium">Industrial effluents & sludges:</span>{" "}
-           coking plants, petroleum refineries, creosote waste. <br />
-          Edible oils especially recycled frying oils. <br />
-          Smoked and grilled foods – fish, meat <br />
-          Cereals and grains contamination during drying, processing, or packaging
-        </>
-      ),
-    },
-    {
-      title: "Instruments Used",
-      content: "Agilent 5977 GC-MSD or Thermo ISQ 7610",
-    },
-    {
-      title: "Sampling Information",
-      content: (
-        <>
-          Amber glass + Teflon-lined lids prevent contamination and photodegradation.<br />
-          Cooling (4 °C) or freezing extends holding times. Light protection is critical.
-        </>
-      ),
-    },
   ];
 
   const samplingDetails = [
@@ -211,10 +174,9 @@ const Pah = () => {
 
   return (
     <Wrapper hideHeader>
-      {/* Main Section */}
       <section
         ref={contentRef}
-        className="bg-gradient-to-b from-white via-neutral-50 to-white py-12 lg:py-20"
+        className="bg-gradient-to-b from-white via-neutral-50 to-white mb-10 py-12 lg:py-20"
       >
        
         <div className="max-w-6xl mx-auto px-4 mt-2 flex justify-between items-center no-pdf">
@@ -233,7 +195,6 @@ const Pah = () => {
           </button>
         </div>
 
-        {/* Header */}
         <div className="max-w-4xl mx-auto text-center my-12 px-4">
           <h1 className="text-4xl md:text-5xl font-thin text-[#153D63] mb-6">
             PAH Mix E
@@ -243,14 +204,10 @@ const Pah = () => {
           </p>
         </div>
 
-        {/* ✅ Reusable Components */}
         <AvailableCompounds compounds={compounds} />
-        <AnalyticalOverview overview={overviewData} />
-      </section>
-
-      {/* ✅ Sampling Section */}
-      <section ref={sampleRef} className="bg-white py-12 my-6 lg:py-20">
-        <SamplingGuidelines samples={samplingDetails} />
+        <div ref={sampleRef} className="py-10 lg:py-20">
+          <SamplingGuidelines samples={samplingDetails} />
+        </div>
       </section>
     </Wrapper>
   );

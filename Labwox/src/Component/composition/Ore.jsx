@@ -148,12 +148,10 @@ const Ore = () => {
         {/* Header */}
         <div className="max-w-4xl mx-auto text-center my-12 px-4">
           <h1 className="text-5xl md:text-6xl font-thin text-[#153D63] mb-6">
-            Elemental Analysis of Ores
+            Elemental Analysis of Ores by ICP-OES
           </h1>
           <p className="text-base md:text-lg text-gray-700 leading-relaxed max-w-4xl mx-auto">
-            At <strong>ChemXpert</strong>, we specialize in <em>elemental analysis</em> of ores, concentrates, and mine tailings.
-            Using ICP-OES, we quantify major, minor, and trace elements with high precision.
-            Our results support mining exploration, ore beneficiation, and environmental monitoring.
+            We analyse over 60 elements to give quantitative data about the percentage composition of various elements in ores.
           </p>
         </div>
 

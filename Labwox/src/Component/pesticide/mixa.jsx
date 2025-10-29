@@ -13,7 +13,6 @@ import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
 
 import AvailableCompounds from "../ui/AvailableCompounds";
-import AnalyticalOverview from "../ui/AnalyticalOverview";
 import SamplingGuidelines from "../ui//sampling";
 
 const Mixa= () => {
@@ -31,53 +30,6 @@ const Mixa= () => {
     "Etofenprox",
   ];
 
-   const overviewData = [
-    {
-      title: "Sample Types",
-      content: (
-        <>
-          <span className="text-sm font-medium">Food and Agricultural Products</span>{" "}
-          Fruits (apples, grapes, citrus, berries, bananas). <br />
-          Vegetables (leafy greens, tomatoes, peppers, cucumbers, root crops).<br />
-          Grains and cereals (rice, maize, wheat, barley)<br />
-          Tea, coffee, cocoa. <br />Animal products (milk, meat, eggs, honey, fish
-          feed).<br />
-          Legumes (beans, lentils, peas) <br /> Spices and herbs (chili, pepper,
-          coriander, basil). <br />
-          <span className="text-sm font-medium">Environmental Samples:</span> {" "}
-          Surface water (rivers, lakes, reservoirs).<br />
-          Groundwater (wells, aquifers).<br />Drinking water.<br />
-          Wastewater (municipal and industrial effluents).<br />
-          Soil and sediments.<br />
-          <span className="text-sm font-medium">Industrial & Domestic Sources:</span>{" "}
-          Pesticide formulations and products (quality control, compliance testing)
-          <br />
-          Runoff from agricultural lands.<br />
-          <span className="text-sm font-medium">Processed and Packaged Foods:</span>{" "}
-          Infant food and baby formula.<br />
-          Juices and soft drinks.<br />
-          Cooking oils and fats.<br />
-          Packaged snacks and baked goods (possible migration from raw materials or
-          packaging)
-        </>
-      ),
-    },
-    {
-      title: "Instruments Used",
-      content: "Agilent 5977 GC-MSD or Thermo ISQ 7610",
-    },
-    {
-      title: "Sampling Information",
-      content: (
-        <>
-          Use amber glass wherever possible (pesticides can adsorb to plastics or
-          degrade under light). <br />
-          Keep samples cool and in the dark. <br />
-          Avoid contamination during sampling, handling, and transport.
-        </>
-      ),
-    },
-  ];
 
   const samplingDetails = [
     {
@@ -221,7 +173,6 @@ const Mixa= () => {
           </button>
         </div>
 
-        {/* Header */}
         <div className="max-w-4xl mx-auto text-center my-12 px-4">
           <h1 className="text-4xl md:text-5xl font-thin text-[#153D63] mb-6">
             Pesticide Multi Residue Mix A
@@ -232,14 +183,11 @@ const Mixa= () => {
           reliable detection across agricultural, food, and environmental samples.
           </p>
         </div>
-
-        
         <AvailableCompounds compounds={compounds} />
-        <AnalyticalOverview overview={overviewData} />
-      </section>
-
-      <section ref={sampleRef} className="bg-white py-12 my-6 lg:py-20">
-        <SamplingGuidelines samples={samplingDetails} />
+      
+        <div ref={sampleRef} className="py-10 lg:py-14">
+          <SamplingGuidelines samples={samplingDetails} />
+        </div>
       </section>
     </Wrapper>
   );
