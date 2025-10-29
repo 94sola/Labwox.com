@@ -11,7 +11,7 @@ const AvailableCompounds = ({ title = "Available Elements", compounds = [] }) =>
   const remaining = compounds.slice(8);
 
   return (
-    <div className="mt-10 max-w-4xl mx-auto">
+    <div className="my-10 max-w-4xl mx-auto">
       <h3 className="text-4xl font-thin text-[#153D63] mb-6 text-center">{title}</h3>
 
       <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-4 gap-4">

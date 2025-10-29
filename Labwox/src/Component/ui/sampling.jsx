@@ -13,9 +13,9 @@ const Sampling = ({ samples = [] }) => {
   };
 
   return (
-    <div className="mt-12 max-w-4xl mx-auto px-4">
+    <div className="max-w-4xl mx-auto px-4">
       <h3 className="text-3xl md:text-4xl font-thin text-[#153D63] mb-10 text-center">
-        Select Sample Type
+        Sampling Information
       </h3>
       <div className="grid grid-cols-3 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {samples.map((sample, i) => (

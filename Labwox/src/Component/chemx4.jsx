@@ -42,7 +42,7 @@ const Chemx = () => {
           className="relative z-10 text-center mb-16"
         >
           <h1 className="text-[#0B3D2E] font-medium text-5xl sm:text-4xl md:text-5xl tracking-wide drop-shadow-lg">
-            Why Chemxpert?
+            Why Chemxpert ?
           </h1>
           <p className="text-gray-600 mt-4 max-w-2xl mx-auto text-lg">
             Discover the core values that make Chemxpert a trusted research partner.

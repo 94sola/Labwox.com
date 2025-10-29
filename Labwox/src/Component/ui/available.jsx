@@ -6,7 +6,7 @@ const AvailableCompounds = ({ title = "Available Compounds", compounds = [] }) =
   }
 
   return (
-    <div className="mt-10 max-w-3xl mx-auto">
+    <div className="my-10 max-w-3xl mx-auto">
       <h3 className="text-4xl font-thin text-[#153D63] mb-6 text-center">{title}</h3>
 
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-4">

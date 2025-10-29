@@ -11,7 +11,6 @@ import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
 
 import AvailableCompounds from "../ui/AvailableCompounds";
-import AnalyticalOverview from "../ui/AnalyticalOverview";
 import SamplingGuidelines from "../ui/sampling";
 
 const Fame = () => {
@@ -55,40 +54,7 @@ const Fame = () => {
     "cis-4,7,10,13,16,19-Docosahexaenoic acid methyl ester",
   ];
 
-  const overviewData = [
-    {
-      title: "Sample Types",
-      content: (
-        <>
-          <span className="text-sm font-medium">Food & Oils:</span>{" "}
-          Includes vegetable oils (soybean, sunflower, olive, palm), dairy fats,
-          meat and seafood extracts, and processed foods such as margarine and
-          baked goods. These samples are critical for nutritional labeling,
-          authenticity checks, and quality control.  
-          <br />
-          <span className="text-sm font-medium">Biodiesel:</span>{" "}
-          Covers transesterified fuels, raw oils, and industrial feedstocks.
-          FAME analysis ensures compliance with international fuel standards,
-          determines oxidative stability, and verifies blending proportions.    
-        </>
-      ),
-    },
-    {
-      title: "Instruments Used",
-      content: "Agilent GC-FID, GC-MS",
-    },
-    {
-      title: "Sampling Information",
-      content: (
-        <>
-          Collect fats and oils in clean amber glass bottles.<br /> 
-          Avoid plastic contact. Store food samples refrigerated (≤ 4 °C).<br />
-          Freeze biological samples immediately at –80 °C.<br />
-          Document source, matrix type, and collection date to ensure traceability. 
-        </>
-      ),
-    },
-  ];
+  
 
   const samplingDetails = [
     {
@@ -177,7 +143,7 @@ const Fame = () => {
       {/* Main Section */}
       <section
         ref={contentRef}
-        className="bg-gradient-to-b from-white via-neutral-50 to-white py-12 lg:py-20"
+        className="bg-gradient-to-b from-white via-neutral-50 mb-10 to-white py-12 lg:py-20"
       >
         {/* Back & Print Actions */}
         <div className="max-w-6xl mx-auto px-4 mt-2 flex justify-between items-center no-pdf">
@@ -212,12 +178,9 @@ const Fame = () => {
         </div>
 
         <AvailableCompounds compounds={compounds} />
-        <AnalyticalOverview overview={overviewData} />
-      </section>
-
-      
-      <section ref={sampleRef} className="bg-white py-12 my-6 lg:py-20">
-        <SamplingGuidelines samples={samplingDetails} />
+        <div ref={sampleRef} className="py-10 lg:py-14">
+          <SamplingGuidelines samples={samplingDetails} />
+        </div>
       </section>
     </Wrapper>
   );

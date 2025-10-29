@@ -10,7 +10,6 @@ import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
 
 import AvailableCompounds from "../ui/elements";
-import AnalyticalOverview from "../ui/AnalyticalOverview";
 import SamplingGuidelines from "../ui/sampling";
 
 const Ore = () => {
@@ -38,29 +37,8 @@ const Ore = () => {
     "Ag (Silver)", "Tl (Thallium)", "V (Vanadium)", "Zn (Zinc)"
   ];
 
-  const overviewData = [
-    {
-      title: "Sample Types",
-      content: (
-        <>
-          <span className="text-sm font-medium">Ore Samples:</span>{" "}
-          Iron ore, bauxite, copper ore, gold ore, laterites.<br />
-          <span className="text-sm font-medium">Mine Tailings & Sludge:</span>{" "}
-          Waste streams from extraction and beneficiation.<br />
-          <span className="text-sm font-medium">Concentrates & Alloys:</span>{" "}
-          Smelting, refining, and metallurgical processes.
-        </>
-      ),
-    },
-    {
-      title: "Instruments Used",
-      content: "Agilent 720 ICP-OES",
-    },
-    {
-      title: "Sampling Information",
-      content: "Submit at least 5g of sample.",
-    },
-  ];
+
+
 
   const samplingDetails = [
     {
@@ -148,7 +126,7 @@ const Ore = () => {
           
       <section
         ref={contentRef}
-        className="bg-gradient-to-b from-white via-neutral-50 to-white py-12 lg:py-20"
+        className="bg-gradient-to-b from-white via-neutral-50 to-white py-5 lg:py-14 mb-10 "
       >
         {/* Back & Print Actions */}
         <div className="max-w-6xl mx-auto px-4 mt-2 flex justify-between items-center no-pdf">
@@ -180,12 +158,10 @@ const Ore = () => {
         </div>
 
         <AvailableCompounds compounds={compounds} />
-        <AnalyticalOverview overview={overviewData} />
-      </section>
-
-    
-      <section ref={sampleRef} className="bg-white py-12 my-6 lg:py-20">
-        <SamplingGuidelines samples={samplingDetails} />
+        
+        <div ref={sampleRef} className="pt-10 lg:pt-14">
+          <SamplingGuidelines samples={samplingDetails} />
+        </div>
       </section>
     </Wrapper>
   );

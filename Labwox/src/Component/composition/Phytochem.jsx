@@ -10,7 +10,6 @@ import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
 
 import AvailableCompounds from "../ui/available";
-import AnalyticalOverview from "../ui/AnalyticalOverview";
 import SamplingGuidelines from "../ui/sampling";
 
 
@@ -22,39 +21,6 @@ const Phytochemical = () => {
     "Volatile plant esters",
     "Aldehydes",
     "Ketones",
-  ];
-
-  const overviewData = [
-    {
-      title: "Sample Types",
-      content: (
-        <>
-          <span className="text-sm font-medium">Plant Extracts:</span>{" "}
-          Leaves, roots, bark, seeds, fruits, and flowers used for bioactive compound screening.<br />
-          <span className="text-sm font-medium">Medicinal Herbs:</span>{" "}
-          Dried or powdered herbal materials subjected to qualitative and quantitative phytochemical testing.<br />
-          <span className="text-sm font-medium">Essential Oils & Resins:</span>{" "}
-          Natural plant oils and resins analyzed for secondary metabolites and active constituents.<br />
-          <span className="text-sm font-medium">Plant-Based Products:</span>{" "}
-          Nutraceuticals, teas, tonics, and herbal formulations evaluated for phytochemical composition.
-        </>
-      ),
-    },
-    {
-      title: "Instruments Used",
-      content: "Agilent 5977 GC-MSD",
-    },
-    {
-      title: "Sampling Information",
-      content: (
-        <>
-          Collect plant materials in clean containers, avoid plastic
-          contact. Dry in shade if required.<br /> Store ≤ 4 °C for fresh
-          samples, freeze extracts for long-term storage.<br /> Document
-          species, part used, and collection conditions.
-        </>
-      ),
-    },
   ];
 
   const samplingDetails = [
@@ -145,7 +111,7 @@ const Phytochemical = () => {
       {/* Main Section */}
       <section
         ref={contentRef}
-        className="bg-gradient-to-b from-white via-neutral-50 to-white py-12 lg:py-20"
+        className="bg-gradient-to-b from-white via-neutral-50 to-white mb-10 py-12 lg:py-20"
       >
         {/* Back & Print Actions */}
         <div className="max-w-6xl mx-auto px-4 mt-2 flex justify-between items-center no-pdf">
@@ -167,7 +133,7 @@ const Phytochemical = () => {
         {/* Header */}
         <div className="max-w-4xl mx-auto text-center my-12 px-4">
           <h1 className="text-5xl md:text-6xl font-thin text-[#153D63] mb-6">
-            Phytochemical Analysis
+            Phytochemical Analysis by Gc - Ms
           </h1>
           <p className="text-base md:text-lg text-gray-700 leading-relaxed max-w-xl mx-auto">
             <strong>Phytochemical Analysis</strong> plays a vital role in
@@ -177,12 +143,12 @@ const Phytochemical = () => {
         </div>
 
         <AvailableCompounds compounds={compounds} />
-        <AnalyticalOverview overview={overviewData} />
-      </section>
+     
 
     
-      <section ref={sampleRef} className="bg-white py-12 my-6 lg:py-20">
-        <SamplingGuidelines samples={samplingDetails} />
+        <div ref={sampleRef} className="py-10  lg:py-14">
+          <SamplingGuidelines samples={samplingDetails} />
+        </div>
       </section>
     </Wrapper>
   );
