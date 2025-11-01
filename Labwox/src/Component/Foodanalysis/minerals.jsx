@@ -139,17 +139,10 @@ const Mineral = () => {
         {/* Header */}
         <div className="max-w-4xl mx-auto text-center my-12 px-4">
           <h1 className="text-4xl md:text-5xl font-thin text-[#153D63] mb-6">
-            Minerals in Food
+            Minerals by ICP-OES
           </h1>
           <p className="text-base md:text-lg text-gray-700 leading-relaxed max-w-4xl mx-auto">
-            <strong>Minerals</strong> such as calcium, iron, zinc, magnesium,
-            and potassium are essential micronutrients required for growth,
-            metabolism, bone strength, immunity, and overall human health. At{" "}
-            ChemXpert, we apply advanced techniques such as{" "}
-            <em>ICP-MS, AAS, and XRF</em> to quantify major and trace minerals
-            in food, beverages, supplements, and biological samples. Our
-            analyses support food fortification programs, regulatory compliance,
-            nutritional labeling, and clinical research studies.
+            We apply ICP-OES to quantify major and trace minerals in food, beverages, supplements, and biological samples.
           </p>
         </div>
         <AvailableCompounds compounds={compounds} />

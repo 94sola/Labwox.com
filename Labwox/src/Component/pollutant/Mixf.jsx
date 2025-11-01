@@ -107,9 +107,11 @@ const Mixf = () => {
         </div>
 
         <div className="max-w-4xl mx-auto text-center my-12 px-4">
-          <h1 className="text-4xl md:text-5xl font-thin text-[#153D63] mb-6">PAH Mix F</h1>
+          <h1 className="text-4xl md:text-5xl font-thin text-[#153D63] mb-6">
+          PAHs by GC-MSD [Mix F]
+          </h1>
           <p className="text-base md:text-lg text-gray-700 leading-relaxed">
-            <strong>PAH</strong> are widespread environmental contaminants found in air, soil, and water, and can also be ingested through contaminated food, such as grilled meats. Some PAHs are considered carcinogenic.
+          PAH are widespread environmental contaminants found in air, soil, and water, Analysie a mix of PAH compounds at trace levels by GC-MSD
           </p>
         </div>
 

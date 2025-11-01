@@ -66,7 +66,7 @@ function App() {
         <Navbar />
 
         {/* Main Page Content */}
-        <div className="pt-[5rem]">
+        <div className="">
           <Routes>
             <Route path="/" element={<Labwox />} />
             <Route path="/explore" element={<Explore />} />
