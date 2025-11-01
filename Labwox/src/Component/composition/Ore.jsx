@@ -147,7 +147,7 @@ const Ore = () => {
 
         {/* Header */}
         <div className="max-w-4xl mx-auto text-center my-12 px-4">
-          <h1 className="text-5xl md:text-6xl font-thin text-[#153D63] mb-6">
+          <h1 className="text-4xl md:text-5xl font-thin text-[#153D63] mb-6">
             Elemental Analysis of Ores by ICP-OES
           </h1>
           <p className="text-base md:text-lg text-gray-700 leading-relaxed max-w-4xl mx-auto">

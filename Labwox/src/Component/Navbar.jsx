@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Wrapper from '../Component/wrapper';
 import { LuChevronDown, LuChevronRight } from 'react-icons/lu';
+import logo from '../assets/image/Labwox Logo2.png'
 import { IoMdClose } from 'react-icons/io';
 
 const Navbar = () => {
@@ -37,13 +38,13 @@ const Navbar = () => {
       <Wrapper>
         <nav className="flex justify-between items-center px-4 lg:px-8 py-4 relative">
           {/* Logo */}
-          <Link to="/" className="text-xl font-bold text-black hover:text-gray-600 z-50">
-            <div className="logo text-2xl lg:text-4xl font-bold">
-              <span style={{ color: '#153D63' }}>labwox</span>
-              <span style={{ color: '#FFC000' }}>.</span>
-            </div>
+          <Link to="/" className="flex items-center h-20 w-auto md:h-24 transition-transform duration-300 hover:scale-105">
+            <img
+              src={logo}
+              alt="Labwox Logo"
+              className="h-full w-auto object-contain"
+            />
           </Link>
-
           {/* Mobile Hamburger & Close Button */}
           <div className="lg:hidden z-50">
             <button

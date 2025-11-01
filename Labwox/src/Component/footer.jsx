@@ -7,19 +7,21 @@ import {
   FaWhatsapp,
 } from "react-icons/fa";
 import { FiArrowRight } from "react-icons/fi";
+import logo from '../assets/image/Labwox Logo2.png'
 
 const Footer = () => {
   return (
     <Wrapper >
-      <footer className="bg-white text-black w-full px-4 sm:px-6 md:px-10 lg:px-20 py-12 md:py-16 mx-auto">
+      <footer className="bg-white text-black w-full px-4 sm:px-6 md:px-10 lg:px-20 py-12 md:py-16 mt-10 mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-20">
           {/* Brand Section */}
           <div className="space-y-4">
-            <Link to="/" className="inline-block">
-              <div className="logo text-2xl md:text-3xl lg:text-4xl font-bold">
-                <span style={{ color: "#153D63" }}>labwox</span>
-                <span style={{ color: "#FFC000" }}>.</span>
-              </div>
+            <Link to="/" className="flex items-center h-20 w-auto md:h-24 transition-transform duration-300 hover:scale-105">
+              <img
+                src={logo}
+                alt="Labwox Logo"
+                className="h-full w-auto object-contain"
+              />
             </Link>
             <h1 className="text-xl sm:text-2xl md:text-3xl font-medium leading-snug text-neutral-900">
               Classic Research, Modern Tools
