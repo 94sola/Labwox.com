@@ -49,7 +49,7 @@ const Chemx = () => {
       <section className="py-14 px-4 bg-white w-full mb-8 rounded-sm">
         {/* === Section Header === */}
         <div className="max-w-7xl mx-auto text-center mb-10">
-          <h2 className="text-[#0B3D2E] font-semibold text-4xl md:text-5xl mt-4">
+          <h2 className="text-[#153D63] font-semibold text-4xl md:text-5xl mt-4">
             Areas of Competence
           </h2>
           <p className="text-gray-600 mt-4 text-lg max-w-3xl mx-auto">
@@ -85,13 +85,13 @@ const Chemx = () => {
                     item.title === "Compositional Analyses"
                       ? "text-2xl"
                       : "text-2xl"
-                  } font-semibold text-[#0B3D2E]`}
+                  } font-semibold text-[#153D63]`}
                 >
                   {item.title}
                 </h3>
 
                 {/* Decorative Line */}
-                <div className="w-16 h-1 bg-green-300 rounded-full mt-3 mb-4"></div>
+                <div className="w-16 h-1 bg-blue-300 rounded-full mt-3 mb-4"></div>
 
                 <p className="text-gray-700 leading-relaxed flex-1">
                   {item.description}
@@ -101,7 +101,7 @@ const Chemx = () => {
                 <div className="flex justify-center mt-6">
                   <Link
                     to={item.link}
-                    className="inline-block px-12 py-1.5 rounded-md bg-[#0B3D2E] text-white text-sm font-medium hover:bg-[#0d4e3c] transition-colors duration-300"
+                    className="inline-block px-12 py-1.5 rounded-md bg-[#153D63] text-white text-sm font-medium hover:bg-[#0f304e] transition-colors duration-300"
                   >
                     {item.linkLabel}
                   </Link>
