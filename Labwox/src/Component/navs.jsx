@@ -36,14 +36,7 @@ const cards = [
     description: "Bring your research ideas to life.",
     tooltip: "Discover ChemXpert",
   },
-  {
-    title: "Labsoft",
-    icon: <ServerCog className="w-7 h-7 md:w-9 md:h-9 text-blue-600" />,
-    image: labsoftImg,
-    link: "/labsoft",
-    description: "Science Productivity Solutions.",
-    tooltip: "View Labsoft",
-  },
+ 
 ];
 
 const NavTop = () => {
@@ -84,7 +77,7 @@ const NavTop = () => {
   return (
     <motion.div
       ref={containerRef}
-      className="sticky top-0 z-50 bg-black/95 backdrop-blur-sm border-b border-gray-800 shadow-[0_3px_20px_rgba(0,0,0,0.5)] overflow-hidden"
+      className="sticky top-0 z-50 bg-black/95 mx-auto backdrop-blur-sm border-b border-gray-800 shadow-[0_3px_20px_rgba(0,0,0,0.5)] overflow-hidden"
       onMouseEnter={() => {
         if (isDesktop()) setIsHovered(true);
       }}
@@ -95,7 +88,7 @@ const NavTop = () => {
         }
       }}
       animate={{
-        height: isDesktop() && isHovered ? "auto" : "3.5rem",
+        height: isDesktop() && isHovered ? "auto" : "3rem",
       }}
       transition={{
         duration: isHovered ? 0.15 : 0.05, // ⚡ faster open, instant close
@@ -103,9 +96,9 @@ const NavTop = () => {
       }}
     >
       <div
-        className={`max-w-[1280px] w-full mx-auto transition-all duration-200 ${
+        className={`max-w-[900px] w-full mx-auto transition-all duration-200 ${
           isDesktop() && isHovered
-            ? "py-6 grid grid-cols-3 gap-6"
+            ? "py-6 grid grid-cols-2 gap-6"
             : "h-14 flex items-center justify-between px-4"
         }`}
       >

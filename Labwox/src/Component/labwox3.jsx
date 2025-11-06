@@ -39,17 +39,17 @@ const Labwox = () => {
             {/* 📝 Text Section */}
             <div className="flex-1 text-center lg:text-left">
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-light text-white leading-tight drop-shadow-md">
-                Hear What Experts Say <br />
-                About <span className="text-[#2a8fee] font-semibold">Labwox</span>
+                Building Nigeria’s Research<br />
+                <span className="text-yellow-200 font-semibold">Future Together</span>
               </h1>
               <p className="mt-6 text-sm sm:text-base md:text-lg text-gray-50 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                “Labwox has revolutionized the way our institution approaches research and data analysis. With its seamless integration, powerful tools, and reliable performance, our team is more productive and confident in delivering accurate results.”
+                We’ve partnered with institutions and agencies such as the <span className="text-[#adcbe7] font-semibold"> Standards Organisation of Nigeria, UNILAG’s D.K. Olukoya Central Research Laboratory and the Lagos State Environmental Protection Agency,</span>offering method development, training, and analytical support for diverse research goals.
               </p>
               <Link
                 to="/labwox"
-                className="mt-8 inline-block bg-[#2a8fee] text-white px-6 py-3 rounded-xl hover:bg-[#102B4E] transition-all text-sm font-medium shadow-md"
+                className="mt-8 inline-block bg-[#356b9e] text-white px-6 py-3 rounded-xl hover:bg-[#102B4E] transition-all text-sm font-medium shadow-md"
               >
-                Explore Labwox
+                Your institution could be next
               </Link>
             </div>
 
