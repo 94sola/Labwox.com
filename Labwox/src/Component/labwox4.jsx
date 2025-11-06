@@ -45,7 +45,7 @@ export default function LabwoxFeatures() {
   ];
   return (
     <Wrapper>
-      <section className="w-full bg-gradient-to-br from-[#153D63] via-white to-[#153D63] my-10 items-center justify-center px-4 py-20">
+      <section className="w-full bg-gradient-to-br from-[#0a3d62] via-[#1b4f72] to-[#6a0572] my-10 items-center justify-center px-4 py-20">
         {/* === Particle + Benefit Section === */}
         <div className="relative w-full py-14 px-16 mx-auto overflow-hidden ">
           <Particles
@@ -93,7 +93,7 @@ export default function LabwoxFeatures() {
               initial={{ opacity: 0, y: -40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="text-[#153D63] font-bold text-4xl md:text-5xl mt-4 tracking-tight"
+              className="text-white font-bold text-4xl md:text-5xl mt-4 tracking-tight"
             >
               Who Can Benefit?
             </motion.h1>
@@ -122,9 +122,9 @@ export default function LabwoxFeatures() {
                     className="px-4 py-10 transition-all text-[#153D63]"
                   >
                     <div className="flex justify-center mb-4">
-                      <Icon className="w-10 h-10 text-[#153D63]" />
+                      <Icon className="w-10 h-10 text-white" />
                     </div>
-                    <p className="text-lg font-medium leading-relaxed text-neutral-800">
+                    <p className="text-lg font-medium leading-relaxed text-white">
                       {item.desc}
                     </p>
                   </motion.div>
