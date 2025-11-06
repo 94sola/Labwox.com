@@ -131,16 +131,10 @@ const Proximate = () => {
 
         <div className="max-w-4xl mx-auto text-center my-12 px-4">
           <h1 className="text-4xl md:text-5xl font-thin text-[#153D63] mb-6">
-            Proximate Analysis of Foods
+            Proximate Analysis
           </h1>
           <p className="text-base md:text-lg text-gray-700 leading-relaxed max-w-4xl mx-auto">
-            <strong>Proximate analysis</strong> measures the major nutritional
-            components of food, including{" "}
-            <em>moisture, ash, protein, fat, crude fiber, and carbohydrates</em>.
-            This provides a quick overview of energy value and food quality. At{" "}
-            <strong>ChemXpert</strong>, we follow AOAC-approved methods for
-            accurate results in food research, quality assurance, and regulatory
-            compliance.
+           Assess the major nutritional components of food, including moisture, ash, protein, fat, crude fiber, and carbohydrates.
           </p>
         </div>
 

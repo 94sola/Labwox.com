@@ -144,10 +144,10 @@ const Pcb = () => {
 
         <div className="max-w-4xl mx-auto text-center my-12 px-4">
           <h1 className="text-4xl md:text-5xl font-thin text-[#153D63] mb-6">
-            PCBs
+            PCBs by GC-MSD
           </h1>
           <p className="text-base md:text-lg text-gray-700 leading-relaxed max-w-4xl mx-auto">
-            <strong>PCBs</strong> (Polychlorinated Biphenyls) are highly toxic, persistent organic pollutants that were historically used in transformers, capacitors, hydraulic fluids, and other industrial applications due to their chemical stability and insulating properties. .
+          Analyse a mix of 19 PCB compounds in various matrix types by GC-MSD
           </p>
         </div>
 

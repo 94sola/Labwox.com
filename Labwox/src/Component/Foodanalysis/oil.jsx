@@ -133,17 +133,10 @@ const Oil = () => {
         {/* Header */}
         <div className="max-w-4xl mx-auto text-center my-12 px-4">
           <h1 className="text-4xl md:text-5xl font-thin text-[#153D63] mb-6">
-            Oil Quality Parameters
+            Oil Quality 
           </h1>
           <p className="text-base md:text-lg text-gray-700 leading-relaxed max-w-4xl mx-auto">
-            <strong>Oil quality parameters</strong> such as free fatty acid
-            content, peroxide value, iodine value, and saponification value
-            are critical indicators of freshness, stability, and suitability of
-            edible oils and fats. At <strong>ChemXpert</strong>, we apply
-            validated chemical and instrumental methods to monitor oil quality
-            in plant oils, processed oils, and fat blends. Our analyses ensure
-            compliance with food standards, support shelf-life studies, and
-            guarantee consumer safety.
+            Obtain physicochemical data regarding oil quality using chemical methods.
           </p>
         </div>
 
