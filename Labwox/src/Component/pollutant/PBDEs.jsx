@@ -153,14 +153,10 @@ const Pbde = () => {
 
         <div className="max-w-4xl mx-auto text-center my-12 px-4">
           <h1 className="text-4xl md:text-5xl font-thin text-[#153D63] mb-6">
-            Polybrominated Diphenyl Ethers (PBDEs)
+          PBDEs by GC-MSD
           </h1>
           <p className="text-base md:text-lg text-gray-700 leading-relaxed max-w-4xl mx-auto">
-            <strong>PBDEs</strong> are brominated flame retardants widely used 
-            in plastics, textiles, and electronics. These persistent organic pollutants 
-            accumulate in the environment and living organisms, raising concerns 
-            about human health and ecological safety. Our advanced analytical 
-            services ensure accurate detection, monitoring, and regulatory compliance.
+          PBDEs are brominated flame retardants widely used in plastics, textiles, and electronics. Analyse a mix of PBDEs in various sample matrices by GC-MSD.
           </p>
         </div>
 

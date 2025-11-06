@@ -1,127 +1,118 @@
-import React from 'react';
+import React from "react";
 import { Link } from "react-router-dom";
-import labsoft from "../assets/image/labsoft.jpg";
-import labsofts from "../assets/image/labsoft2.jpg";
-import Wrapper from './wrapper';
+import Wrapper from "./wrapper";
+import { motion } from "framer-motion";
 
-// Swiper imports
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
+import pollutant from "../assets/image/pollution.jpg";
+import pesticide from "../assets/image/pesticide.jpg";
+import foodwater from "../assets/image/foodwater.jpeg";
+import compositional from "../assets/image/compositional.png";
 
-const LabsoftData = [
+const items = [
   {
-    title: 'Labsoft for Academics',
-    image: labsoft,
+    title: " Environmental Pollutants",
+    image: pollutant,
     description:
-      'Empowering institutions to streamline academic research, foster student collaboration, and manage data more efficiently.',
-    link: '/universities',
+      "Identify and quantify pollutants in soil, air, and water. Our capabilities cover hydrocarbons, volatile and semi-volatile compounds, and persistent organic pollutants for comprehensive environmental assessment.",
+    link: "/pollutantanaly",
+    linkLabel: "Explore",
   },
   {
-    title: 'Labsoft for Laboratories',
-    image: labsofts,
+    title: "Pesticide Residues",
+    image: pesticide,
     description:
-      'Simplifying laboratory workflows with intelligent tracking, automation, and compliance tools—built for scientific teams.',
-    link: '/laboratory',
+      "Detect pesticide residues across diverse matrices with high sensitivity. Our validated methods ensure compliance with international standards and support food safety research.",
+    link: "/pesticide",
+    linkLabel: "Explore",
+  },
+  {
+    title: "Food and Water Quality",
+    image: foodwater,
+    description:
+      "Ensure safety and quality with advanced testing of food and water samples. From essential minerals to heavy metals, we deliver reliable results that support nutrition, safety, and regulatory compliance.",
+    link: "/foodwater",
+    linkLabel: "Explore",
+  },
+  {
+    title: "Compositional Analyses",
+    image: compositional,
+    description:
+      "Understand what your samples are made of. We provide detailed profiling of chemical composition, enabling insights into product quality, authenticity, and research innovation.",
+    link: "/composition",
+    linkLabel: "Explore",
   },
 ];
 
-const Labwox = () => {
+const Chemx = () => {
   return (
     <Wrapper>
-      <section className="py-16 px-4 sm:px-6 md:px-10 lg:px-20 bg-white">
-        <div className="max-w-7xl mx-auto text-center space-y-10">
-          
-          {/* Header Section */}
-          <div className="space-y-5">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extralight text-gray-900 leading-tight">
-              Discover the Simplicity of Smart Lab Management with{' '}
-              <span className="text-[#153D63] font-semibold">Labsoft</span>
-            </h1>
-            <p className="text-base sm:text-lg md:text-xl text-gray-700 max-w-3xl mx-auto">
-              Labsoft delivers intuitive digital tools tailored for labs and universities. Focus on innovation while we handle the complexity of data, documentation, and operations.
-            </p>
-          </div>
+      <section className="py-14 px-4 bg-white w-full mb-8 rounded-sm">
+        {/* === Section Header === */}
+        <div className="max-w-7xl mx-auto text-center mb-10">
+          <h2 className="text-[#153D63] font-semibold text-4xl md:text-5xl mt-4">
+            Areas of Competence
+          </h2>
+          <p className="text-gray-600 mt-4 text-lg max-w-3xl mx-auto">
+            Explore our specialized areas of expertise supporting advanced
+            research and analysis.
+          </p>
+        </div>
 
-          {/* Mobile Slider */}
-          <div className="sm:hidden">
-            <Swiper spaceBetween={20} slidesPerView={1}>
-              {LabsoftData.map((labsft, index) => (
-                <SwiperSlide key={index}>
-                  <div
-                    className="relative rounded-2xl overflow-hidden shadow-lg group min-h-[450px]"
-                  >
-                    {/* Background Image */}
-                    <div
-                      className="absolute inset-0 transition-transform duration-700 scale-100 group-hover:scale-110"
-                      style={{
-                        backgroundImage: `url(${labsft.image})`,
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center',
-                      }}
-                    ></div>
+        {/* === Cards Grid === */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols- gap-8 max-w-4xl mx-auto">
+          {items.map((item, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.2, duration: 0.6 }}
+              className="flex flex-col bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300"
+            >
+              {/* === Image === */}
+              <div className="relative w-full h-40">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"
+                />
+              </div>
 
-                    {/* Gradient Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent transition duration-300"></div>
+              {/* === Text Content === */}
+              <div className="flex-1 p-6 flex flex-col">
+                <h3
+                  className={`${
+                    item.title === "Food and Water Quality" ||
+                    item.title === "Compositional Analyses"
+                      ? "text-2xl"
+                      : "text-2xl"
+                  } font-semibold text-[#153D63]`}
+                >
+                  {item.title}
+                </h3>
 
-                    {/* Content */}
-                    <div className="relative z-10 flex flex-col justify-center items-center text-center h-full p-6 text-white space-y-6">
-                      <h3 className="text-2xl font-bold drop-shadow-lg">{labsft.title}</h3>
-                      <p className="text-base leading-relaxed drop-shadow max-w-md">
-                        {labsft.description}
-                      </p>
-                      <Link
-                        to={labsft.link}
-                        className="inline-block bg-[#FFC000] text-[#153D63] px-6 py-3 text-sm rounded-lg font-semibold shadow hover:bg-[#e6ae00] transition"
-                      >
-                        Learn More →
-                      </Link>
-                    </div>
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
+                {/* Decorative Line */}
+                <div className="w-16 h-1 bg-blue-300 rounded-full mt-3 mb-4"></div>
 
-          {/* Desktop Grid */}
-          <div className="hidden sm:grid grid-cols-1 sm:grid-cols-2 gap-10">
-            {LabsoftData.map((labsft, index) => (
-              <div
-                key={index}
-                className="relative rounded-2xl overflow-hidden shadow-lg group min-h-[500px]"
-              >
-                {/* Background Image */}
-                <div
-                  className="absolute inset-0 transition-transform duration-700 scale-100 group-hover:scale-110"
-                  style={{
-                    backgroundImage: `url(${labsft.image})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                  }}
-                ></div>
+                <p className="text-gray-700 leading-relaxed flex-1">
+                  {item.description}
+                </p>
 
-                {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent transition duration-300"></div>
-
-                {/* Content */}
-                <div className="relative z-10 flex flex-col justify-center items-center text-center h-full p-6 text-white space-y-6">
-                  <h3 className="text-2xl font-bold drop-shadow-lg">{labsft.title}</h3>
-                  <p className="text-base leading-relaxed drop-shadow max-w-md">
-                    {labsft.description}
-                  </p>
+                {/* CTA Button */}
+                <div className="flex justify-center mt-6">
                   <Link
-                    to={labsft.link}
-                    className="inline-block bg-[#FFC000] text-[#153D63] px-6 py-3 text-sm rounded-lg font-semibold shadow hover:bg-[#e6ae00] transition"
+                    to={item.link}
+                    className="inline-block px-12 py-1.5 rounded-md bg-[#153D63] text-white text-sm font-medium hover:bg-[#0f304e] transition-colors duration-300"
                   >
-                    Learn More →
+                    {item.linkLabel}
                   </Link>
                 </div>
               </div>
-            ))}
-          </div>
+            </motion.div>
+          ))}
         </div>
       </section>
     </Wrapper>
   );
 };
 
-export default Labwox;
+export default Chemx;

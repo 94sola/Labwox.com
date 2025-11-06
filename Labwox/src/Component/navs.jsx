@@ -5,7 +5,6 @@ import { FlaskConical, Atom, ServerCog } from "lucide-react";
 
 import labwoxImg from "../assets/image/labwox.jpg";
 import chemxpertImg from "../assets/image/labwox4.jpg";
-import labsoftImg from "../assets/image/labsoft.jpg";
 
 const Tooltip = ({ text }) => (
   <motion.div
@@ -32,7 +31,7 @@ const cards = [
     title: "ChemXpert",
     icon: <Atom className="w-7 h-7 md:w-9 md:h-9 text-[#0B3D2E]" />,
     image: chemxpertImg,
-    link: "/chemxpert",
+    link: "/application",
     description: "Bring your research ideas to life.",
     tooltip: "Discover ChemXpert",
   },

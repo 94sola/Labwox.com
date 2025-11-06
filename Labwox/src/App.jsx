@@ -8,7 +8,6 @@ import { useAnalytics } from "./Component/hooks/useAnalytics";
 // Pages
 
 import Labwox from './Component/labwox';
-import Xpert from './Component/chemxpert';
 import Training from './Component/traning';
 import Consulting from './Component/consulting';
 import Research from './Component/research';
@@ -74,7 +73,6 @@ function App() {
             <Route path="/faq" element={<Faq />} />
             <Route path="/application" element={<Application />} />
             <Route path="/aim" element={<Aim />} />
-            <Route path="/chemxpert" element={<Xpert />} />
             <Route path="/research" element={<Research />} />
             <Route path="/training" element={<Training />} />
             <Route path="/consulting" element={<Consulting />} />

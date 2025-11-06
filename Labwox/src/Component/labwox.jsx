@@ -1,6 +1,6 @@
 import Hero from './Hero';
-import Hero1 from './chemx3';;
-import Hero2 from './chemx2';
+import Hero1 from './labwox2';;
+import Hero2 from './Labwox1';
 import Hero3 from './labwox3';
 import Hero4 from './labwox4';
 
