@@ -131,7 +131,7 @@ const Oil = () => {
         </div>
 
         {/* Header */}
-        <div className="max-w-4xl mx-auto text-center my-12 px-4">
+        <div className="max-w-4xl mx-auto text-center my-12 px-5">
           <h1 className="text-4xl md:text-5xl font-thin text-[#153D63] mb-6">
             Oil Quality 
           </h1>
