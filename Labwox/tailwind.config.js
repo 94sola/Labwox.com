@@ -31,6 +31,19 @@ export default {
           '0%': { transform: 'rotate(0deg)' },
           '100%': { transform: 'rotate(360deg)' },
         },
+        shimmer: {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(100%)' },
+        },
+        glow: {
+          '0%, 100%': { opacity: '0.7', transform: 'scale(1)' },
+          '50%': { opacity: '1', transform: 'scale(1.1)' },
+        },
+      },
+      fontFamily: {
+        heading: ['"Inter Tight"', 'sans-serif'],
+        body: ['Inter', 'sans-serif'],
+        manrope: ['"Manrope"', 'sans-serif'],
       },
       animation: {
         'float-slow': 'floatSlow 6s ease-in-out infinite',
@@ -39,6 +52,8 @@ export default {
         scroll: 'scrollLeft 100s linear infinite',
         scrollReverse: 'scrollLeftRight 100s ease-in-out infinite',
         spinSlow: 'spinSlow 35s linear infinite',
+        shimmer: 'shimmer 3s infinite linear',
+        glow: 'glow 6s ease-in-out infinite',
       },
     },
   },

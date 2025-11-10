@@ -3,7 +3,7 @@ import image from "../../assets/image/water.png";
 import image1 from "../../assets/image/soil.jpg";
 import image2 from "../../assets/image/discharge.jpg";
 import image3 from "../../assets/image/pipewater.jpg";
-import logo from "../../assets/image/labwox..jpeg"; // ✅ Your logo
+import logo from "../../assets/image/labwox..png";
 
 import { Link } from "react-router-dom";
 import { ArrowLeft, Printer, ChevronDown } from "lucide-react";
