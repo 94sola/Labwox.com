@@ -12,7 +12,6 @@ import Training from './Component/traning';
 import Consulting from './Component/consulting';
 import Research from './Component/research';
 import Explore from './Component/explore';
-import About from './Component/about';
 import Gallery from './Component/gallery';
 import Aim from './Component/aim';
 import Chemical from './Component/phytochemical';
@@ -68,7 +67,6 @@ function App() {
             <Route path="/" element={<Labwox />} />
             <Route path="/explore" element={<Explore />} />
             <Route path="/gallery" element={<Gallery />} />
-            <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/faq" element={<Faq />} />
             <Route path="/application" element={<Application />} />
