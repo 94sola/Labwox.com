@@ -1,17 +1,18 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
-import { FlaskConical, Atom, ServerCog } from "lucide-react";
+import { Handshake, Beaker, GraduationCap } from "lucide-react";
 
-import labwoxImg from "../assets/image/labwox.jpg";
-import chemxpertImg from "../assets/image/labwox4.jpg";
+import img1 from "../assets/image/statistics.jpg";
+import img2 from "../assets/image/collabarative.jpg";
+import img3 from "../assets/image/trainner.jpg";
 
 const Tooltip = ({ text }) => (
   <motion.div
     initial={{ opacity: 0, y: -8 }}
     animate={{ opacity: 1, y: 0 }}
     exit={{ opacity: 0, y: -8 }}
-    transition={{ duration: 0.18, ease: "easeOut" }} // faster tooltip animation
+    transition={{ duration: 0.18, ease: "easeOut" }}
     className="absolute -top-9 left-1/2 -translate-x-1/2 bg-gradient-to-r from-gray-900 to-gray-800 text-white text-xs md:text-sm px-3 py-1 rounded-full shadow-xl border border-white/10 backdrop-blur-md z-50"
   >
     {text}
@@ -20,23 +21,31 @@ const Tooltip = ({ text }) => (
 
 const cards = [
   {
-    title: "Labwox",
-    icon: <FlaskConical className="w-7 h-7 md:w-9 md:h-9 text-[#153D63]" />,
-    image: labwoxImg,
-    link: "/",
-    description: "Home",
-    tooltip: "Explore Labwox",
+    title: "Collaborative Research",
+    icon: <Handshake className="w-7 h-7 md:w-9 md:h-9 text-[#153D63]" />,
+    image: img1,
+    link: "/chemxpert",
+    description: "Partner with Labwox to bring your research ideas to life",
+    tooltip: "Get Started",
   },
   {
-    title: "ChemXpert",
-    icon: <Atom className="w-7 h-7 md:w-9 md:h-9 text-[#0B3D2E]" />,
-    image: chemxpertImg,
-    link: "/application",
-    description: "Bring your research ideas to life.",
+    title: "Method Development",
+    icon: <Beaker className="w-7 h-7 md:w-9 md:h-9 text-[#0B3D2E]" />,
+    image: img2,
+    link: "/mdv",
+    description: "We refine analytical methods that meet international standards",
+    tooltip: "Contact us",
+  },
+  {
+    title: "Training & Capacity Building",
+    icon: <GraduationCap className="w-7 h-7 md:w-9 md:h-9 text-[#0B3D2E]" />,
+    image: img3,
+    link: "/training",
+    description: "Gain hands-on experience with modern analytical techniques.",
     tooltip: "Discover ChemXpert",
   },
- 
 ];
+
 
 const NavTop = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -95,9 +104,9 @@ const NavTop = () => {
       }}
     >
       <div
-        className={`max-w-[900px] w-full mx-auto transition-all duration-200 ${
+        className={`max-w-[1050px] w-full mx-auto transition-all duration-200 ${
           isDesktop() && isHovered
-            ? "py-6 grid grid-cols-2 gap-6"
+            ? "py-6 grid grid-cols-3 gap-6"
             : "h-14 flex items-center justify-between px-4"
         }`}
       >

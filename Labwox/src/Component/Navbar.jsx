@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Wrapper from '../Component/wrapper';
 import { LuChevronDown, LuChevronRight } from 'react-icons/lu';
-import logo from '../assets/image/Labwox Logo2.png'
+import logo from '../assets/image/labwox..png';
 import { IoMdClose } from 'react-icons/io';
 
 const Navbar = () => {
@@ -27,7 +27,6 @@ const Navbar = () => {
 
   const menuItems = {
     Company: [
-      { label: 'Gallery', link: '/gallery' },
       { label: 'Aim & Vision', link: '/aim' },
       { label: 'FAQ', link: '/faq' },
     ],
@@ -112,11 +111,11 @@ const Navbar = () => {
               {/* Standalone About Us */}
               <li>
                 <Link
-                  to="/about"
+                  to="/gallery"
                   onClick={closeMobileMenu}
                   className="capitalize hover:text-gray-600"
                 >
-                  About Us
+                  Gallery
                 </Link>
               </li>
 

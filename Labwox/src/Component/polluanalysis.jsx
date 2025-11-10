@@ -23,10 +23,8 @@ const Pollutant = () => {
         className="relative w-full py-24 sm:py-28 lg:py-36 overflow-hidden bg-fixed bg-center bg-cover"
         style={{ backgroundImage: `url(${pollu})` }}
       >
-        {/* Dark Overlay for Contrast */}
         <div className="absolute inset-0 bg-black/70 backdrop-blur-[2px]" />
 
-        {/* Back Navigation */}
         <div className="relative flex items-center justify-start mb-6 sm:mb-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link
             to="/application"
@@ -37,7 +35,6 @@ const Pollutant = () => {
           </Link>
         </div>
 
-        {/* Header */}
         <div className="relative text-center mb-10 sm:mb-14 px-4 sm:px-6 lg:px-8">
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white">
             Explore Pollutant Applications
@@ -51,7 +48,6 @@ const Pollutant = () => {
           </p>
         </div>
 
-        {/* Application List */}
         <div className="relative max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8 px-4 sm:px-6 lg:px-8">
           {applications.map((app, index) => (
             <Link

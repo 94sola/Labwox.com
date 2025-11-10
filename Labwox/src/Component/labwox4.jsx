@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from 'react-router-dom';
 import Wrapper from "./wrapper";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
@@ -45,7 +46,7 @@ export default function LabwoxFeatures() {
   ];
   return (
     <Wrapper>
-      <section className="w-full bg-gradient-to-br from-[#0a3d62] via-[#1b4f72] to-[#6a0572] my-10 items-center justify-center px-4 py-20">
+      <section className="w-full bg-white items-center justify-center px-4 py-20">
         {/* === Particle + Benefit Section === */}
         <div className="relative w-full py-14 px-16 mx-auto overflow-hidden ">
           <Particles
@@ -88,12 +89,12 @@ export default function LabwoxFeatures() {
           />
 
           <div className="relative max-w-5xl mx-auto text-center z-10">
-            {/* === Heading === */}
+
             <motion.h1
               initial={{ opacity: 0, y: -40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="text-white font-bold text-4xl md:text-5xl mt-4 tracking-tight"
+              className="text-[#153D63] font-thin text-5xl md:text-6xl mt-4 tracking-tight"
             >
               Who Can Benefit?
             </motion.h1>
@@ -105,7 +106,6 @@ export default function LabwoxFeatures() {
               className="mt-4 h-1 w-28 mx-auto bg-yellow-400 rounded-full"
             />
 
-            {/* === Benefit Cards === */}
             <div className="mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
               {benefitItems.map((item, index) => {
                 const Icon = item.icon;
@@ -122,9 +122,9 @@ export default function LabwoxFeatures() {
                     className="px-4 py-10 transition-all text-[#153D63]"
                   >
                     <div className="flex justify-center mb-4">
-                      <Icon className="w-10 h-10 text-white" />
+                      <Icon className="w-10 h-10 text-[#153D63]" />
                     </div>
-                    <p className="text-lg font-medium leading-relaxed text-white">
+                    <p className="text-lg font-medium leading-relaxed text-[#153D63]">
                       {item.desc}
                     </p>
                   </motion.div>
@@ -132,29 +132,30 @@ export default function LabwoxFeatures() {
               })}
             </div>
 
-            {/* === CTA Section === */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1 }}
               className="mt-20 max-w-3xl mx-auto bg-gradient-to-br from-white via-gray-50 to-gray-100 border border-yellow-400/30 rounded-2xl p-8 shadow-2xl"
             >
-              <h2 className="text-2xl sm:text-3xl font-bold text-[#153D63] mb-4">
+              <h2 className="text-2xl sm:text-3xl font-thin text-[#153D63] mb-4">
                 Take the First Step
               </h2>
-              <p className="text-neutral-700 text-base sm:text-lg leading-relaxed">
-                ChemXpert is more than free testing — it’s the start of a
+              <p className="text-[#153D63] text-base leading-relaxed">
+                ChemXpert is more than free testing it’s the start of a
                 transformative partnership. By combining institutional knowledge
                 with Labwox’s scientific network, we produce research outputs
                 that are impactful, publishable, and globally competitive.
               </p>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="mt-6 inline-block px-8 py-3 bg-[#153D63] text-white font-semibold text-lg rounded-xl shadow-lg hover:bg-[#1e4d7c] transition-all"
-              >
-                Get Started
-              </motion.button>
+              <Link to="/contact">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="mt-6 inline-block px-8 py-3 bg-yellow-400 text-white font-semibold text-lg rounded-xl shadow-lg hover:bg-yellow-500 transition-all"
+                >
+                  Get Started
+                </motion.button>
+              </Link>
             </motion.div>
           </div>
         </div>
