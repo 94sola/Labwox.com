@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Custom animations for glass effect */
+.animate-shimmer {
+  animation: shimmer 3s infinite linear;
+}
+
+.animate-glow {
+  animation: glow 6s ease-in-out infinite;
+}
+
+
 
 
 

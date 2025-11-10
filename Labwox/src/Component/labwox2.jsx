@@ -46,19 +46,19 @@ const items = [
 const Chemx = () => {
   return (
     <Wrapper>
-      <section className="py-14 px-4 bg-white w-full mb-8 rounded-sm">
-        {/* === Section Header === */}
-        <div className="max-w-7xl mx-auto text-center mb-10">
+      <section className="py-14 px-4 bg-white w-full rounded-sm">
+
+        <div className="max-w-5xl mx-auto text-center mb-10">
           <h2 className="text-[#153D63] font-semibold text-4xl md:text-5xl mt-4">
             Areas of Competence
           </h2>
-          <p className="text-gray-600 mt-4 text-lg max-w-3xl mx-auto">
+          <p className="text-gray-600 mt-4 text-base md:text-2xl max-w-3xl mx-auto">
             Explore our specialized areas of expertise supporting advanced
             research and analysis.
           </p>
         </div>
 
-        {/* === Cards Grid === */}
+ 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols- gap-8 max-w-4xl mx-auto">
           {items.map((item, index) => (
             <motion.div
@@ -68,7 +68,7 @@ const Chemx = () => {
               transition={{ delay: index * 0.2, duration: 0.6 }}
               className="flex flex-col bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300"
             >
-              {/* === Image === */}
+
               <div className="relative w-full h-40">
                 <img
                   src={item.image}
@@ -77,7 +77,7 @@ const Chemx = () => {
                 />
               </div>
 
-              {/* === Text Content === */}
+
               <div className="flex-1 p-6 flex flex-col">
                 <h3
                   className={`${
@@ -90,14 +90,11 @@ const Chemx = () => {
                   {item.title}
                 </h3>
 
-                {/* Decorative Line */}
                 <div className="w-16 h-1 bg-blue-300 rounded-full mt-3 mb-4"></div>
 
-                <p className="text-gray-700 leading-relaxed flex-1">
+                <p className="text-[#153D63] leading-relaxed flex-1">
                   {item.description}
                 </p>
-
-                {/* CTA Button */}
                 <div className="flex justify-center mt-6">
                   <Link
                     to={item.link}

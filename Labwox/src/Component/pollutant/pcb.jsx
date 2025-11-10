@@ -1,5 +1,5 @@
 import React, { useRef, } from "react"
-import logo from "../../assets/image/labwox..jpeg";
+import logo from "../../assets/image/labwox..png";
 import image from "../../assets/image/water.png";
 import images from "../../assets/image/petroleum.jpg";
 import image2 from "../../assets/image/waste.jpg"; 

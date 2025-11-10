@@ -15,10 +15,9 @@ const Composition = () => {
       <section className="relative w-full py-24 sm:py-28 lg:py-36 overflow-hidden bg-fixed bg-center bg-cover mb-10"
         style={{ backgroundImage: `url(${compo})` }}
       >
-        {/* Dark Overlay for Contrast */}
+
         <div className="absolute inset-0 bg-neutral-800/70 backdrop-blur-[2px]" />
 
-        {/* Navigation - Only Previous */}
         <div className="relative flex items-center justify-start mb-10 max-w-7xl mx-auto px-4">
           <Link
             to="/application"
@@ -28,7 +27,6 @@ const Composition = () => {
           </Link>
         </div>
 
-        {/* Header */}
         <div className="relative text-center mb-12 px-4">
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white">
             Compositional Analysis
@@ -40,7 +38,6 @@ const Composition = () => {
           </p>
         </div>
 
-        {/* Analysis Options */}
         <div className="relative max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-8 px-4 sm:px-6 lg:px-8">
           {Analysis.map((item, index) => (
             <Link

@@ -23,7 +23,7 @@ const Application = () => {
         {/* Back Navigation */}
         <div className="relative flex items-center justify-start mb-6 sm:mb-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link
-            to="/chemxpert"
+            to="/"
             className="flex items-center gap-2 text-[#FFC000] hover:text-white transition-colors text-sm sm:text-base font-medium"
           >
             <ArrowLeft size={18} className="sm:size-5" />

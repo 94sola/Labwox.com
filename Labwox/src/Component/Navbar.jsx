@@ -1,14 +1,36 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react'; 
 import { Link } from 'react-router-dom';
 import Wrapper from '../Component/wrapper';
 import { LuChevronDown, LuChevronRight } from 'react-icons/lu';
-import logo from '../assets/image/Labwox Logo2.png'
+import logo from '../assets/image/labwox..png';
 import { IoMdClose } from 'react-icons/io';
 
 const Navbar = () => {
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [activeSubDropdown, setActiveSubDropdown] = useState(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  // Added states
+  const [hidden, setHidden] = useState(false);
+  const [lastScroll, setLastScroll] = useState(0);
+
+  // Scroll hide/show logic (exactly as requested)
+  useEffect(() => {
+    const handleScroll = () => {
+      const current = window.scrollY;
+
+      if (current - lastScroll > 40) {
+        setHidden(true);       // hide header when scrolling down 40px
+      } else if (lastScroll - current > 40) {
+        setHidden(false);      // show header when scrolling up 40px
+      }
+
+      setLastScroll(current);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScroll]);
 
   const toggleDropdown = (menu) => {
     setActiveDropdown((prev) => (prev === menu ? null : menu));
@@ -27,17 +49,19 @@ const Navbar = () => {
 
   const menuItems = {
     Company: [
-      { label: 'Gallery', link: '/gallery' },
       { label: 'Aim & Vision', link: '/aim' },
       { label: 'FAQ', link: '/faq' },
     ],
   };
 
   return (
-    <header className="bg-[#efebe7] text-black sticky top-0 left-0 w-full z-50">
+    <header
+      className={`bg-[#efebe7] text-black sticky top-0 left-0 w-full z-50 transition-transform duration-300 ${
+        hidden ? "-translate-y-full" : "translate-y-0"
+      }`}
+    >
       <Wrapper>
         <nav className="flex justify-between items-center px-4 lg:px-8 py-4 relative">
-          {/* Logo */}
           <Link to="/" className="flex items-center h-20 w-auto md:h-24 transition-transform duration-300 hover:scale-105">
             <img
               src={logo}
@@ -45,7 +69,7 @@ const Navbar = () => {
               className="h-full w-auto object-contain"
             />
           </Link>
-          {/* Mobile Hamburger & Close Button */}
+
           <div className="lg:hidden z-50">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -56,7 +80,6 @@ const Navbar = () => {
             </button>
           </div>
 
-          {/* Nav Links */}
           <div
             className={`${
               isMobileMenuOpen
@@ -75,7 +98,6 @@ const Navbar = () => {
                 </Link>
               </li>
 
-              {/* Dropdown Menus */}
               {Object.entries(menuItems).map(([menu, items]) => (
                 <li key={menu} className="relative group w-full lg:w-auto">
                   <button
@@ -90,7 +112,6 @@ const Navbar = () => {
                     />
                   </button>
 
-                  {/* Main Dropdown */}
                   {activeDropdown === menu && (
                     <ul className="bg-[#efebe7] text-black mt-2 py-2 shadow-lg rounded-lg z-50 w-full lg:w-60 lg:absolute lg:top-full lg:left-0">
                       {items.map((item) => (
@@ -98,7 +119,7 @@ const Navbar = () => {
                           <Link
                             to={item.link}
                             onClick={closeMobileMenu}
-                            className="block py-2 px-4 hover:bg-gray-600 hover:text-gray-200  rounded-lg"
+                            className="block py-2 px-4 hover:bg-gray-600 hover:text-gray-200 rounded-lg"
                           >
                             {item.label}
                           </Link>
@@ -109,18 +130,16 @@ const Navbar = () => {
                 </li>
               ))}
 
-              {/* Standalone About Us */}
               <li>
                 <Link
-                  to="/about"
+                  to="/gallery"
                   onClick={closeMobileMenu}
                   className="capitalize hover:text-gray-600"
                 >
-                  About Us
+                  Gallery
                 </Link>
               </li>
 
-              {/* Standalone Contact */}
               <li>
                 <Link
                   to="/contact"

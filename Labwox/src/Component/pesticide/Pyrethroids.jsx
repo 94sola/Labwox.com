@@ -4,7 +4,7 @@ import image2 from "../../assets/image/food.jpg";
 import images from "../../assets/image/waste.jpg";
 import image3 from "../../assets/image/sediment.jpg";
 import image1 from "../../assets/image/biological.jpg";
-import logo from "../../assets/image/labwox..jpeg"; // ✅ Your logo
+import logo from "../../assets/image/labwox..png";
 
 import { Link } from "react-router-dom";
 import { ArrowLeft, Printer, } from "lucide-react";

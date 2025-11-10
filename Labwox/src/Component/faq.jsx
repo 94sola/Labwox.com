@@ -4,29 +4,92 @@ import Wrapper from "./wrapper";
 
 const faqs = [
   {
+    question: "Who Is Labwox?",
+    answer:
+      "Labwox is a science consulting company that helps laboratories and researchers achieve more with less.",
+  },
+  {
     question: "Is Labwox a laboratory?",
     answer:
       "No, Labwox is not a laboratory but it partners with several laboratories and aggregates their services on its online platform.",
   },
   {
-    question: "How long does it take to obtain test results?",
+    question: "What is Chemxpert?",
     answer:
-      "This depends on factors specific to each order, but typical turnaround times fall between 2 - 4 weeks.",
+      " Chemxpert is a collaborative research initiative by Labwox that connects universities and research institutions to advanced analytical laboratories. It provides free testing for selected research projects, hands-on training, and expert technical guidance.",
   },
   {
-    question: "What services does Chemxpert provide?",
+    question: "Who can participate in Chemxpert?",
     answer:
-      "Chemxpert provides advanced analytical chemistry consulting, instrument rental, and expert training services.",
+      "Chemxpert is open to academic researchers, postgraduate students, and faculty members from accredited institutions who are engaged in research aligned with our core analytical areas.",
   },
   {
-    question: "Can I access Labsoft without a subscription?",
+    question: "What is Chemxpert?",
     answer:
-      "Some features may be available for demo, but full access to Labsoft requires a valid subscription.",
+      " Chemxpert is a collaborative research initiative by Labwox that connects universities and research institutions to advanced analytical laboratories. It provides free testing for selected research projects, hands-on training, and expert technical guidance.",
   },
   {
-    question: "Are your platforms suitable for academic research?",
+    question: "Is Chemxpert a paid service?",
     answer:
-      "Yes. Labwox, Chemxpert, and Labsoft are all designed to support academic and industrial research.",
+      "No. Chemxpert is a promotional and collaborative initiative by Labwox. Selected research projects receive testing and analytical support at no cost, fostering long-term institutional partnerships.",
+  },
+  {
+    question: "What areas of research does Chemxpert cover?",
+    answer:
+      "Our core areas of competence include food and water analysis, environmental pollutant analysis, compositional analysis, and pesticide residue analysis.",
+  },
+  {
+    question: " How does Labwox select projects for Chemxpert?",
+    answer:
+      " Projects are evaluated based on their scientific merit, alignment with our analytical capabilities, and potential for publication or institutional collaboration.",
+  },
+
+  {
+    question: " How can my institution partner with Labwox?",
+    answer:
+      "Institutions can submit an expression of interest through the website. Once contact is established, Labwox formalizes the collaboration through a Memorandum of Understanding (MoU) defining roles, benefits, and the scope of engagement.",
+  },
+  {
+    question: "What are the benefits of partnering with Labwox",
+    answer:
+      " Partner institutions gain access to laboratory facilities, collaborative research opportunities, technical training for staff and students, and enhanced institutional visibility through co-authored publications.",
+  },
+  {
+    question: " Does Labwox offer training programs?",
+    answer:
+      "Yes. In addition to collaborative research, Labwox provides training and workshops in analytical instrumentation and laboratory best practices — both online and in-person.",
+  },
+  {
+    question: "Who owns the data and results from Chemxpert projects?",
+    answer:
+      "Results from Chemxpert-supported projects are shared between Labwox and the collaborating institution, with co-authorship opportunities clearly outlined in the MoU.",
+  },
+  {
+    question: "Can Chemxpert help with publication support?",
+    answer:
+      "Yes. Labwox supports data interpretation, results validation, and collaborative publication of Chemxpert research outcomes.",
+  },
+  {
+    question: "What analytical techniques are available through Labwox?",
+    answer:
+      " Our network of laboratories supports ICP-OES, GC-FID, GC-MS, UV-Vis, and other advanced techniques for elemental, compositional, and contaminant analyses.",
+  },
+
+  {
+    question: "How do I apply for Chemxpert?",
+    answer:
+      "Simply fill out the Expression of Interest form on our website, stating your institution, research area, and project overview. Our team will review your submission and reach out to discuss next steps.",
+  },
+  {
+    question: "How long does it take to begin a Chemxpert project?",
+    answer:
+      "Timelines vary depending on project scope and sample type, but selected researchers are typically onboarded within 2–3 weeks of approval.",
+  },
+
+  {
+    question: "Can international researchers apply?",
+    answer:
+      " Currently, Chemxpert focuses on Nigerian institutions, but partnerships with regional and international universities are being explored.",
   },
 ];
 
@@ -54,14 +117,14 @@ const Faq = () => {
             >
                 <button
                 onClick={() => toggleAccordion(index)}
-                className="w-full flex items-center justify-between text-left px-6 py-4 font-semibold text-gray-800 hover:bg-gray-50"
+                className="w-full flex items-center justify-between text-left px-6 py-4 font-medium text-lg text-gray-800 hover:bg-gray-50"
                 >
                 <span>{faq.question}</span>
                 {activeIndex === index ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
                 </button>
 
                 <div
-                className={`px-6 pb-4 text-gray-600 text-sm transition-all duration-300 ease-in-out ${
+                className={`px-6 pb-4 text-gray-600 text-base transition-all duration-300 ease-in-out ${
                     activeIndex === index ? "block" : "hidden"
                 }`}
                 >

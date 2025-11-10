@@ -3,7 +3,7 @@ import Wrapper from "./wrapper";
 import hero from "../assets/image/heroImg.png";
 import { Link } from "react-router-dom";
 
-// Floating metal label
+
 const HeavyMetalLabel = ({ symbol, label, className, color, delay = 0 }) => (
   <div
     className={`absolute z-0 opacity-30 ${color} ${className} animate-float-slow`}
@@ -14,7 +14,6 @@ const HeavyMetalLabel = ({ symbol, label, className, color, delay = 0 }) => (
   </div>
 );
 
-// ✅ Tailwind-based animations directly injected
 const styles = `
 @keyframes scroll-left {
   0% { transform: translateX(0); }
@@ -65,8 +64,7 @@ const Labwox = () => {
       
       <style>{styles}</style>
 
-      <div className="relative bg-white px-8 py-10 lg:pb-40 lg:pt-8 lg:rounded-t-[40px] shadow-xl flex flex-col justify-center overflow-hidden hidden lg:block">
-        {/* Decorative SVGs */}
+      <div className="relative bg-white px-8 py-10 lg:pb-40 lg:pt-8 lg:rounded-t-[40px] flex flex-col justify-center overflow-hidden hidden lg:block font-manrope">
         <div className="absolute top-10 left-10 opacity-60 z-0 animate-spinSlow">
           <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#b8149d" strokeWidth="1.5">
             <circle cx="12" cy="12" r="2" />
@@ -74,8 +72,6 @@ const Labwox = () => {
             <path d="M2 12a10 10 0 0 1 20 0" />
           </svg>
         </div>
-
-        {/* Atom style */}
         <div className="absolute top-24 right-[55%] opacity-30 z-0 animate-spinSlow">
           <svg width="64" height="64" viewBox="0 0 100 100" fill="none" stroke="#252301" strokeWidth="2">
             <circle cx="50" cy="50" r="8" />
@@ -89,16 +85,16 @@ const Labwox = () => {
             <line x1="50" y1="50" x2="70" y2="70" />
           </svg>
         </div>
-
-        {/* Main Content */}
         <div className="w-full max-w-8xl mx-4 lg:mx-10 space-y-16 z-10 relative pt-8 lg:pt-10">
           <div className="grid lg:grid-cols-2 items-center gap-12">
             <div className="space-y-6 text-gray-800">
-              <h1 className="text-4xl md:text-7xl lg:text-8xl font-medium text-neutral-900 leading-tight">
+              <h1 className="text-6xl max-w-2xl md:text-7xl lg:text-8xl font-extrabold text-neutral-900 leading-tight">
                 Classic Research, Modern Tools
               </h1>
-              <p className="text-base md:text-2xl font-light text-gray-700 leading-relaxed">
-                Labwox offers a unique solution to support researchers <br /> in executing high-quality scientific work.
+              <p className="text-base md:text-2xl max-w-3xl font-light text-[#153D63] leading-relaxed">
+              We connect institutions and researchers with the resources,
+              expertise, and infrastructure needed to conduct high-quality,
+              publishable research.
               </p>
               <Link
                 to="/application"
@@ -116,8 +112,6 @@ const Labwox = () => {
             </div>
           </div>
         </div>
-
-        {/* ✅ Scrolling Banner Desktop (scrolls left, pauses on hover) */}
         <div className="group w-full mt-20 bg-neutral-100 py-3 overflow-hidden relative border-t border-gray-200">
           <div className="flex whitespace-nowrap animate-scroll-left text-[#153D63] text-xl font-light tracking-wide px-6 gap-10">
             {[...bannerTexts, ...bannerTexts].map((text, index) => (
@@ -131,7 +125,6 @@ const Labwox = () => {
           </div>
         </div>
 
-        {/* Floating Heavy Metals */}
         <HeavyMetalLabel symbol="Pb" label="Lead" className="bottom-[5%] left-[25%]" color="text-red-500" delay={1.2} />
         <HeavyMetalLabel symbol="Hg" label="Mercury" className="bottom-[3%] right-[5%]" color="text-yellow-400" delay={1.4} />
         <HeavyMetalLabel symbol="Cd" label="Cadmium" className="bottom-[6%] left-[50%]" color="text-pink-500" delay={1.6} />
@@ -139,18 +132,20 @@ const Labwox = () => {
         <HeavyMetalLabel symbol="Sb" label="Antimony" className="bottom-[4%] left-[5%]" color="text-teal-500" delay={2.0} />
       </div>
 
-      {/* ================= MOBILE LAYOUT ================= */}
-      <div className="block lg:hidden bg-white px-4 py-12 space-y-12">
+
+      <div className="block lg:hidden bg-white px-4 pt-12 max-w-7xl space-y-12">
         <div className="space-y-6 text-gray-800">
-          <h1 className="text-4xl font-medium text-neutral-900 leading-snug">
+          <h1 className="text-4xl font-bold text-neutral-900 leading-snug">
             Classic Research, Modern Tools
           </h1>
-          <p className="text-base text-gray-700 leading-relaxed">
-            Labwox helps researchers and academics with high-quality scientific work through streamlined collaboration and access.
+          <p className="text-lg text-gray-700 max-w-4xl leading-relaxed">
+            We connect institutions and researchers with the resources,
+            expertise, and infrastructure needed to conduct high-quality,
+            publishable research.
           </p>
           <Link
-            to="/labsoft"
-            className="inline-block bg-[#153D63] text-white px-5 py-3 rounded-md text-sm font-medium shadow-md"
+            to="/application"
+            className="inline-block bg-[#153D63] text-white px-5 py-3 rounded-md text-sm font-bold shadow-md"
           >
             Get started
           </Link>
@@ -164,7 +159,6 @@ const Labwox = () => {
           />
         </div>
 
-        {/* ✅ Scrolling Banner Mobile (scrolls right, pauses on hover) */}
         <div className="group w-full bg-neutral-100 py-3 overflow-hidden relative border-t border-gray-200">
           <div className="flex whitespace-nowrap animate-scroll-right text-[#153D63] text-lg font-light tracking-wide px-4 gap-8">
             {[...bannerTexts, ...bannerTexts].map((text, index) => (

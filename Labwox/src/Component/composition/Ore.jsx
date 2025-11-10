@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import image from "../../assets/image/rock.jpg";
 import image1 from "../../assets/image/cores.jpg";
 import image2 from "../../assets/image/mine.jpg";
-import logo from "../../assets/image/labwox..jpeg";
+import logo from "../../assets/image/labwox..png";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Printer } from "lucide-react";
 import Wrapper from "../wrapper";

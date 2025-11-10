@@ -1,11 +1,13 @@
-const Labsoft= () => {
-    return (
-        <div className="h-lvh bg-[#efebe7]">
+import Hero from './collaborative';
+import Hero1 from './collaborative1';
 
 
-        </div>
-    )
-};
 
-
-export default Labsoft;
+export default function Home() {
+  return (
+    <div className="home-page bg-[#efebe7]">
+      <Hero />
+      <Hero1/>
+    </div>
+  );
+}

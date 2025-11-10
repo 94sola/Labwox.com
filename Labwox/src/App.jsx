@@ -5,14 +5,15 @@ import Navs from './Component/navs';
 import './index.css';
 import { useAnalytics } from "./Component/hooks/useAnalytics";
 
-// Pages
 
 import Labwox from './Component/labwox';
 import Training from './Component/traning';
 import Consulting from './Component/consulting';
-import Research from './Component/research';
+import Son from './Component/son';
+import Lasepa from './Component/lasepa';
+import Uni from './Component/unilag';
+import Chemxpert from './Component/chemxpert';
 import Explore from './Component/explore';
-import About from './Component/about';
 import Gallery from './Component/gallery';
 import Aim from './Component/aim';
 import Chemical from './Component/phytochemical';
@@ -26,9 +27,9 @@ import Pesticide from './Component/pest';
 import Composition from './Component/composition';
 import Metal from './Component/composition/Ore';
 import Foodwater from './Component/foodwater';
+import Mdv from './Component/mdv';;
 
 
-// ✅ Fixed casing here
 import Pthalate from './Component/pollutant/Ester';
 import Pah from './Component/pollutant/Mix';
 import Mixf from './Component/pollutant/Mixf';
@@ -68,12 +69,15 @@ function App() {
             <Route path="/" element={<Labwox />} />
             <Route path="/explore" element={<Explore />} />
             <Route path="/gallery" element={<Gallery />} />
-            <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/son" element={<Son />} />
+            <Route path="/lasepa" element={<Lasepa />} />
+            <Route path="/unilag" element={<Uni />} />
             <Route path="/faq" element={<Faq />} />
+            <Route path="/mdv" element={<Mdv />} />
             <Route path="/application" element={<Application />} />
             <Route path="/aim" element={<Aim />} />
-            <Route path="/research" element={<Research />} />
+            <Route path="/chemxpert" element={<Chemxpert />} />
             <Route path="/training" element={<Training />} />
             <Route path="/consulting" element={<Consulting />} />
             <Route path="/food/waterqua" element={<Waterqua />} />

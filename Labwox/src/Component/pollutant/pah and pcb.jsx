@@ -4,8 +4,7 @@ import { ArrowLeft, Printer } from "lucide-react";
 import Wrapper from "../wrapper";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
-
-import logo from "../../assets/image/labwox..jpeg";
+import logo from "../../assets/image/labwox..png";
 import image from "../../assets/image/water.png";
 import image1 from "../../assets/image/soil.jpg";
 import image2 from "../../assets/image/Aquatic animal  tissue.jpg";

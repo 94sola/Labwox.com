@@ -6,7 +6,7 @@ import image3 from "../../assets/image/dust.jpg";
 import image4 from "../../assets/image/petroleum.jpg";
 import image6 from "../../assets/image/Combustion.jpg";
 import image5 from "../../assets/image/Aquatic animal  tissue.jpg";
-import logo from "../../assets/image/labwox..jpeg"; // ✅ Your logo
+import logo from "../../assets/image/labwox..png";
 
 import { Link } from "react-router-dom";
 import { ArrowLeft, Printer, ChevronDown } from "lucide-react";

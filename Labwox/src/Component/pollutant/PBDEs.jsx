@@ -1,7 +1,7 @@
 
 import React, { useRef,} from "react";
 import image from "../../assets/image/water.png";
-import logo from "../../assets/image/labwox..jpeg";
+import logo from "../../assets/image/labwox..png";
 import images from "../../assets/image/sediment.jpg";
 import image2 from "../../assets/image/food.jpg";
 import image3 from "../../assets/image/biological.jpg";

@@ -7,12 +7,12 @@ import {
   FaWhatsapp,
 } from "react-icons/fa";
 import { FiArrowRight } from "react-icons/fi";
-import logo from '../assets/image/Labwox Logo2.png'
+import logo from '../assets/image/labwox..png';
 
 const Footer = () => {
   return (
     <Wrapper >
-      <footer className="bg-white text-black w-full px-4 sm:px-6 md:px-10 lg:px-20 py-12 md:py-16 mt-10 mx-auto">
+      <footer className="bg-white text-[#153D63] w-full px-4 sm:px-6 md:px-10 lg:px-20 py-12 md:py-16 mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-20">
           {/* Brand Section */}
           <div className="space-y-4">
@@ -23,18 +23,18 @@ const Footer = () => {
                 className="h-full w-auto object-contain"
               />
             </Link>
-            <h1 className="text-xl sm:text-2xl md:text-3xl font-medium leading-snug text-neutral-900">
+            <h1 className="text-xl sm:text-2xl md:text-3xl font-medium leading-snug text-[#153D63]">
               Classic Research, Modern Tools
             </h1>
-            <p className="text-black/60 text-sm sm:text-base leading-relaxed">
+            <p className="text-[#153D63] text-sm sm:text-base leading-relaxed">
               © Labwox Limited, all rights reserved. <br />
               2B Awori Close, Akora Villas off Adeniyi Jones, Ikeja, Lagos
             </p>
             <div className="flex flex-wrap gap-3 text-sm">
-              <a href="#privacy" className="underline text-black/70 hover:text-black">
+              <a href="#privacy" className="underline text-[#153D63] hover:text-[#153D63]">
                 Privacy Policy
               </a>
-              <a href="#terms" className="underline text-black/70 hover:text-black">
+              <a href="#terms" className="underline text-[#153D63] hover:text-[#153D63]">
                 Terms & Conditions
               </a>
             </div>
@@ -44,21 +44,21 @@ const Footer = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
             <div>
               <h2 className="text-lg font-semibold mb-3">Company</h2>
-              <ul className="text-black/60 space-y-2 text-sm">
-                <li><a href="#/about" className="hover:text-black">Products</a></li>
-                <li><a href="#/resources" className="hover:text-black">Resources</a></li>
-                <li><a href="#terms" className="hover:text-black">Terms & Conditions</a></li>
-                <li><a href="#privacy" className="hover:text-black">Privacy Policy</a></li>
+              <ul className="text-[#153D63] space-y-2 text-sm">
+                <li><a href="#/about" className="hover:text-[#153D63]">Products</a></li>
+                <li><a href="#/resources" className="hover:text-[#153D63]">Resources</a></li>
+                <li><a href="#terms" className="hover:text-[#153D63]">Terms & Conditions</a></li>
+                <li><a href="#privacy" className="hover:text-[#153D63]">Privacy Policy</a></li>
               </ul>
             </div>
 
             <div>
               <h2 className="text-lg font-semibold mb-3">Contact Us</h2>
-              <ul className="text-black/60 space-y-2 text-sm">
+              <ul className="text-[#153D63] space-y-2 text-sm">
                 <li>
                   <a
                     href="mailto:info@labwox.com.ng"
-                    className="underline hover:text-black"
+                    className="underline hover:text-[#153D63]"
                   >
                     info@labwox.com.ng
                   </a>
@@ -123,7 +123,7 @@ const Footer = () => {
                   name="EMAIL"
                   placeholder="Enter your email"
                   required
-                  className="flex-1 px-3 py-2 border-b border-neutral-800 text-sm text-black placeholder:text-neutral-500 focus:outline-none"
+                  className="flex-1 px-3 py-2 border-b border-neutral-800 text-sm text-[#153D63] placeholder:text-neutral-500 focus:outline-none"
                 />
                 <button
                   type="submit"
