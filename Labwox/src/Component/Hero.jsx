@@ -65,7 +65,7 @@ const Labwox = () => {
       
       <style>{styles}</style>
 
-      <div className="relative bg-white px-8 py-10 lg:pb-40 lg:pt-8 lg:rounded-t-[40px] shadow-xl flex flex-col justify-center overflow-hidden hidden lg:block">
+      <div className="relative bg-white px-8 py-10 lg:pb-40 lg:pt-8 lg:rounded-t-[40px] flex flex-col justify-center overflow-hidden hidden lg:block">
         {/* Decorative SVGs */}
         <div className="absolute top-10 left-10 opacity-60 z-0 animate-spinSlow">
           <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#b8149d" strokeWidth="1.5">
@@ -97,7 +97,7 @@ const Labwox = () => {
               <h1 className="text-4xl md:text-7xl lg:text-8xl font-medium text-neutral-900 leading-tight">
                 Classic Research, Modern Tools
               </h1>
-              <p className="text-base md:text-2xl font-light text-gray-700 leading-relaxed">
+              <p className="text-base md:text-2xl font-light text-[#153D63] leading-relaxed">
                 Labwox offers a unique solution to support researchers <br /> in executing high-quality scientific work.
               </p>
               <Link
@@ -140,7 +140,7 @@ const Labwox = () => {
       </div>
 
       {/* ================= MOBILE LAYOUT ================= */}
-      <div className="block lg:hidden bg-white px-4 py-12 space-y-12">
+      <div className="block lg:hidden bg-white px-4 pt-12 space-y-12">
         <div className="space-y-6 text-gray-800">
           <h1 className="text-4xl font-medium text-neutral-900 leading-snug">
             Classic Research, Modern Tools

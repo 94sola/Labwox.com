@@ -46,13 +46,13 @@ const items = [
 const Chemx = () => {
   return (
     <Wrapper>
-      <section className="py-14 px-4 bg-white w-full mb-8 rounded-sm">
+      <section className="py-14 px-4 bg-white w-full rounded-sm">
         {/* === Section Header === */}
-        <div className="max-w-7xl mx-auto text-center mb-10">
+        <div className="max-w-5xl mx-auto text-center mb-10">
           <h2 className="text-[#153D63] font-semibold text-4xl md:text-5xl mt-4">
             Areas of Competence
           </h2>
-          <p className="text-gray-600 mt-4 text-lg max-w-3xl mx-auto">
+          <p className="text-gray-600 mt-4 text-base md:text-2xl max-w-3xl mx-auto">
             Explore our specialized areas of expertise supporting advanced
             research and analysis.
           </p>
@@ -93,7 +93,7 @@ const Chemx = () => {
                 {/* Decorative Line */}
                 <div className="w-16 h-1 bg-blue-300 rounded-full mt-3 mb-4"></div>
 
-                <p className="text-gray-700 leading-relaxed flex-1">
+                <p className="text-[#153D63] leading-relaxed flex-1">
                   {item.description}
                 </p>
 

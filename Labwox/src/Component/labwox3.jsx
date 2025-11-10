@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
 import Wrapper from "./wrapper";
 import { FaStar } from "react-icons/fa";
-import labsofts from "../assets/image/review.jpg";
-import lab from "../assets/image/background.jpg";
+import labsofts from "../assets/image/partnerships.jpg";
 
 const testimonials = [
   {
@@ -22,27 +21,22 @@ const testimonials = [
   },
 ];
 
-const Labwox = () => {
+const Labwox = () =>{
   return (
     <Wrapper>
-      <div className="relative bg-neutral-300 overflow-hidden py-16 px-4 sm:px-8 lg:px-20">
-        {/* 🧪 Background */}
-        <img
-          src={lab}
-          alt="Labwox Background"
-          className="absolute inset-0 w-full h-full object-cover opacity-20 z-0"
-        />
+      <div className="relative bg-white overflow-hidden py-16 px-4 sm:px-8 lg:px-20">
+        
 
         {/* 💬 Testimonial Intro Section */}
         <div className="relative bg-[#153D63] rounded-3xl shadow-xl p-6 sm:p-10 lg:p-16 z-10 max-w-screen-2xl mx-auto">
           <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-12 lg:gap-20">
             {/* 📝 Text Section */}
             <div className="flex-1 text-center lg:text-left">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-light text-white leading-tight drop-shadow-md">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-thin text-white leading-tight drop-shadow-md">
                 Building Nigeria’s Research<br />
                 <span className="text-yellow-200 font-semibold">Future Together</span>
               </h1>
-              <p className="mt-6 text-sm sm:text-base md:text-lg text-gray-50 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+              <p className="mt-6 text-base md:text-2xl text-gray-50 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
                 We’ve partnered with institutions and agencies such as the <span className="text-[#adcbe7] font-semibold"> Standards Organisation of Nigeria, UNILAG’s D.K. Olukoya Central Research Laboratory and the Lagos State Environmental Protection Agency,</span>offering method development, training, and analytical support for diverse research goals.
               </p>
               <Link
@@ -80,13 +74,13 @@ const Labwox = () => {
                     <FaStar key={i} />
                   ))}
                 </div>
-                <p className="text-sm text-neutral-900 italic leading-relaxed">
+                <p className="text-sm text-[#153D63] italic leading-relaxed">
                   “{review.text}”
                 </p>
                 <div className="text-base sm:text-lg text-[#153D63] font-semibold">
                   {review.name}
                 </div>
-                <div className="text-sm text-gray-600">{review.company}</div>
+                <div className="text-sm text-[#153D63]">{review.company}</div>
               </div>
             ))}
           </div>

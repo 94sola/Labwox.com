@@ -12,7 +12,6 @@ import Training from './Component/traning';
 import Consulting from './Component/consulting';
 import Research from './Component/research';
 import Explore from './Component/explore';
-import About from './Component/about';
 import Gallery from './Component/gallery';
 import Aim from './Component/aim';
 import Chemical from './Component/phytochemical';
@@ -26,6 +25,7 @@ import Pesticide from './Component/pest';
 import Composition from './Component/composition';
 import Metal from './Component/composition/Ore';
 import Foodwater from './Component/foodwater';
+import Mdv from './Component/mdv';;
 
 
 // ✅ Fixed casing here
@@ -68,9 +68,9 @@ function App() {
             <Route path="/" element={<Labwox />} />
             <Route path="/explore" element={<Explore />} />
             <Route path="/gallery" element={<Gallery />} />
-            <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/faq" element={<Faq />} />
+            <Route path="/mdv" element={<Mdv />} />
             <Route path="/application" element={<Application />} />
             <Route path="/aim" element={<Aim />} />
             <Route path="/research" element={<Research />} />
