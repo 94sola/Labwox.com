@@ -1,65 +1,109 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Wrapper from "./wrapper";
+import son from "../assets/image/SON collage.png";
 
 const Activities = [
-  "Familiarization of participants with instrument hardware and software.",
-  "Presentation sessions covering theoretical background of instrumentation as well as analytical workflows.",
-  "Hands-on practice sessions giving participants opportunities for operation of instrumentation",
-  "Sample preparation workflows were established and documented.",
+  "QUECHERS sample preparation was demonstrated and practiced by participants.",
+  "Introduction to GC-MS instrumentation and software.",
+  "Demonstration of sample analysis of real grains for pesticides using QUECHERS and GC-MSD.",
+  "Result confirmation protocols were explained, demonstrated, and practiced on real datasets.",
+  "A mini study using over 40 real-life samples was carried to obtain real data and to create more opportunities for trainees to practice."
 ];
 
 const Results = [
-  "Staff of the laboratory gained proficiency in the operation of the GC-MSD and its application in the analysis of pesticide residues",
+  "Staff of the laboratory gained proficiency in the operation of the GC-MSD and its application in the analysis of pesticide residues.",
+  "Real data regarding the concentrations of various pesticide residues in grains was obtained to assist SON in its regulatory duties."
 ];
 
-
 export default function About() {
+
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const blocks = sectionRef.current.querySelectorAll(".fade-in");
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("opacity-100", "translate-y-0");
+          }
+        });
+      },
+      { threshold: 0.25 }
+    );
+    blocks.forEach(el => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <Wrapper>
-      <section className="bg-white py-10 font-manrope relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-white via-gray-50 to-white pointer-events-none"></div>
+      <section
+        ref={sectionRef}
+        className="relative bg-[#153D63] py-10 md:py-14 font-manrope overflow-hidden"
+      >
 
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-start gap-16">
-          
-          {/* Left Column */}
-          <div className="w-full lg:w-7/12">
-            <h3 className="text-gray-900 text-3xl md:text-4xl font-semibold mb-10 tracking-tight">
-              Activities
-            </h3>
-            <ul className="space-y-6">
-              {Activities.map((text, index) => (
-                <li
-                  key={index}
-                  className="relative pl-12 text-gray-800 text-base md:text-lg leading-relaxed group transition-all duration-300 hover:text-gray-900"
-                >
-                  <span className="absolute left-0 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-black shadow-lg transition-all duration-300 group-hover:scale-125"></span>
-                  {text}
-                </li>
-              ))}
-            </ul>
-          </div>
+        <div className="absolute inset-0 bg-gradient-to-br from-[#153D63] via-[#133e66] to-[#153D63] pointer-events-none" />
 
-          {/* Right Column */}
-          <div className="w-full lg:w-5/12 space-y-8">
-            <h3 className="text-gray-900 text-3xl md:text-4xl font-semibold mb-6 tracking-tight">
-              Results
-            </h3>
+        <div className="absolute inset-0 ring-1 ring-[#153D63]/5 pointer-events-none" />
+
+        <div className="relative max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+
+          <div className="fade-in opacity-0 translate-y-6 transition-all duration-700">
+            <div className="mb-12">
+              <h3 className="text-2xl md:text-3xl font-semibold text-gray-50 mb-6">
+                Activities
+              </h3>
+               <h5 className="text-xl md:text-2xl font-medium text-gray-50 mb-6">
+                Theoretical background of pesticide residue analysis using GC-MS was established during a presentation.
+              </h5>
+
+              <ul className="space-y-6">
+                {Activities.map((text, index) => (
+                  <li
+                    key={index}
+                    className="relative pl-12 text-gray-50 text-base md:text-lg leading-relaxed"
+                  >
+                    <span className="absolute left-0 top-2 w-3 h-3 rounded-full bg-gray-50 shadow-sm"></span>
+                    {text}
+                  </li>
+                ))}
+              </ul>
+            </div>
 
             <div>
-              <p className="text-gray-700 text-base md:text-lg font-medium mb-4">Sector-wide intelligence on:</p>
+              <h3 className="text-2xl md:text-3xl font-semibold text-gray-50 mb-4">
+                Results
+              </h3>
+
               <ul className="space-y-4">
                 {Results.map((text, index) => (
                   <li
                     key={index}
-                    className="relative pl-10 text-gray-800 text-sm md:text-base leading-relaxed group hover:text-gray-900 transition-colors duration-300"
+                    className="relative pl-10 text-gray-50 text-base md:text-lg leading-relaxed"
                   >
-                    <span className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-1 rounded-full bg-gray-900 shadow-sm"></span>
+                    <span className="absolute left-0 top-2 w-2 h-2 rounded-full bg-[#153D63]"></span>
                     {text}
                   </li>
                 ))}
               </ul>
             </div>
           </div>
+
+          <div className="fade-in opacity-0 translate-y-6 transition-all duration-700 delay-200">
+            <div className="relative max-w-lg mx-auto">
+
+              <div className="absolute inset-0 blur-xl bg-[#153D63]/80 rounded-3xl"></div>
+
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/90">
+                <img
+                  src={son}
+                  alt="Training program collage"
+                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-[1.03]"
+                />
+              </div>
+            </div>
+          </div>
+
         </div>
       </section>
     </Wrapper>

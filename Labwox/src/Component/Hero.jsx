@@ -64,7 +64,7 @@ const Labwox = () => {
       
       <style>{styles}</style>
 
-      <div className="relative bg-white px-8 py-10 lg:pb-40 lg:pt-8 lg:rounded-t-[40px] flex flex-col justify-center overflow-hidden hidden lg:block font-manrope">
+      <div className="relative bg-white px-8 py-10 lg:pb-40 lg:pt-10 lg:rounded-t-[40px] flex flex-col justify-center overflow-hidden hidden lg:block font-manrope">
         <div className="absolute top-10 left-10 opacity-60 z-0 animate-spinSlow">
           <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#b8149d" strokeWidth="1.5">
             <circle cx="12" cy="12" r="2" />

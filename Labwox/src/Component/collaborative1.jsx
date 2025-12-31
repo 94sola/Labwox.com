@@ -1,6 +1,7 @@
 import React from "react";
 import chemxpertImage from "../assets/image/SPECTRO.jpeg";
 import Wrapper from "./wrapper";
+import { Link } from "react-router-dom";
 
 export default function ChemXpertSection() {
   return (
@@ -13,11 +14,19 @@ export default function ChemXpertSection() {
               Built for Academic & Research Institutions
             </h2>
 
-            <p className="text-lg text-gray-700 mb-12 max-w-xl">
+            <p className="text-lg text-gray-700 max-w-xl">
               Give your faculty and students the tools they need to carry out impactful, publishable
                research across food, water, environment, and pollutant analysis.
             </p>
-
+             <Link to="/application">
+                <button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="mt-6 inline-block px-4 py-2 my-8 bg-[#153D63] text-white font-semibold text-lg rounded-xl shadow-lg hover:bg-[#174b7c] transition-all"
+                >
+                  View applicaton
+                </button>
+              </Link>
             <div className="space-y-6">
               {[
                 "Free pilot testing for selected studies",
