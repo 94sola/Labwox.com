@@ -53,13 +53,13 @@ const Labwox = () => {
         <div className="max-w-7xl mx-auto px-5 md:px-10">
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight text-black max-w-4xl">
-            <span className="text-yellow-500">Chemxpert:</span> Built for Quality Research
+            <span className="text-yellow-500">Free Pilot testing</span>  with Chemxpert
           </h1>
 
           <p className="text-base sm:text-lg md:text-xl text-gray-700 my-6 max-w-3xl">
-            Chemxpert is Labwox’s institutional partnership program that empowers universities with free
-            pilot testing, advanced analytical support, and access to world-class instrumentation—
-            without the cost of owning the equipment.
+            Chemxpert is Labwox’s research partnership program open to individual researchers, 
+            departments, and institutions. Labwox empowers enrollees with free 
+            pilot testing, advanced analytical support, and access to research grade methods without the cost of owning the equipment.
           </p>
           <div className="relative w-full mt-12">
             <div className="absolute -top-14 right-4 md:right-20 z-20">

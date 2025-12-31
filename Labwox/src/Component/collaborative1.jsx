@@ -11,12 +11,14 @@ export default function ChemXpertSection() {
 
           <div>
             <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
-              Built for Academic & Research Institutions
+              Built for Quality Research
             </h2>
 
             <p className="text-lg text-gray-700 max-w-xl">
-              Give your faculty and students the tools they need to carry out impactful, publishable
-               research across food, water, environment, and pollutant analysis.
+             With Chemxpert, researchers can evaluate the feasibility of their research 
+             projects through free pilot testing. The initiative also provides a pathway for full-scale research
+             collaboration with enrollees, enabling impactful, publishable research across 
+             various fields, including food, water, environment, and pollutant analysis
             </p>
              <Link to="/application">
                 <button
@@ -24,7 +26,7 @@ export default function ChemXpertSection() {
                   whileTap={{ scale: 0.95 }}
                   className="mt-6 inline-block px-4 py-2 my-8 bg-[#153D63] text-white font-semibold text-lg rounded-xl shadow-lg hover:bg-[#174b7c] transition-all"
                 >
-                  View applicaton
+                  View applicatons
                 </button>
               </Link>
             <div className="space-y-6">

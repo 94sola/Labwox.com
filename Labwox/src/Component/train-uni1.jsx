@@ -10,7 +10,7 @@ const Activities = [
 ];
 
 const Results = [
-  "Staff of the laboratory gained proficiency in the operation of the MP-OES."
+  "Staff of the laboratory gained proficiency in the operation of the MP-AES."
 ];
 
 export default function About() {
@@ -51,10 +51,7 @@ export default function About() {
               <h3 className="text-2xl md:text-3xl font-semibold text-gray-50 mb-6">
                 Activities
               </h3>
-               <h5 className="text-xl md:text-2xl font-medium text-gray-50 mb-6">
-                Theoretical background of pesticide residue analysis using GC-MS was established during a presentation.
-              </h5>
-
+               
               <ul className="space-y-6">
                 {Activities.map((text, index) => (
                   <li

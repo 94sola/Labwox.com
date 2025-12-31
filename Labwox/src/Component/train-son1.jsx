@@ -3,6 +3,7 @@ import Wrapper from "./wrapper";
 import son from "../assets/image/SON collage.png";
 
 const Activities = [
+  "Theoretical background of pesticide residue analysis using GC-MS was established during a presentation.",
   "QUECHERS sample preparation was demonstrated and practiced by participants.",
   "Introduction to GC-MS instrumentation and software.",
   "Demonstration of sample analysis of real grains for pesticides using QUECHERS and GC-MSD.",
@@ -53,9 +54,6 @@ export default function About() {
               <h3 className="text-2xl md:text-3xl font-semibold text-gray-50 mb-6">
                 Activities
               </h3>
-               <h5 className="text-xl md:text-2xl font-medium text-gray-50 mb-6">
-                Theoretical background of pesticide residue analysis using GC-MS was established during a presentation.
-              </h5>
 
               <ul className="space-y-6">
                 {Activities.map((text, index) => (

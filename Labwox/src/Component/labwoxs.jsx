@@ -7,32 +7,25 @@ const Labwox = () => {
     <Wrapper>
       <section className="relative py-28 bg-white overflow-hidden">
         <div className="relative max-w-7xl mx-auto px-10 lg:px-18">
-          <div className="grid md:grid-cols-2 gap-4 items-start">
+          <div className="grid md:grid-cols-2 gap-10 items-start">
 
             <h2 className="text-5xl md:text-6xl font-bold leading-[1.1] tracking-tight text-left">
               <span
                 className="bg-gradient-to-r from-[#c29bff] via-[#5a8bff] to-[#1d4ed8] bg-clip-text text-transparent"
               >
-                Free Pilot 
+                Chemxpert:Accelerate
               </span>
               {" "}
-              <span className="text-gray-900">testing </span>
-
-              <br />
-
-              <span
-                className="text-gray-900"
-              >
-                with 
+              <span className="text-gray-900"> Accelerate Research  
               </span>
               {" "}
-              <span className="bg-gradient-to-r from-[#5a8bff] to-[#1d4ed8] bg-clip-text text-transparent">Chemxpert</span>
+              <span className="bg-gradient-to-r from-[#5a8bff] to-[#1d4ed8] bg-clip-text text-transparent">in Your Institution</span>
             </h2>
             <div className="flex flex-col gap-6 text-left animate-fadeInSlow">
               <p className="text-lg md:text-xl text-gray-800 leading-relaxed">
-                Chemxpert is Labwox’s research partnership program open to individual researchers, departments, and institutions.
-                Labwox empowers enrollees with free pilot testing, advanced analytical support, 
-                and access to research grade methods without the cost of owning the equipment.
+                Chemxpert is Labwox’s institutional partnership program that empowers 
+                universities with free pilot testing, advanced analytical support, and access to
+                world-class instrumentation—without the cost of owning the equipment.
               </p>
 
               <Link to="/chemxpert">
