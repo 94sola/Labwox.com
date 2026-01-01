@@ -64,7 +64,7 @@ function App() {
         <Navbar />
 
         {/* Main Page Content */}
-        <div className="pt-6 md:pt-8">
+        <div className="pt-8 md:pt-20">
           <Routes>
             <Route path="/" element={<Labwox />} />
             <Route path="/explore" element={<Explore />} />

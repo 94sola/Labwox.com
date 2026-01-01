@@ -24,7 +24,7 @@ export default function ChemXpertSection() {
                 <button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="mt-6 inline-block px-4 py-2 my-8 bg-[#153D63] text-white font-semibold text-lg rounded-xl shadow-lg hover:bg-[#174b7c] transition-all"
+                  className="mt-6 inline-block px-4 py-2 my-8 bg-yellow-500 text-white font-semibold text-lg rounded-xl shadow-lg hover:bg-yellow-600 transition-all"
                 >
                   View applicatons
                 </button>

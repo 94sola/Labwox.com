@@ -53,7 +53,7 @@ const Labwox = () => {
         <div className="max-w-7xl mx-auto px-5 md:px-10">
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight text-black max-w-4xl">
-            <span className="text-yellow-500">Free Pilot testing</span>  with Chemxpert
+            <span className="text-[#2F7F7B]">Free Pilot testing</span>  with Chemxpert
           </h1>
 
           <p className="text-base sm:text-lg md:text-xl text-gray-700 my-6 max-w-3xl">
@@ -67,13 +67,13 @@ const Labwox = () => {
                 <div
                   className="
                     w-28 h-28 sm:w-32 sm:h-32 md:w-40 md:h-40 
-                    rounded-full bg-[#153D63] text-white 
+                    rounded-full bg-yellow-500 text-white 
                     flex flex-col justify-center items-center text-center
                     font-semibold shadow-xl
                     text-sm sm:text-base md:text-[22px] leading-snug
                   "
                 >
-                  Send an<br />application
+                  Apply for <br />Pilot Testing
                 </div>
               </Link>
             </div>

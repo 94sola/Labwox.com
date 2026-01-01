@@ -9,19 +9,19 @@ import img3 from "../assets/image/unilag-training.jpg";
 
 const cards = [
   {
-    title: "Son training project on pesticide 2025",
+    title: "GC-MSD/Pesticide Residue Training at SON",
     image: img1,
     link: "/son",
     linkLabel: "View project",
   },
   {
-    title: "Lasepa training project on pesticide 2025",
+    title: "MP-AES/Elemental Analysis Training at UNILAG",
     image: img2,
     link: "/lasepa",
     linkLabel: "View project",
   },
   {
-    title: "Unilag training project on pesticide 2025",
+    title: "GC-FID/GC-MSD/MP-AES Training at LASEPA",
     image: img3,
     link: "/unilag",
     linkLabel: "View project",

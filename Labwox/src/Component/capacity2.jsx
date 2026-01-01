@@ -15,7 +15,7 @@ export default function About() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
           <div className="grid md:grid-cols-2 gap-8 md:gap-10 items-start">
             <h3 className="text-white text-3xl sm:text-4xl lg:text-5xl font-medium leading-tight tracking-tight mb-6">
-              Professional Training in Analytical Instrumentation
+              Analytical Application Specialties
             </h3>
             <ul className="space-y-6">
               {Labwox.map((text, index) => (
