@@ -4,7 +4,7 @@ import Wrapper from "./wrapper";
 
 // Import images
 import img1 from "../assets/image/SON collage.png";
-import img2 from "../assets/image/training.jpg";
+import img2 from "../assets/image/lasepa-photo-collage.png";
 import img3 from "../assets/image/unilag-training.jpg";
 
 const cards = [
@@ -15,13 +15,13 @@ const cards = [
     linkLabel: "View project",
   },
   {
-    title: "MP-AES/Elemental Analysis Training at UNILAG",
+    title: "GC-FID/GC-MSD/MP-AES Training at LASEPA",
     image: img2,
     link: "/lasepa",
     linkLabel: "View project",
   },
   {
-    title: "GC-FID/GC-MSD/MP-AES Training at LASEPA",
+    title: "MP-AES/Elemental Analysis Training at UNILAG",
     image: img3,
     link: "/unilag",
     linkLabel: "View project",

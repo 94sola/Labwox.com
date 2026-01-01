@@ -26,7 +26,7 @@ export default function ChemXpertSection() {
                   whileTap={{ scale: 0.95 }}
                   className="mt-6 inline-block px-4 py-2 my-8 bg-yellow-500 text-white font-semibold text-lg rounded-xl shadow-lg hover:bg-yellow-600 transition-all"
                 >
-                  View applicatons
+                  View Applicatons
                 </button>
               </Link>
             <div className="space-y-6">

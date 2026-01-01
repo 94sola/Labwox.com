@@ -1,6 +1,6 @@
 import React from "react";
 import Wrapper from "./wrapper";
-import BannerImage from "../assets/image/trainner.jpg";
+import BannerImage from "../assets/image/lasepa-photo-collage.png";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 

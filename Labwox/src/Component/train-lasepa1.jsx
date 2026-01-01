@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import Wrapper from "./wrapper";
-import son from "../assets/image/SON collage.png";
+import son from "../assets/image/lasepa-photo-collage.png";
 
 const Activities = [
   "Familiarization of participants with instrument hardware and software.",
