@@ -25,7 +25,7 @@ export default function Labwox() {
           className="relative w-full h-[32vh] sm:h-[42vh] md:h-[55vh] lg:h-[60vh] bg-cover bg-center"
           style={{ backgroundImage: `url(${BannerImage})` }}
         >
-          <div className="absolute inset-0 bg-[#013220]/40"></div>
+          
         </div>
 
         {/* Content Card */}

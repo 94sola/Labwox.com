@@ -6,6 +6,7 @@ const Labwox = () => {
   return (
     <Wrapper>
       <section className="relative py-28 bg-white overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-[#2F7F7B] via-[#2A736F] to-[#2F7F7B]" />
         <div className="relative max-w-7xl mx-auto px-10 lg:px-18">
           <div className="grid md:grid-cols-2 gap-10 items-start">
 

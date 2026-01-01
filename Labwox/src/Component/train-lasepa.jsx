@@ -23,7 +23,6 @@ export default function Labwox() {
           className="relative w-full h-[38vh] sm:h-[45vh] md:h-[55vh] lg:h-[65vh] bg-cover bg-center"
           style={{ backgroundImage: `url(${BannerImage})` }}
         >
-          <div className="absolute inset-0 bg-[#013220]/45"></div>
         </div>
 
         <div className="relative -mt-16 sm:-mt-20 md:-mt-24 lg:-mt-28 z-20">
