@@ -22,7 +22,7 @@ const Tooltip = ({ text }) => (
 const cards = [
   {
     title: "Collaborative Research",
-    icon: <Handshake className="w-7 h-7 md:w-9 md:h-9 text-[#153D63]" />,
+    icon: <Handshake className="w-7 h-7 md:w-9 md:h-9 text-[#05b35f]" />,
     image: img1,
     link: "/chemxpert",
     description: "Partner with Labwox to bring your research ideas to life",
@@ -30,7 +30,7 @@ const cards = [
   },
   {
     title: "Method Development",
-    icon: <Beaker className="w-7 h-7 md:w-9 md:h-9 text-[#0B3D2E]" />,
+    icon: <Beaker className="w-7 h-7 md:w-9 md:h-9 text-[#1eb386]" />,
     image: img2,
     link: "/mdv",
     description: "We refine analytical methods that meet international standards",
@@ -38,7 +38,7 @@ const cards = [
   },
   {
     title: "Training & Capacity Building",
-    icon: <GraduationCap className="w-7 h-7 md:w-9 md:h-9 text-[#0B3D2E]" />,
+    icon: <GraduationCap className="w-7 h-7 md:w-9 md:h-9 text-[#478673]" />,
     image: img3,
     link: "/training",
     description: "Gain hands-on experience with modern analytical techniques.",
@@ -123,7 +123,7 @@ const NavTop = () => {
                   isDesktop() && isHovered
                     ? isCardHovered
                       ? "bg-white text-gray-900 shadow-2xl border-gray-200 scale-[1.02]"
-                      : "bg-[#bb059d] text-white hover:scale-[1.01]"
+                      : "bg-[#2F7F7B] text-white hover:scale-[1.01]"
                     : "bg-transparent text-white"
                 }
               `}
@@ -179,7 +179,7 @@ const NavTop = () => {
                       </h3>
 
                       <motion.p
-                        className="mt-1 text-sm text-center text-neutral-900 px-2 leading-snug"
+                        className="mt-1 text-sm text-center text-yellow-400 px-2 leading-snug"
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: 10 }}
@@ -192,7 +192,7 @@ const NavTop = () => {
                     </>
                   ) : (
                     // Collapsed view
-                    <div className="flex items-center justify-center h-full hover:text-pink-600 transition-colors">
+                    <div className="flex items-center justify-center h-full hover:text-[#2F7F7B] transition-colors">
                       <h3 className="text-base font-semibold text-center w-full tracking-wide">
                         {card.title}
                       </h3>

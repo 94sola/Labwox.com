@@ -1,6 +1,6 @@
 import React from "react";
 import Wrapper from "./wrapper";
-import BannerImage from "../assets/image/trainner.jpg";
+import BannerImage from "../assets/image/lasepa-photo-collage.png";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 
@@ -20,7 +20,7 @@ export default function Labwox() {
         </div>
 
         <div
-          className="relative w-full h-[38vh] sm:h-[45vh] md:h-[55vh] lg:h-[65vh] bg-cover bg-center"
+          className="relative w-full h-[36vh] sm:h-[46vh] md:h-[56vh] lg:h-[64vh] bg-cover bg-center"
           style={{ backgroundImage: `url(${BannerImage})` }}
         >
         </div>

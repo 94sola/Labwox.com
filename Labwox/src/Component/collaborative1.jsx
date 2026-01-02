@@ -6,11 +6,11 @@ import { Link } from "react-router-dom";
 export default function ChemXpertSection() {
   return (
     <Wrapper>
-      <section className="w-full bg-white font-manrope text-black py-10">
+      <section className="w-full bg-white font-manrope text-neutral-800 py-10">
         <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 grid md:grid-cols-2 gap-16 items-center">
 
           <div>
-            <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
+            <h2 className="text-3xl md:text-4xl font-semibold leading-tight mb-6">
               Built for Quality Research
             </h2>
 
@@ -26,7 +26,7 @@ export default function ChemXpertSection() {
                   whileTap={{ scale: 0.95 }}
                   className="mt-6 inline-block px-4 py-2 my-8 bg-yellow-500 text-white font-semibold text-lg rounded-xl shadow-lg hover:bg-yellow-600 transition-all"
                 >
-                  View applicatons
+                  View Applicatons
                 </button>
               </Link>
             <div className="space-y-6">
@@ -39,18 +39,18 @@ export default function ChemXpertSection() {
               ].map((item, index) => (
                 <div
                   key={index}
-                  className="flex items-center py-3 border-b border-gray-200"
+                  className="flex items-center py-2 border-b border-gray-200"
                 >
                   <span className="text-gray-900">{item}</span>
                 </div>
               ))}
             </div>
           </div>
-          <div className="w-full flex justify-center">
+          <div className="w-full flex justify-center pt-0 md:pt-4 lg:pt-8">
             <div
               className="
                 w-full max-w-md md:max-w-lg lg:max-w-xl 
-                bg-gradient-to-br from-[#2460b9] via-[#25cc1f] to-[#ffffff]
+                bg-gradient-to-br from-[#3174d8] via-[#5beb37] to-[#ffffff]
                 pt-20 px-20 rounded-2xl border border-gray-200 shadow-md
                 flex justify-center items-center
               "

@@ -36,14 +36,14 @@ const Partner = () => {
   return (
     <Wrapper>
       <div className="relative bg-neutral-200 text-[#153D63] overflow-hidden">
-        <div className="px-10 md:py-14 relative z-10">
+        <div className="md:pb-14 relative z-10">
 
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true }}
-            className="bg-[#f9f9f9] py-14 drop-shadow-2xl rounded-2xl mx-4 lg:mx-0 border border-gray-100"
+            className="bg-white pb-14  mx-4 lg:mx-0"
           >
             <div className="text-center px-4">
               <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-thin leading-relaxed text-gray-800">
@@ -66,12 +66,12 @@ const Partner = () => {
                 {[...logos, ...logos].map((logo, index) => (
                   <div
                     key={index}
-                    className="bg-white rounded-xl hover:scale-105 transition-transform duration-300 shadow-md w-20 sm:w-28 md:w-32 flex justify-center items-center p-3 md:p-5 border border-gray-200"
+                    className=" rounded-xl hover:scale-105 transition-transform duration-300 shadow-md w-20 sm:w-28 md:w-32 flex justify-center items-center p-3 md:p-5 border border-gray-200"
                   >
                     <img
                       src={logo}
                       alt={`Partner logo ${index + 1}`}
-                      className="w-full h-auto object-contain grayscale hover:grayscale-0 transition duration-300"
+                      className="w-full h-auto object-contain transition duration-300"
                     />
                   </div>
                 ))}
@@ -88,7 +88,7 @@ const Partner = () => {
           >
             <h3 className="text-xl sm:text-2xl md:text-4xl max-w-5xl lg:text-5xl font-thin leading-snug px-6 sm:px-5 lg:px-10 mx-auto text-[#153D63]">
               Discover how partnering with{" "}
-              <span className="text-[#FFC000]">Labwox</span> can elevate your
+              <span className="text-[#f7c530]">Labwox</span> can elevate your
               research and training capabilities.
             </h3>
 

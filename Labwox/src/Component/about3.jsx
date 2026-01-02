@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import Wrapper from "./wrapper";
 
-// Import images
+
 import img1 from "../assets/image/statistics.jpg";
 import img2 from "../assets/image/collabarative.jpg";
 import img3 from "../assets/image/trainner.jpg";
@@ -23,7 +23,7 @@ const cards = [
       "From concept to validation, Labwox helps you design and refine analytical methods that meet international standards. Our specialists provide end-to-end support to ensure accuracy, reproducibility, and regulatory compliance.",
     image: img2,
     link: "/mdv",
-    linkLabel: "👉 Contact Us",
+    linkLabel: "👉 Learn More",
   },
   {
     title: "Training & Capacity Building",
@@ -51,7 +51,6 @@ const About = () => {
             Partnering with Researchers to Unlock Scientific Potential
           </motion.h2>
 
-          {/* Cards Grid */}
           <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {cards.map((card, index) => {
               const isMiddle = index === 1;
@@ -72,27 +71,22 @@ const About = () => {
                   }`}
                   whileHover={{ scale: isMiddle ? 1.05 : 1.03 }}
                 >
-                  {/* Background Image */}
                   <img
                     src={card.image}
                     alt={card.title}
                     className="w-full h-full object-cover rounded-3xl transition-transform duration-700 group-hover:scale-110"
                   />
-
-                  {/* Gradient overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent backdrop-blur-[1px]" />
 
-                  {/* Content */}
                   <div className="absolute bottom-0 p-8 md:p-10 w-full text-left text-white">
                     <div className="flex justify-between items-center">
                       <h3 className="text-xl md:text-2xl font-semibold tracking-wide">
                         {card.title}
                       </h3>
 
-                      {/* Animated Plus ↔ Minus */}
                       <motion.div
                         layout
-                        className="flex items-center justify-center w-8 h-8 rounded-full bg-blue-600 text-white text-2xl font-bold shadow-md overflow-hidden"
+                        className="flex items-center justify-center w-8 h-8 rounded-full bg-yellow-400 text-white text-2xl font-bold shadow-md overflow-hidden"
                       >
                         <AnimatePresence mode="wait">
                           {!isHovered ? (
@@ -120,7 +114,6 @@ const About = () => {
                       </motion.div>
                     </div>
 
-                    {/* Description + Link (Animated) */}
                     <AnimatePresence>
                       {isHovered && (
                         <motion.div

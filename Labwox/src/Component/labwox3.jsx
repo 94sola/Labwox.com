@@ -32,11 +32,11 @@ const Labwox = () =>{
 
             <div className="flex-1 text-center lg:text-left">
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-thin text-white leading-tight drop-shadow-md">
-                <span className="text-yellow-200 font-semibold">Who Labwox Supports</span>
+                <span className="text-yellow-300 font-semibold">Who Labwox Supports</span>
               </h1>
 
-              <p className="mt-6 text-base md:text-2xl text-gray-50 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                Universities, research institutes, regulatory laboratories, <span className="text-[#adcbe7] font-semibold">and research groups seeking analytical capability, </span>training, and collaborative research support
+              <p className="mt-6 font-manrope text-base md:text-lg text-gray-50 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                Universities, research institutes, regulatory laboratories, <span className="text-yellow-300 font-medium">and research groups seeking analytical capability, </span>training, and collaborative research support
               </p>
               <div className="space-y-6 text-white mt-6">
 
@@ -60,13 +60,13 @@ const Labwox = () =>{
               </div>
               <Link
                 to="/contact"
-                className="mt-8 inline-block bg-[#356b9e] text-white px-6 py-3 rounded-xl hover:bg-[#102B4E] transition-all text-sm font-medium shadow-md"
+                className="mt-8 inline-block bg-[#356b9e] text-white px-6 py-3 rounded-xl hover:bg-yellow-300 transition-all text-sm font-medium shadow-md"
               >
                 Contact Us
               </Link>
             </div>
 
-            <div className="flex-1 max-w-sm sm:max-w-md md:max-w-lg lg:max-w-md xl:max-w-lg">
+            <div className="flex-1 max-w-sm sm:max-w-md h-auto md:max-w-lg lg:max-w-md xl:max-w-lg">
               <div className="rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
                 <img
                   src={labsofts}
