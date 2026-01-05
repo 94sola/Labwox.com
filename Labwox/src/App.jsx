@@ -28,6 +28,8 @@ import Composition from './Component/composition';
 import Metal from './Component/composition/Ore';
 import Foodwater from './Component/foodwater';
 import Mdv from './Component/mdv';;
+import GoogleFormSection from "./Component/googleform";
+
 
 
 import Pthalate from './Component/pollutant/Ester';
@@ -59,11 +61,10 @@ function App() {
   useAnalytics()
   return (
       <div className="relative bg-[#efebe7] min-h-screen">
-        {/* Sticky Navigation */}
+
         <Navs />
         <Navbar />
 
-        {/* Main Page Content */}
         <div className="pt-8 md:pt-20">
           <Routes>
             <Route path="/" element={<Labwox />} />
@@ -76,6 +77,7 @@ function App() {
             <Route path="/faq" element={<Faq />} />
             <Route path="/mdv" element={<Mdv />} />
             <Route path="/application" element={<Application />} />
+            <Route path="/research-application" element={<GoogleFormSection />} />
             <Route path="/aim" element={<Aim />} />
             <Route path="/chemxpert" element={<Chemxpert />} />
             <Route path="/training" element={<Training />} />
@@ -86,8 +88,6 @@ function App() {
             <Route path="/pesticide" element={<Pesticide />} />
             <Route path="/phytochemical" element={<Chemical />} />
             <Route path="/composition" element={<Composition />} />
-
-            {/* Pollutant Pages */}
             <Route path="/pollutant/phthalate" element={<Pthalate />} />
             <Route path="/pollutant/pah" element={<Pah />} />
             <Route path="/pollutant/pahmixf" element={<Mixf />} />
@@ -97,8 +97,6 @@ function App() {
             <Route path="/pollutant/voc" element={<Voc />} />
             <Route path="/pollutant/pbde" element={<Pbde />} />
             <Route path="/pollutant/Heavymetals" element={<Heavymetals />} />
-
-            {/* Pesticide Pages */}
             <Route path="/pesticide/single" element={<Single />} />
             <Route path="/pesticide/multi" element={<Multi />} />
             <Route path="/pesticide/mixa" element={<Mixa />} />
@@ -109,15 +107,11 @@ function App() {
             <Route path="/pesticide/phosphate" element={<Phosphate />} />
             <Route path="/pesticide/pyrethroids" element={<Pyrethroids />} />
             <Route path="/pesticide/chlorine" element={<Chlorine />} />
-
-            {/* Food Analysis Pages */}
             <Route path="/food/foodananlysis" element={<Food />} />
             <Route path="/food/foodananlysis/fame" element={<Fames />} />
             <Route path="/food/foodananlysis/mineral" element={<Mineral />} />
             <Route path="/food/foodananlysis/oil" element={<Oil />} />
             <Route path="/food/foodananlysis/proximate" element={<Proximate />} />
-
-            {/* Composition Pages */}
             <Route path="/composition/metal" element={<Metal />} />
             <Route path="/composition/Phytochemical" element={<Phytochemical />} />
           </Routes>

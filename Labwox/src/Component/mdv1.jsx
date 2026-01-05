@@ -8,7 +8,7 @@ export default function LabwoxHero() {
     <Wrapper>
         <section className="relative w-full font-manrope bg-white overflow-hidden">
         
-            <div className="max-w-7xl mx-auto px-6 py-20 grid lg:grid-cols-2 gap-6 items-center">
+            <div className="max-w-7xl mx-auto px-6 py-12 grid lg:grid-cols-2 gap-6 items-center">
             <div className="space-y-4">
                 <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight text-gray-900">
                 Robust Methods for Real-World Samples
@@ -19,7 +19,7 @@ export default function LabwoxHero() {
                     and laboratories with reliable, standards-aligned workflows.
                 </p>
                 <div className="flex flex-wrap items-center gap-6 pt-4">
-                    <button className="bg-white border border-gray-200 shadow-sm px-6 py-3 rounded-xl text-gray-900 font-medium hover:shadow-md transition">
+                    <button className="bg-[#153D63] border border-gray-700 shadow-sm px-2 py-1 rounded-xl text-white font-medium hover:shadow-md transition">
                     Request Method Support
                     </button>
                 </div>

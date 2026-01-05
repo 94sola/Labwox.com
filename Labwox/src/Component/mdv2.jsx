@@ -22,7 +22,7 @@ const Mdv = () => {
 
           <div className="mt-10 flex items-center justify-center">
             <Link
-              to="/contact"
+              to="/application"
               className="group inline-flex items-center gap-2 rounded-2xl bg-[#153D63] px-4 py-2 text-sm sm:text-base font-normal text-white shadow-xl transition-all duration-300 hover:-translate-y-0.5 hover:bg-yellow-600 hover:shadow-2xl"
             >
               View Applications
