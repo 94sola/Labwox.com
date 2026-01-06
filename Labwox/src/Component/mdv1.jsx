@@ -4,6 +4,16 @@ import Wrapper from "./wrapper";
 
 export default function LabwoxHero() {
   
+
+  const handlePilotFormClick = () => {
+    if (typeof window !== "undefined" && window.gtag) {
+      window.gtag("event", "open_google_form", {
+        event_category: "Chemxpert",
+        event_label: "Pilot Testing Application",
+        value: 1,
+      });
+    }
+  };
   return (
     <Wrapper>
         <section className="relative w-full font-manrope bg-white overflow-hidden">
@@ -19,9 +29,14 @@ export default function LabwoxHero() {
                     and laboratories with reliable, standards-aligned workflows.
                 </p>
                 <div className="flex flex-wrap items-center gap-6 pt-4">
-                    <button className="bg-[#153D63] border border-gray-700 shadow-sm px-2 py-1 rounded-xl text-white font-medium hover:shadow-md transition">
-                    Request Method Support
-                    </button>
+                     <a
+                        href="https://docs.google.com/forms/d/e/1FAIpQLSe_thcIyZcw0_8Rv6mZN2rK1ltaeGk2FqYtIoiQ_hVCkWcXGg/viewform"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={handlePilotFormClick}
+                        className="bg-[#153D63] border border-gray-700 shadow-sm px-2 py-1 rounded-xl text-white font-medium hover:shadow-md transition">
+                        Request Method Support
+                    </a>
                 </div>
             </div>
 
