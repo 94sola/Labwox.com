@@ -40,12 +40,15 @@ const Navbar = () => {
       <Wrapper>
         <nav className="flex justify-between items-center px-4 lg:px-8 py-2 relative">
 
-          {/* LOGO */}
           <Link to="/" className="flex items-center h-12 md:h-14">
-            <img src={logo} alt="Labwox Logo" className="h-full w-auto object-contain" />
+            <img
+              src={logo}
+              alt="Labwox Logo"
+              className="h-full w-auto object-contain"
+            />
           </Link>
 
-          {/* MOBILE MENU BUTTON */}
+ 
           <div className="lg:hidden z-50">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -55,16 +58,14 @@ const Navbar = () => {
             </button>
           </div>
 
-          {/* MENU */}
           <div
             className={`absolute lg:static left-0 w-full lg:w-auto bg-[#efebe7] transition-all duration-500 
             ${isMobileMenuOpen ? "top-[60px] opacity-100" : "top-[-120vh] opacity-0"}
             lg:opacity-100 lg:top-0 flex flex-col lg:flex-row items-start lg:items-center gap-4 lg:gap-6
-            p-5 lg:p-0 pt-16 lg:pt-0`}
+            p-5 lg:p-0 pt-12 lg:pt-0`}
           >
             <ul className="flex flex-col lg:flex-row gap-4 text-sm lg:text-base font-light">
 
-              {/* HOVER UNDERLINE STYLE */}
               <style>
                 {`
                   .nav-link {
@@ -92,12 +93,13 @@ const Navbar = () => {
                 </Link>
               </li>
 
-              {/* DROPDOWN */}
               {Object.entries(menuItems).map(([menu, items]) => (
                 <li key={menu} className="relative">
                   <button
                     onClick={() =>
-                      setActiveDropdown(prev => (prev === menu ? null : menu))
+                      setActiveDropdown(prev =>
+                        prev === menu ? null : menu
+                      )
                     }
                     className="flex items-center nav-link"
                   >
@@ -109,13 +111,12 @@ const Navbar = () => {
                     />
                   </button>
 
-                  {/* Animated Dropdown */}
                   <ul
-                    className={`bg-[#efebe7] rounded-md border border-gray-300 lg:absolute lg:w-44 z-50 mt-2
+                    className={`absolute left-0 bg-[#efebe7] rounded-md border border-gray-300 w-full lg:w-40 z-50
                     transition-all duration-300 origin-top
                     ${
                       activeDropdown === menu
-                        ? "opacity-100 scale-100 translate-y-0"
+                        ? "opacity-100 scale-100 translate-y-0 pointer-events-auto"
                         : "opacity-0 scale-95 -translate-y-2 pointer-events-none"
                     }`}
                   >

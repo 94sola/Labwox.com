@@ -79,6 +79,15 @@ const Labwox = () => {
       v.removeEventListener("loadedmetadata", setDur);
     };
   }, []);
+  const handlePilotFormClick = () => {
+    if (typeof window !== "undefined" && window.gtag) {
+      window.gtag("event", "open_google_form", {
+        event_category: "Chemxpert",
+        event_label: "Pilot Testing Application",
+        value: 1,
+      });
+    }
+  };
 
   return (
     <Wrapper>
@@ -93,8 +102,16 @@ const Labwox = () => {
             Labwox equips science professionals and academic teams with the skills needed
             to confidently operate, troubleshoot, and optimize laboratory workflows.
           </p>
-
-          {/* VIDEO WRAPPER */}
+          <div className="flex flex-wrap items-center gap-6 pt-4">
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSe_thcIyZcw0_8Rv6mZN2rK1ltaeGk2FqYtIoiQ_hVCkWcXGg/viewform"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={handlePilotFormClick}
+              className="bg-[#153D63] border border-gray-700 shadow-sm px-2 py-1 rounded-xl text-white font-medium hover:shadow-md transition">
+              Request Training Support
+            </a>
+          </div>
           <div className="relative w-full mt-12" id="video-container">
             <div className="w-full h-[400px] sm:h-[500px] md:h-[620px] rounded-2xl overflow-hidden relative shadow-xl bg-black">
               
@@ -137,7 +154,6 @@ const Labwox = () => {
                     {muted || volume == 0 ? <VolumeX size={20} /> : <Volume2 size={20} />}
                   </button>
 
-                  {/* Volume slider */}
                   <input
                     type="range"
                     min="0"

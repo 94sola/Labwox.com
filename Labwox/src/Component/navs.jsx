@@ -134,13 +134,13 @@ const NavTop = () => {
                 className="block md:hidden h-full w-full px-3 py-2"
               >
                 <div className="flex items-center justify-center">
-                  <h3 className="text-sm font-semibold tracking-wide">
+                  <h3 className="text-[10px] font-medium tracking-wide">
                     {card.title}
                   </h3>
                 </div>
               </Link>
 
-              {/* DESKTOP VIEW */}
+
               <Link
                 to={card.link}
                 className="hidden md:block h-full w-full px-4 py-3"
@@ -148,7 +148,7 @@ const NavTop = () => {
                 <AnimatePresence>
                   {isHovered && isDesktop() ? (
                     <>
-                      {/* Image with Icon */}
+
                       <motion.div
                         className="relative w-full h-24 md:h-28 rounded-lg overflow-hidden shadow-lg"
                         initial={{ opacity: 0, y: 10 }}
@@ -173,7 +173,6 @@ const NavTop = () => {
                         </div>
                       </motion.div>
 
-                      {/* Texts */}
                       <h3 className="text-base md:text-lg font-semibold text-center mt-2 tracking-wide">
                         {card.title}
                       </h3>
@@ -191,7 +190,7 @@ const NavTop = () => {
                       {isCardHovered && <Tooltip text={card.tooltip} />}
                     </>
                   ) : (
-                    // Collapsed view
+
                     <div className="flex items-center justify-center h-full hover:text-[#2F7F7B] transition-colors">
                       <h3 className="text-base font-semibold text-center w-full tracking-wide">
                         {card.title}
