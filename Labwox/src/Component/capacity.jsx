@@ -114,19 +114,15 @@ const Labwox = () => {
           </div>
           <div className="relative w-full mt-12" id="video-container">
             <div className="w-full h-[400px] sm:h-[500px] md:h-[620px] rounded-2xl overflow-hidden relative shadow-xl bg-black">
-              
-              {/* VIDEO */}
+
               <video
                 ref={videoRef}
                 src={video}
                 onClick={togglePlay}
                 className="w-full h-full object-cover object-center brightness-75 contrast-[1.35] saturate-[1.3] transition-all duration-700"
               ></video>
-
-              {/* CONTROL BAR */}
               <div className="absolute bottom-4 left-0 right-0 px-4 bg-gray-700/70 py-2 rounded-lg flex flex-col gap-2">
-                
-                {/* Progress bar */}
+
                 <input
                   type="range"
                   min="0"
@@ -136,7 +132,6 @@ const Labwox = () => {
                   className="w-full h-1 rounded-full bg-gray-400 accent-yellow-400 cursor-pointer"
                 />
 
-                {/* Buttons row */}
                 <div className="flex items-center gap-3">
                   <button onClick={togglePlay} className="p-2 rounded-full text-white hover:bg-white/20">
                     {isPlaying ? <Pause size={20} /> : <Play size={20} />}

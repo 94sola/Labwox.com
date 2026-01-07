@@ -4,7 +4,7 @@ import lasepa from "../assets/image/lasepa-logo.png";
 import son from "../assets/image/SON-logo.png";
 import nirma from "../assets/image/NIRMA.png";
 import scientific from "../assets/image/ls-scientific.png";
-import ctx from "../assets/image/ctx.png";
+import ctx from "../assets/image/CTX-logo.png";
 import { Link } from "react-router-dom";
 import { motion, useAnimation } from "framer-motion";
 
@@ -13,7 +13,6 @@ const Partner = () => {
   const [direction, setDirection] = useState(1);
   const controls = useAnimation();
   const [isPaused, setIsPaused] = useState(false);
-
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -43,22 +42,22 @@ const Partner = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true }}
-            className="bg-white pb-14  mx-4 lg:mx-0"
+            className="bg-white pb-14 mx-4 lg:mx-0"
           >
             <div className="text-center px-4">
-              <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-thin leading-relaxed text-gray-800">
+              <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-thin leading-relaxed text-gray-900">
                 These great companies have chosen to trust{" "}
-                <span className="text-[#153D63] font-normal">Labwox</span>.
+                <span className="text-[#09253f] font-normal">Labwox</span>.
               </h2>
-              <p className="mt-3 text-[#153D63] text-base md:text-2xl max-w-2xl mx-auto">
+              <p className="mt-3 text-[#153D63] text-lg md:text-2xl max-w-2xl mx-auto">
                 We proudly collaborate with top organizations that value
                 innovation, precision, and research excellence.
               </p>
             </div>
 
-            <div className="mt-12 overflow-hidden">
+            <div className="mt-10 overflow-hidden">
               <motion.div
-                className="flex items-center justify-start gap-10 md:gap-16 cursor-pointer"
+                className="flex items-center justify-start gap-6 md:gap-12 cursor-pointer"
                 animate={controls}
                 onMouseEnter={() => setIsPaused(true)}
                 onMouseLeave={() => setIsPaused(false)}
@@ -66,12 +65,24 @@ const Partner = () => {
                 {[...logos, ...logos].map((logo, index) => (
                   <div
                     key={index}
-                    className=" rounded-xl hover:scale-105 transition-transform duration-300 shadow-md w-20 sm:w-28 md:w-32 flex justify-center items-center p-3 md:p-5 border border-gray-200"
+                    className="
+                      w-24 sm:w-28 md:w-32
+                      h-24 sm:h-28 md:h-32
+                      flex items-center justify-center
+                      rounded-xl
+                      transition-all duration-300
+                    "
                   >
                     <img
                       src={logo}
                       alt={`Partner logo ${index + 1}`}
-                      className="w-full h-auto object-contain transition duration-300"
+                      className="
+                        h-18 sm:h-20 md:h-16
+                        w-auto
+                        object-contain
+                        will-change-transform
+                        translate-z-0
+                      "
                     />
                   </div>
                 ))}
@@ -86,9 +97,9 @@ const Partner = () => {
             viewport={{ once: true }}
             className="text-center py-8 lg:py-10"
           >
-            <h3 className="text-xl sm:text-2xl md:text-4xl max-w-5xl lg:text-5xl font-thin leading-snug px-6 sm:px-5 lg:px-10 mx-auto text-[#153D63]">
+            <h3 className="text-xl sm:text-2xl md:text-4xl max-w-5xl lg:text-5xl font-thin leading-snug px-6 sm:px-5 lg:px-10 mx-auto text-[#081c30]">
               Discover how partnering with{" "}
-              <span className="text-[#f7c530]">Labwox</span> can elevate your
+              <span className="text-[#ffbf00]">Labwox</span> can elevate your
               research and training capabilities.
             </h3>
 
@@ -104,7 +115,8 @@ const Partner = () => {
               </Link>
             </div>
           </motion.div>
-        </div> 
+
+        </div>
       </div>
     </Wrapper>
   );
