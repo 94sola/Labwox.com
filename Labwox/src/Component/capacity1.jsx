@@ -2,10 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Wrapper from "./wrapper";
 
-// Import images
+
 import img1 from "../assets/image/SON collage.png";
 import img2 from "../assets/image/lasepa-photo-collage.png";
-import img3 from "../assets/image/unilag-training.jpg";
+import img3 from "../assets/image/Unilag photo.jpg";
 
 const cards = [
   {

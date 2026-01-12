@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import Wrapper from "./wrapper";
-import uni from "../assets/image/SON collage.png";
+import uni from "../assets/image/Unilag photo.jpg";
 
 const Activities = [
   "Familiarization of participants with instrument hardware and software.",

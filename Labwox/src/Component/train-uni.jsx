@@ -1,6 +1,6 @@
 import React from "react";
 import Wrapper from "./wrapper";
-import BannerImage from "../assets/image/unilag-training.jpg";
+import BannerImage from "../assets/image/Unilag photo.jpg";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 

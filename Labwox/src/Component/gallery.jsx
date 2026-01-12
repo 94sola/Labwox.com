@@ -18,16 +18,26 @@ import nurs from "../assets/image/SON collage.png";
 import after from "../assets/image/son6.jpg";
 import pris from "../assets/image/son9.jpeg";
 import unis from "../assets/image/son2.jpg";
-
 import nurse from "../assets/image/son3.jpg";
 import afterse from "../assets/image/son4.jpg";
 import prises from "../assets/image/son5.jpg";
 import unises from "../assets/image/son8.jpg";
-
 import son from "../assets/image/son3.jpg";
 import son1 from "../assets/image/son4.jpg";
 import son2 from "../assets/image/son5.jpg";
 import son3 from "../assets/image/son8.jpg";
+import uni12 from "../assets/image/unilag1.jpg";
+import uni1 from "../assets/image/unilag.jpg";
+import uni2 from "../assets/image/unilag2.jpg";
+import uni3 from "../assets/image/unilag7.jpg";
+import uni8 from "../assets/image/unilag12.jpg";
+import uni9 from "../assets/image/unilag22.jpg";
+import uni10 from "../assets/image/unilag17.jpg";
+import uni11 from "../assets/image/unilag13.jpg";
+import uni4 from "../assets/image/unilag10.jpg";
+import uni5 from "../assets/image/unilag8.jpg";
+import uni6 from "../assets/image/unilag17.jpg";
+import uni7 from "../assets/image/unilag19.jpg";
 
 import lasepa from "../assets/image/lasepa-photo-collage.png";
 import lasepa1 from "../assets/image/lasepa1.jpg";
@@ -66,6 +76,18 @@ const images = [
   { src: lasepa5, label: "Lagos State Environmental Protection Agency" },
   { src: lasepa6, label: "Lagos State Environmental Protection Agency" },
   { src: lasepa7, label: "Lagos State Environmental Protection Agency" },
+  { src: uni1, label: "University of Lagos (UNILAG)" },
+  { src: uni2, label: "University of Lagos (UNILAG)" },
+  { src: uni3, label: "University of Lagos (UNILAG)" },
+  { src: uni4, label: "University of Lagos (UNILAG)" },
+  { src: uni5, label: "University of Lagos (UNILAG)" },
+  { src: uni6, label: "University of Lagos (UNILAG)" },
+  { src: uni7, label: "University of Lagos (UNILAG)" },
+  { src: uni8, label: "University of Lagos (UNILAG)" },
+  { src: uni9, label: "University of Lagos (UNILAG)" },
+  { src: uni10, label: "University of Lagos (UNILAG)" },
+  { src: uni11, label: "University of Lagos (UNILAG)" },
+  { src: uni12, label: "University of Lagos (UNILAG)" },
 ];
 
 
@@ -184,7 +206,7 @@ const Gallery = () => {
           <motion.img
             key={currentIndex}
             src={images[currentIndex].src}
-            className="w-full h-[420px] sm:h-[540px] object-cover rounded-xl shadow-lg cursor-pointer"
+            className="w-full h-[460px] sm:h-[550px] object-cover rounded-xl shadow-lg cursor-pointer"
             onClick={() => setSelectedImage(images[currentIndex].src)}
           />
           <p className="text-center text-white mt-3">
