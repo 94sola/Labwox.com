@@ -42,7 +42,6 @@ import Pbde from './Component/pollutant/PBDEs';
 import Voc from './Component/pollutant/voc';
 import Single from './Component/pesticide/single';
 import Multi from './Component/pesticide/multi';
-import Mixa from './Component/pesticide/mixa';
 import Mixb from './Component/pesticide/mixb';
 import Mixc from './Component/pesticide/mixc';
 import Mixd from './Component/pesticide/mixd';
@@ -99,7 +98,6 @@ function App() {
             <Route path="/pollutant/Heavymetals" element={<Heavymetals />} />
             <Route path="/pesticide/single" element={<Single />} />
             <Route path="/pesticide/multi" element={<Multi />} />
-            <Route path="/pesticide/mixa" element={<Mixa />} />
             <Route path="/pesticide/mixb" element={<Mixb />} />
             <Route path="/pesticide/mixc" element={<Mixc />} />
             <Route path="/pesticide/mixd" element={<Mixd />} />

@@ -37,19 +37,18 @@ const Multi = () => {
         </div>
 
         {/* Analysis Groups */}
-        <div className="relative max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6 px-4">
+        <div className="relative max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2 gap-6 px-4">
           {[
-            { name: "Mix A", link: "/pesticide/mixa" },
-            { name: "Mix B [Herbicides,Fungicides,Organochlorines,Pyrethroids]", link: "/pesticide/mixb" },
+            { name: "Mix B [Herbicides, Fungicides, Organochlorines, Pyrethroids]", link: "/pesticide/mixb" },
             { name: "Mix C [Organochlorine Pesticides]", link: "/pesticide/mixc" },
-            { name: "Mix D [Fungicides,Organochlorines,Organophosphates, Pyrethroids]", link: "/pesticide/mixd" },
+            { name: "Mix D [Fungicides, Organochlorines, Organophosphates, Pyrethroids]", link: "/pesticide/mixd" },
           ].map((item, index) => (
             <Link
               key={index}
               to={item.link}
-              className="bbg-neutral-700/60 backdrop-blur-sm border border-white/20 rounded-xl p-5 sm:p-7 text-center text-white hover:bg-[#FFC000]/20 hover:border-[#FFC000] hover:shadow-lg hover:shadow-[#ffc00055] transition duration-300"
+              className={`bg-neutral-700/60 backdrop-blur-sm border border-white/20 rounded-xl p-3 sm:p-4 text-center text-white hover:bg-[#FFC000]/20 hover:border-[#FFC000] hover:shadow-lg hover:shadow-[#ffc00055] transition duration-300${index === 2 ? ' sm:justify-self-center md:col-span-2 lg:col-span-1 md:justify-self-center lg:justify-self-center' : ''}`}
             >
-              <h2 className="text-xl font-semibold">{item.name}</h2>
+              <h2 className="text-lg sm:text-xl font-semibold">{item.name}</h2>
             </Link>
           ))}
         </div>
