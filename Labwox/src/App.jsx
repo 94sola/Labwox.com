@@ -45,10 +45,7 @@ import Multi from './Component/pesticide/multi';
 import Mixb from './Component/pesticide/mixb';
 import Mixc from './Component/pesticide/mixc';
 import Mixd from './Component/pesticide/mixd';
-import Chlorine from './Component/pesticide/chlorine';
 import Other from './Component/pesticide/others';
-import Pyrethroids from './Component/pesticide/Pyrethroids';
-import Phosphate from './Component/pesticide/phosphate';
 import Phytochemical from './Component/composition/Phytochem';
 import Fames from './Component/Foodanalysis/fames';
 import Mineral from './Component/Foodanalysis/minerals';
@@ -102,9 +99,6 @@ function App() {
             <Route path="/pesticide/mixc" element={<Mixc />} />
             <Route path="/pesticide/mixd" element={<Mixd />} />
             <Route path="/pesticide/others" element={<Other />} />
-            <Route path="/pesticide/phosphate" element={<Phosphate />} />
-            <Route path="/pesticide/pyrethroids" element={<Pyrethroids />} />
-            <Route path="/pesticide/chlorine" element={<Chlorine />} />
             <Route path="/food/foodananlysis" element={<Food />} />
             <Route path="/food/foodananlysis/fame" element={<Fames />} />
             <Route path="/food/foodananlysis/mineral" element={<Mineral />} />

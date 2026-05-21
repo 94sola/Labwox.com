@@ -17,25 +17,21 @@ import SamplingGuidelines from "../ui/sampling";
 
 const Mixd= () => {
   const compounds = [
-    "Mevinphos",
-    "Etridiazole",
     "Pirimicarb",
     "Fenthion",
     "Cyprodinil",
-    "Dodemorph",
-    "Bioallethrin",
+    "Fluopyram",
+    "S-Bioallethrin",
     "Methoprene",
     "Buprofezin",
-    "β-Endosulfan",
     "Endosulfan sulfate",
     "Resmethrin",
-    "Iprodione",
     "Tetramethrin",
     "Phenothrin",
     "Spirodiclofen",
-    "Coumaphos",
     "Fenvalerate",
     "Deltamethrin", 
+    "Dimethomorph ",
   ];
 
   const samplingDetails = [

@@ -16,21 +16,19 @@ import AvailableCompounds from "../ui/AvailableCompounds";
 import SamplingGuidelines from "../ui/sampling";
 const Mixc = () => {
   const compounds = [
-    "α-BHC",
-    "β-BHC",
-    "δ-BHC",
-    "γ-BHC",
+    "a-BHC",
+    "b-BHC",
+    "b-BHC",
     "Heptachlor",
     "Aldrin",
-    "Heptachlor Epoxide",
-    "α-Endosulfan",
-    "Dieldrin",
+    "Heptachlor epoxide",
+    "Endosulfan 1",
     "p,p'-DDE",
     "Endrin",
-    "Endosulfan II",
-    "4,4'-DDD",
+    "m,p-DDD",
+    "Endrin aldehyde",
     "Endosulfan Sulfate",
-    "4,4'-DDT",
+    "p,p'-DDT",
     "Methoxychlor",
   ];
 

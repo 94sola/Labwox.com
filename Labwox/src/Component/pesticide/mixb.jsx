@@ -17,27 +17,28 @@ import SamplingGuidelines from "../ui/sampling";
 
 const Mixb = () => {
   const compounds = [
-    "Eptam",
+    "EPTC",
+    "Butylate",
     "Pebulate",
     "Chloroneb",
     "Molinate",
     "Propachlor",
     "Cycloate",
-    "delta-Lindane",
-    "Lindane/Atrazine",
+    "a-BHC",
+    "Vinclozoline",
     "Propazine",
-    "Chlorothalonil",
     "Simetryn",
     "Metolachlor",
-    "DCPA",
     "Diphenamid",
+    "Butachlor",
+    "trans-Permethrin",
     "g-Chlordane",
     "a-Chlordane",
     "p,p'-DDE",
     "p,p'-DDD",
     "p,p'-DDT",
     "Methoxychlor",
-    "Permethrin",
+    "cis-Permethrin",
   ];
 
   const samplingDetails = [
