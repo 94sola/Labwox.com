@@ -26,7 +26,7 @@ const Multi = () => {
         {/* Header */}
         <div className="relative text-center mb-12 px-4">
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white">
-            Multi Residue Analysis
+            Multi Residue Applications
           </h1>
           <p className="mt-4 text-lg text-gray-50 max-w-2xl mx-auto">
             Multi residue methods allow the simultaneous detection of hundreds
