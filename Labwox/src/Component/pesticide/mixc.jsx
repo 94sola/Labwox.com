@@ -175,10 +175,10 @@ const Mixc = () => {
         {/* Header */}
         <div className="max-w-4xl mx-auto text-center my-12 px-4">
           <h1 className="text-4xl md:text-5xl font-thin text-[#153D63] mb-6">
-            Pesticide Multi Residue Mix C
+            OCP Mix 
           </h1>
           <p className="text-base md:text-lg text-gray-700 leading-relaxed max-w-4xl mx-auto">
-          Mix C consists of organochlorine pesticides widely monitored in 
+          OCP Mix consists of organochlorine pesticides widely monitored in 
           environmental and food safety studies. Designed for multi-residue 
           analysis, it supports accurate detection across food, water, and 
           environmental matrices.

@@ -178,10 +178,10 @@ const Mixd= () => {
 
         <div className="max-w-4xl mx-auto text-center my-12 px-4">
           <h1 className="text-4xl md:text-5xl font-thin text-[#153D63] mb-6">
-            Pesticide Multi Residue Mix D
+            CCP CAN Mix 
           </h1>
           <p className="text-base md:text-lg text-gray-700 leading-relaxed max-w-4xl mx-auto">
-          Mix D consists of carbamate pesticides frequently monitored for 
+          CCP CAN Mix consists of carbamate pesticides frequently monitored for 
           food and environmental safety. Designed for multi-residue analysis, 
           it ensures accurate detection across agricultural, food, and 
           environmental samples.

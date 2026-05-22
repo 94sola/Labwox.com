@@ -174,13 +174,12 @@ const Single = () => {
 
         <div className="max-w-4xl mx-auto text-center my-12 px-4">
           <h1 className="text-4xl md:text-5xl font-thin text-[#153D63] mb-6">
-            Single Residue Organophosphate
+            Single Residue Applications
           </h1>
           <p className="text-base md:text-lg text-gray-700 leading-relaxed max-w-4xl mx-auto">
-          Organophosphates are widely used insecticides that act by disrupting 
-          the nervous system of pests. Single-residue analysis ensures precise 
-          detection of individual compounds across food, feed, and environmental 
-          samples for regulatory compliance and public safety.
+            Single residue analysis targets one individual pesticide compound at a time,
+            delivering highly accurate results for food, feed, and environmental
+            samples to support regulatory compliance and consumer safety.
           </p>
         </div>
 

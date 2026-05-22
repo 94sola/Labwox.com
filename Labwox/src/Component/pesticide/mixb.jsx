@@ -184,10 +184,10 @@ const Mixb = () => {
 
         <div className="max-w-4xl mx-auto text-center my-12 px-4">
           <h1 className="text-4xl md:text-5xl font-thin text-[#153D63] mb-6">
-            Pesticide Multi Residue Mix B
+            525 Mix
           </h1>
           <p className="text-base md:text-lg text-gray-700 leading-relaxed max-w-4xl mx-auto">
-          Mix B consists of selected herbicides, fungicides, and organochlorines 
+          525 Mix consists of selected herbicides, fungicides, and organochlorines 
           commonly targeted in regulatory monitoring. Designed for multi-residue 
           analysis, it provides accurate detection across diverse food and 
           environmental matrices.
